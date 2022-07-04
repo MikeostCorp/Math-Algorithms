@@ -1,12 +1,13 @@
 #ifndef MATHALGO_H_
 #define MATHALGO_H_
 
-//#include <iostream>
+#include <iostream>
+#include <cmath>
 
 namespace mathAlgo{
 
 	// Abs
-	double abs(double number){
+	long double abs(long double number){
 		if(number < 0){
 			return -number;
 		}
@@ -14,7 +15,12 @@ namespace mathAlgo{
 			return number;
 		}
 	}
-	
+
+	// Cotangent
+	long double cot(long double number){
+		return (cos(number) / sin(number));
+	}
+
 }
 
 #endif
