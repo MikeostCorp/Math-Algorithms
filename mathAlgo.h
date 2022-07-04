@@ -4,6 +4,8 @@
 #include <iostream>
 #include <cmath>
 
+//hello!
+
 namespace mathAlgo{
 
 	// Abs
