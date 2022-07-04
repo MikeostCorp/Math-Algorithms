@@ -6,7 +6,7 @@
 namespace mathAlgo{
 
 	// Abs
-	double iabs(double number){
+	double abs(double number){
 		if(number < 0){
 			return -number;
 		}
