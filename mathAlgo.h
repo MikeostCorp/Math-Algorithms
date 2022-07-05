@@ -69,8 +69,7 @@ namespace mathAlgo {
 		double Integral = 0; 
 		double a = 0.0, b = abs(x);
 		double h = 0.01;
-		double n;
-		n = (b - a) / h;
+		double n = (b - a) / h;
 		for (int i = 1; i <= n; i++)
 			Integral = Integral + h * endLaplaceTheorem(a + h * (i - 0.5));
 		return 1 / sqrt(2 * _pi) * Integral;
