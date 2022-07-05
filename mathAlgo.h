@@ -83,7 +83,7 @@ namespace mathAlgo {
 	// Expected value
 	long double exvalue(double x[], double p[], const int _size) {
 		long double _m = 0;
-		for (int i = 0; i < _size; i++) {
+		for (int i = 0; i < _size; ++i) {
 			_m += x[i] * p[i];
 		}
 		return _m;
@@ -92,10 +92,10 @@ namespace mathAlgo {
 	// Dispersion
 	long double dispersion(double x[], double p[], const int _size) {
 		long double _mx2 = 0;
-		long double _mx = pow(exvalue(x,p,_size),2);
+		long double _mx = pow(exvalue(x, p, _size), 2);
 
 		for (int i = 0; i < _size; i++) {
-			_mx2 += x[i]*x[i] * p[i];
+			_mx2 += x[i] * x[i] * p[i];
 		}
 
 		return _mx2 - _mx;
@@ -103,7 +103,7 @@ namespace mathAlgo {
 
 	// Standard deviation from the variance of a random variable
 	long double sdev(double x[], double p[], const int _size) {
-		return sqrt(dispersion(x,p,_size));
+		return sqrt(dispersion(x, p, _size));
 	}
 
 	// Finding the length of a line segment
