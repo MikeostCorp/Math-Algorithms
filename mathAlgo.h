@@ -78,11 +78,19 @@ namespace mathAlgo {
 	bool isPrime(uint64_t number){
 		if(number <= 1) return false;
 
-		for(uint64_t i = 2; i < number / 2; ++i){
+		for(uint64_t i = 2; i < sqrt(number); ++i){
 			if(number % i == 0) return false;
 		}
 
 		return true;
+	}
+
+	// Fibonacci number
+	uint64_t fibonacci(uint64_t number){
+		if(number == 0) return 0;
+		if(number == 1) return 1;
+
+		return fibonacci(number - 1) + fibonacci(number - 2);
 	}
 
 } // end namespace
