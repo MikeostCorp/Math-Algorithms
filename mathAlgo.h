@@ -9,12 +9,8 @@ namespace mathAlgo {
 
 	// Abs
 	long double abs(long double number) {
-		if (number < 0) {
-			return -number;
-		}
-		else {
-			return number;
-		}
+		if (number < 0) return -number;
+		return number;
 	}
 
 	// Cotangent
@@ -51,6 +47,11 @@ namespace mathAlgo {
 	// Default Bernoulli's formula
 	long double bern(uint64_t n, uint64_t k, long double p){
 		return comС(n, k) * pow(p, k) * pow(p, n - k);
+	}
+
+	// Finding the length of a line segment
+	long double lengthOfLine(long double x1, long double x2, long double y1, long double y2, long double z1 = 0, long double z2 = 0){
+		return sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2) + pow((z2 - z1), 2));
 	}
 
 } // end namespace
