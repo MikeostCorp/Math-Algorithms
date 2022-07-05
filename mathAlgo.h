@@ -61,13 +61,13 @@ namespace mathAlgo {
 
 	//End part of the function for the number phi
 	double endLaplaceTheorem(double x) {
-		return exp(-((x*x)/2));
+		return exp(-((x * x) / 2));
 	}
 
 	//Phi number for local Laplace theorem
 	long double fiIntegral(long double x) {
 		double Integral = 0; 
-		double a = 0.0, b = abs(x);
+		double a = 0.0, b = fabs(x);
 		double h = 0.01;
 		double n = (b - a) / h;
 		for (int i = 1; i <= n; i++)
@@ -77,7 +77,7 @@ namespace mathAlgo {
 
 	// Laplace integral theorem
 	long double iLapl(long double k1, long double k2, long double n, long double p) {
-		return fiIntegral((k2-n*p)/sqrt(n*p*(1-p))) + fiIntegral((k1 - n * p) / sqrt(n * p * (1 - p)));
+		return fiIntegral((k2 - n * p) / sqrt( n * p * (1 - p))) + fiIntegral((k1 - n * p) / sqrt(n * p * (1 - p)));
 	}
 
 	// Finding the length of a line segment
