@@ -54,14 +54,24 @@ namespace mathAlgo {
 		return sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2) + pow((z2 - z1), 2));
 	}
 
-	// n-th term of arithmetic sequence
+	// n-th term of an arithmetic sequence
 	long double nTermOfASequence(long double a1, long double d, uint64_t n){
 		return a1 + (n - 1) * d;
 	}
 
 	// n-th term of a geometric sequence
-	long double nTermOfGSequence(long double a, long double r, uint64_t n){
-		return a * pow(r, n - 1);
+	long double nTermOfGSequence(long double a, long double q, uint64_t n){
+		return a * pow(q, n - 1);
+	}
+
+	// The sum of an arithmetic progression
+	long double sumAprogression(long double a1, long double an, uint64_t n){
+		return (a1 + an) * n / 2;
+	}
+
+	// The sum of a geometric progression
+	long double sumGprogression(long double a1, long double an, long double q){
+		return (a1 - an * q) / (1 - q);
 	}
 
 } // end namespace
