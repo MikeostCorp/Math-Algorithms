@@ -54,6 +54,11 @@ namespace mathAlgo {
 		return sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2) + pow((z2 - z1), 2));
 	}
 
+	// Arithmetic progression, n-th term of sequence
+	long double nTermOfSequence(long double a1, long double d, uint64_t n){
+		return a1 + (n - 1) * d;
+	}
+
 } // end namespace
 
 
