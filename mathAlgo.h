@@ -55,7 +55,7 @@ namespace mathAlgo {
 	}
 
 	//Local Laplace theorem
-	long double lLapl(long double p, long double n, long double k) {
+	long double lLaplace(long double p, long double n, long double k) {
 		return fiLocal((k - n * p) / sqrt(n * p * (1 - p))) / sqrt(n * p * (1 - p));
 	}
 
@@ -66,7 +66,7 @@ namespace mathAlgo {
 
 	//Phi number for local Laplace theorem
 	long double fiIntegral(long double x) {
-		double Integral = 0; 
+		double Integral = 0;
 		double a = 0.0, b = fabs(x);
 		double h = 0.01;
 		double n = (b - a) / h;
@@ -76,50 +76,76 @@ namespace mathAlgo {
 	}
 
 	// Laplace integral theorem
-	long double iLapl(long double k1, long double k2, long double n, long double p) {
-		return fiIntegral((k2 - n * p) / sqrt( n * p * (1 - p))) + fiIntegral((k1 - n * p) / sqrt(n * p * (1 - p)));
+	long double iLaplace(long double k1, long double k2, long double n, long double p) {
+		return fiIntegral((k2 - n * p) / sqrt(n * p * (1 - p))) + fiIntegral((k1 - n * p) / sqrt(n * p * (1 - p)));
+	}
+
+	// Expected value
+	long double exvalue(double x[], double p[], const int _size) {
+		long double _m = 0;
+		for (int i = 0; i < _size; i++) {
+			_m += x[i] * p[i];
+		}
+		return _m;
+	}
+
+	// Dispersion
+	long double dispersion(double x[], double p[], const int _size) {
+		long double _mx2 = 0;
+		long double _mx = pow(exvalue(x,p,_size),2);
+
+		for (int i = 0; i < _size; i++) {
+			_mx2 += x[i]*x[i] * p[i];
+		}
+
+		return _mx2 - _mx;
+	}
+
+	// Standard deviation from the variance of a random variable
+	long double sdev(double x[], double p[], const int _size) {
+		return sqrt(dispersion(x,p,_size));
 	}
 
 	// Finding the length of a line segment
-	long double lengthOfLine(long double x1, long double x2, long double y1, long double y2, long double z1 = 0, long double z2 = 0){
+	long double lengthOfLine(long double x1, long double x2, long double y1, long double y2, long double z1 = 0, long double z2 = 0) {
 		return sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2) + pow((z2 - z1), 2));
 	}
 
 	// n-th term of an arithmetic sequence
-	long double nTermOfASequence(long double a1, long double d, uint64_t n){
+	long double nTermOfASequence(long double a1, long double d, uint64_t n) {
 		return a1 + (n - 1) * d;
 	}
 
 	// n-th term of a geometric sequence
-	long double nTermOfGSequence(long double a, long double q, uint64_t n){
+	long double nTermOfGSequence(long double a, long double q, uint64_t n) {
 		return a * pow(q, n - 1);
 	}
 
 	// The sum of an arithmetic progression
-	long double sumAprogression(long double a1, long double an, uint64_t n){
+	long double sumAprogression(long double a1, long double an, uint64_t n) {
 		return (a1 + an) * n / 2;
 	}
 
 	// The sum of a geometric progression
-	long double sumGprogression(long double a1, long double an, long double q){
+	long double sumGprogression(long double a1, long double an, long double q) {
 		return (a1 - an * q) / (1 - q);
 	}
 
 	// Check prime number
-	bool isPrime(uint64_t number){
-		if(number <= 1) return false;
+	bool isPrime(uint64_t number) {
+		if (number <= 1) return false;
 
-		for(uint64_t i = 2; i < sqrt(number); ++i){
-			if(number % i == 0) return false;
+		for (uint64_t i = 2; i < sqrt(number); ++i) {
+			if (number % i == 0) return false;
 		}
 
 		return true;
 	}
 
 	// Fibonacci number
-	uint64_t fibonacci(uint64_t number){
-		if(number == 0) return 0;
-		if(number == 1) return 1;
+	uint64_t fibonacci(uint64_t number) {
+		if (number == 0) return 0;
+		if (number == 1) return 1;
 
 		return fibonacci(number - 1) + fibonacci(number - 2);
 	}
@@ -129,7 +155,5 @@ namespace mathAlgo {
 
 
 /*
-
-    GitHub: https://github.com/MikeostCorp/Math-Algorithms
-
+	GitHub: https://github.com/MikeostCorp/Math-Algorithms
 */
