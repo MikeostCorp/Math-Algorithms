@@ -2,8 +2,8 @@
 
 #include <math.h>
 
-#define _pi 3.141592653589793 // number PI
-#define _e  2.7182818284590   // number E
+#define _pi 3.1415926535897932384626433832795028841971693993751058209749 // number PI
+#define _e  2,7182818284590452353602874713526624977572470936999595749669 // number e
 
 namespace mathAlgo {
 
@@ -45,8 +45,40 @@ namespace mathAlgo {
 	}
 
 	// Default Bernoulli's formula
-	long double bern(uint64_t n, uint64_t k, long double p){
+	long double bern(uint64_t n, uint64_t k, long double p) {
 		return comС(n, k) * pow(p, k) * pow(p, n - k);
+	}
+
+	//phi number for local Laplace theorem
+	long double fiLocal(long double x) {
+		return 1 / sqrt(2 * _pi) * exp(-(x * x) / 2);
+	}
+
+	//Local Laplace theorem
+	long double lLapl(long double p, long double n, long double k) {
+		return fiLocal((k - n * p) / sqrt(n * p * (1 - p))) / sqrt(n * p * (1 - p));
+	}
+
+	//End part of the function for the number phi
+	double endLaplaceTheorem(double x) {
+		return exp(-((x*x)/2));
+	}
+
+	//Phi number for local Laplace theorem
+	long double fiIntegral(long double x) {
+		double Integral = 0; 
+		double a = 0.0, b = abs(x);
+		double h = 0.01;
+		double n;
+		n = (b - a) / h;
+		for (int i = 1; i <= n; i++)
+			Integral = Integral + h * endLaplaceTheorem(a + h * (i - 0.5));
+		return 1 / sqrt(2 * _pi) * Integral;
+	}
+
+	// Laplace integral theorem
+	long double iLapl(long double k1, long double k2, long double n, long double p) {
+		return fiIntegral((k2-n*p)/sqrt(n*p*(1-p))) + fiIntegral((k1 - n * p) / sqrt(n * p * (1 - p)));
 	}
 
 	// Finding the length of a line segment
