@@ -70,7 +70,7 @@ namespace mathAlgo {
 		double a = 0.0, b = fabs(x);
 		double h = 0.01;
 		double n = (b - a) / h;
-		for (int i = 1; i <= n; i++)
+		for (int i = 1; i <= n; ++i)
 			Integral = Integral + h * endLaplaceTheorem(a + h * (i - 0.5));
 		return 1 / sqrt(2 * _pi) * Integral;
 	}
