@@ -74,6 +74,17 @@ namespace mathAlgo {
 		return (a1 - an * q) / (1 - q);
 	}
 
+	// Check prime number
+	bool isPrime(uint64_t number){
+		if(number <= 1) return false;
+
+		for(uint64_t i = 2; i < number / 2; ++i){
+			if(number % i == 0) return false;
+		}
+
+		return true;
+	}
+
 } // end namespace
 
 
