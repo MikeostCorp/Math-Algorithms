@@ -1,8 +1,9 @@
 #pragma once
+
 #include <math.h>
 
-#define _pi 3.141592653589793 // число пи
-#define _eil  2.7182818284590 // число 
+#define _pi 3.141592653589793 // number PI
+#define _e  2.7182818284590   // number E
 
 namespace mathAlgo {
 
@@ -23,33 +24,33 @@ namespace mathAlgo {
 
 	// Acotangent
 	long double acot(long double number) {
-		return atan(1/number);
+		return atan(1 / number);
 	}
 
-	// factorial
-	long double fac(long double number) {
-		if (number == 0) return 1;
-		else return number* fac(number - 1);
+	// Factorial
+	uint64_t fac(uint64_t number) {
+		if (number <= 1) return 1;
+		else return number * fac(number - 1);
 	}
 
-	//probability
+	// Probability
 	long double prob(long double m, long double n) {
-		return m/n;
+		return m / n;
 	}
 
-	// number of placements, the order in the condition is important
-	long double nop(long double m, long double n) {
+	// Number of placements, the order in the condition is important
+	uint64_t nop(uint64_t n, uint64_t m) {
 		return fac(n) / fac(n - m);
 	}
 
-	// combination C, order is NOT important
-	long double comc(long double m, long double n) {
-		return fac(n) / (fac(m)*fac(n-m));
+	// Combination C, order is NOT important
+	uint64_t comС(uint64_t n, uint64_t m) {
+		return fac(n) / (fac(m) * fac(n - m));
 	}
 
-	// Defoult Bernoulli's formula
-	long double bern(long double n, long double k, long double p){
-		return comc(k, n) * pow(p,k) * pow(p,n-k);
+	// Default Bernoulli's formula
+	long double bern(uint64_t n, uint64_t k, long double p){
+		return comС(n, k) * pow(p, k) * pow(p, n - k);
 	}
 
 } // end namespace
