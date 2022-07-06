@@ -3,15 +3,32 @@
 #include <math.h>
 
 #define _pi 3.1415926535897932384626433832795028841971693993751058209749 // number PI
-#define _e  2,7182818284590452353602874713526624977572470936999595749669 // number e
+#define _e  2.7182818284590452353602874713526624977572470936999595749669 // number e
 
 namespace mathAlgo {
 
-	// Abs
-	long double abs(long double number) {
-		if (number < 0) return -number;
-		return number;
+	//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+	//
+	// Ordinary arithmetic
+	//
+	//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+	// Check prime number
+	bool isPrime(uint64_t number) {
+		if (number <= 1) return false;
+
+		for (uint64_t i = 2; i < sqrt(number); ++i) {
+			if (number % i == 0) return false;
+		}
+
+		return true;
 	}
+
+	//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+	//
+	// Geometry
+	//
+	//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
 	// Cotangent
 	long double cot(long double number) {
@@ -23,6 +40,17 @@ namespace mathAlgo {
 		return atan(1 / number);
 	}
 
+	// Finding the length of a line segment
+	long double lengthOfLine(long double x1, long double x2, long double y1, long double y2, long double z1 = 0, long double z2 = 0) {
+		return sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2) + pow((z2 - z1), 2));
+	}
+
+	//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+	//
+	// Formulas from probability theory and combinatorics
+	//
+	//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+	
 	// Factorial
 	uint64_t fac(uint64_t number) {
 		if (number <= 1) return 1;
@@ -48,12 +76,7 @@ namespace mathAlgo {
 	long double bern(uint64_t n, uint64_t k, long double p) {
 		return comС(n, k) * pow(p, k) * pow(p, n - k);
 	}
-	
-	//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-	//
-	// Laplace Theorem
-	//
-	
+
 	//phi number for local Laplace theorem
 	long double fiLocal(long double x) {
 		return 1 / sqrt(2 * _pi) * exp(-(x * x) / 2);
@@ -85,8 +108,6 @@ namespace mathAlgo {
 		return fiIntegral((k2 - n * p) / sqrt(n * p * (1 - p))) + fiIntegral((k1 - n * p) / sqrt(n * p * (1 - p)));
 	}
 
-	//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-	
 	// Expected value
 	long double exvalue(double x[], double p[], const int _size) {
 		long double _m = 0;
@@ -113,16 +134,12 @@ namespace mathAlgo {
 		return sqrt(dispersion(x, p, _size));
 	}
 
-	// Finding the length of a line segment
-	long double lengthOfLine(long double x1, long double x2, long double y1, long double y2, long double z1 = 0, long double z2 = 0) {
-		return sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2) + pow((z2 - z1), 2));
-	}
-
 	//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 	//
 	// Arithmetic and geometric progression
 	//
-		
+	//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
 	// n-th term of an arithmetic sequence
 	long double nTermOfASequence(long double a1, long double d, uint64_t n) {
 		return a1 + (n - 1) * d;
@@ -143,18 +160,13 @@ namespace mathAlgo {
 		return (a1 - an * q) / (1 - q);
 	}
 
+
 	//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-	
-	// Check prime number
-	bool isPrime(uint64_t number) {
-		if (number <= 1) return false;
+	//
+	// Recursion
+	//
+	//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
-		for (uint64_t i = 2; i < sqrt(number); ++i) {
-			if (number % i == 0) return false;
-		}
-
-		return true;
-	}
 
 	// Fibonacci number
 	uint64_t fibonacci(uint64_t number) {
@@ -165,7 +177,6 @@ namespace mathAlgo {
 	}
 
 } // end namespace
-
 
 
 /*
