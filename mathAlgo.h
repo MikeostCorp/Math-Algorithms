@@ -118,6 +118,11 @@ namespace mathAlgo {
 		return sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2) + pow((z2 - z1), 2));
 	}
 
+	//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+	//
+	// Arithmetic and geometric progression
+	//
+		
 	// n-th term of an arithmetic sequence
 	long double nTermOfASequence(long double a1, long double d, uint64_t n) {
 		return a1 + (n - 1) * d;
@@ -138,6 +143,8 @@ namespace mathAlgo {
 		return (a1 - an * q) / (1 - q);
 	}
 
+	//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+	
 	// Check prime number
 	bool isPrime(uint64_t number) {
 		if (number <= 1) return false;
