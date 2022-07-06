@@ -48,7 +48,12 @@ namespace mathAlgo {
 	long double bern(uint64_t n, uint64_t k, long double p) {
 		return comС(n, k) * pow(p, k) * pow(p, n - k);
 	}
-
+	
+	//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+	//
+	// Laplace Theorem
+	//
+	
 	//phi number for local Laplace theorem
 	long double fiLocal(long double x) {
 		return 1 / sqrt(2 * _pi) * exp(-(x * x) / 2);
@@ -80,6 +85,8 @@ namespace mathAlgo {
 		return fiIntegral((k2 - n * p) / sqrt(n * p * (1 - p))) + fiIntegral((k1 - n * p) / sqrt(n * p * (1 - p)));
 	}
 
+	//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+	
 	// Expected value
 	long double exvalue(double x[], double p[], const int _size) {
 		long double _m = 0;
