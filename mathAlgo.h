@@ -178,22 +178,19 @@ namespace mathAlgo {
 	
 	// Half-Division method
 	template<typename F>
-	long double halfDivisionMethod(F func, long double a, long double b, long double e = 0.001){
+	long double halfDivisionMethod(F func, long double a, long double b, long double e = 0.001) {
 		long double x;
-  		uint64_t count = 0;
 
   		x = (a + b) / 2;
-  		while(fabs(b - a) > e){
-  			if(func(a) * func(x) <= 0){
-     			b = x;
+  		while (fabs(b - a) > e){
+  			if (func(a) * func(x) <= 0) {
+     				b = x;
   			}
-  			else{
-      			a = x;
+  			else {
+      				a = x;
   			}
   			x = (a + b) / 2;
-  			++count;
   		}
-
   		return x;
 	}
 
