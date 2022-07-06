@@ -176,6 +176,14 @@ namespace mathAlgo {
 		return fibonacci(number - 1) + fibonacci(number - 2);
 	}
 	
+	
+	//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+	//
+	// Numerical methods for solving nonlinear equations
+	//
+	//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+	
+	
 	// Half-Division method
 	template<typename F>
 	long double halfDivisionMethod(F func, long double a, long double b, long double e = 0.001) {
