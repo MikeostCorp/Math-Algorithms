@@ -193,6 +193,19 @@ namespace mathAlgo {
   		}
   		return x;
 	}
+	
+	// Secant method
+	template<typename F>
+	long double secantMethod(F func, long double x0, long double x1, long double e = 0.001) {
+
+		while(fabs(x1 - x0) > e) {
+			long double tmp = x1;
+			x1 = x1 - (((x1 - x0) * func(x1)) / (func(x1) - func(x0))); 
+			x0 = tmp;
+		}
+
+		return x1;
+	}
 
 } // end namespace
 
