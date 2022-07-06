@@ -197,7 +197,6 @@ namespace mathAlgo {
 	// Secant method
 	template<typename F>
 	long double secantMethod(F func, long double x0, long double x1, long double e = 0.001) {
-
 		while(fabs(x1 - x0) > e) {
 			long double tmp = x1;
 			x1 = x1 - (((x1 - x0) * func(x1)) / (func(x1) - func(x0))); 
@@ -206,7 +205,38 @@ namespace mathAlgo {
 
 		return x1;
 	}
+	
+	// Parabola method
+	template<typename F>
+	long double parabolaMethod(F func, long double a, long double b, long double e = 0.001) {
+		long double x, c, A, B, C, x1, x2;
 
+		while(fabs(a - b) > e) {
+			c = (a + b) / 2;
+
+			C = func(a);
+
+			B = ((func(c) - func(a)) / (c - a)) + ((((func(b) - func(c)) / (b - c)) - ((func(c) - func(a)) / (c - a))) / (b - a)) * (a - c);
+			
+			A = (((func(b) - func(c)) / (b - c)) - ((func(c) - func(a)) / (c - a))) / (b - a);
+			
+			x1 = a - ((2 * C) / (B + sqrt(pow(B, 2) - 4 * A * C)));
+			
+			x2 = a - ((2 * C) / (B - sqrt(pow(B, 2) - 4 * A * C)));
+			
+			if((a <= x1 && x1 <= b) || (a >= x1 && x1 >= b)) x = x1;			
+			
+			if((a <= x2 && x2 <= b) || (a >= x2 && x2 >= b)) x = x2;
+			
+			if(func(a) * func(x) < 0) b = x;
+			
+			if(func(x) * func(b) < 0) a = x;
+			
+		}
+
+		return x;
+	}
+	
 } // end namespace
 
 
