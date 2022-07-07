@@ -120,7 +120,7 @@ namespace mathAlgo {
 	// Dispersion
 	long double dispersion(double x[], double p[], const int size) {
 		long double mx2 = 0;
-		long double mx = pow(exvalue(x, p, size), 2);
+		long double mx = pow(exValue(x, p, size), 2);
 
 		for (int i = 0; i < size; ++i) {
 			mx2 += x[i] * x[i] * p[i];
