@@ -3,10 +3,6 @@
 <br/>
 🇷🇺 Библиотека с++ с математическими алгоритмами
 
-🇺🇸 Currently the library includes algorithms and formulas for topics such as simple arithmetic, geometry, probability theory and combinatorics, arithmetic and geometric progressions, recursion.
-<br/>
-🇷🇺 На данный момент библиотека включает в себя алгоритмы и формулы таких тем: простая арифметика, геометрия, теория вероятности и комбинаторика, арифметическая и геометрическая прогрессии, рекурсия.
-
 🇺🇸 Navigation:
 - [Simple arithmetic](https://github.com/MikeostCorp/Math-Algorithms#simple-arithmetic)
   - [Prime number](https://github.com/MikeostCorp/Math-Algorithms#prime-number)
