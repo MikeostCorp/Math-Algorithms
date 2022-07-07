@@ -109,28 +109,28 @@ namespace mathAlgo {
 	}
 
 	// Expected value
-	long double exvalue(double x[], double p[], const int size) {
-		long double _m = 0;
+	long double exValue(double x[], double p[], const int size) {
+		long double m = 0;
 		for (int i = 0; i < size; ++i) {
-			_m += x[i] * p[i];
+			m += x[i] * p[i];
 		}
-		return _m;
+		return m;
 	}
 
 	// Dispersion
 	long double dispersion(double x[], double p[], const int size) {
-		long double _mx2 = 0;
-		long double _mx = pow(exvalue(x, p, size), 2);
+		long double mx2 = 0;
+		long double mx = pow(exvalue(x, p, size), 2);
 
-		for (int i = 0; i < size; i++) {
-			_mx2 += x[i] * x[i] * p[i];
+		for (int i = 0; i < size; ++i) {
+			mx2 += x[i] * x[i] * p[i];
 		}
 
-		return _mx2 - _mx;
+		return mx2 - mx;
 	}
 
 	// Standard deviation from the variance of a random variable
-	long double sdev(double x[], double p[], const int size) {
+	long double sDev(double x[], double p[], const int size) {
 		return sqrt(dispersion(x, p, size));
 	}
 
@@ -256,7 +256,7 @@ namespace mathAlgo {
 	template <typename typeArr>
 	typeArr amin(typeArr* arr, const int size) {
 		typeArr minimum = arr[0];
-		for (int i = 0; i < size; i++) {
+		for (int i = 0; i < size; ++i) {
 			if (arr[i] < minimum) {
 				minimum = arr[i];
 			}
@@ -268,7 +268,7 @@ namespace mathAlgo {
 	template <typename typeArr>
 	typeArr amax(typeArr* arr, const int size) {
 		typeArr maximum = arr[0];
-		for (int i = 0; i < size; i++) {
+		for (int i = 0; i < size; ++i) {
 			if (arr[i] > maximum) {
 				maximum = arr[i];
 			}
