@@ -17,7 +17,7 @@ namespace mathAlgo {
 	bool isPrime(uint64_t number) {
 		if (number <= 1) return false;
 
-		for (uint64_t i = 2; i < sqrt(number); ++i) {
+		for (uint64_t i = 2; i < sqrt(number); i++) {
 			if (number % i == 0) return false;
 		}
 
@@ -98,7 +98,7 @@ namespace mathAlgo {
 		double a = 0.0, b = fabs(x);
 		double h = 0.01;
 		double n = (b - a) / h;
-		for (int i = 1; i <= n; ++i)
+		for (int i = 1; i <= n; i++)
 			Integral = Integral + h * endLaplaceTheorem(a + h * (i - 0.5));
 		return 1 / sqrt(2 * _pi) * Integral;
 	}
@@ -112,7 +112,7 @@ namespace mathAlgo {
 	template <typename typeArr1, typename typeArr2>
 	long double exvalue(typeArr1 x[], typeArr2 p[], const int size) {
 		long double m = 0;
-		for (int i = 0; i < size; ++i) {
+		for (int i = 0; i < size; i++) {
 			m += x[i] * p[i];
 		}
 		return m;
@@ -291,7 +291,7 @@ namespace mathAlgo {
 	template <typename typeArr>
 	typeArr* bsort(typeArr* arr, const int size, bool status = true) {
 		typeArr temp = 0;
-		for (int i = 1; i < size; ++i)
+		for (int i = 1; i < size; i++)
 		{
 			for (int j = 0; j < size - i; j++)
 			{
