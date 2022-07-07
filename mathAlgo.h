@@ -50,7 +50,7 @@ namespace mathAlgo {
 	// Formulas from probability theory and combinatorics
 	//
 	//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-	
+
 	// Factorial
 	uint64_t fac(uint64_t number) {
 		if (number <= 1) return 1;
@@ -63,11 +63,11 @@ namespace mathAlgo {
 	}
 
 	// Number of placements, the order in the condition is important
-	uint64_t nop(uint64_t n, uint64_t m) {
+	uint64_t comA(uint64_t n, uint64_t m) {
 		return fac(n) / fac(n - m);
 	}
 
-	// Combination C, order is NOT important
+	// Number of placements, order is NOT important
 	uint64_t comС(uint64_t n, uint64_t m) {
 		return fac(n) / (fac(m) * fac(n - m));
 	}
@@ -109,20 +109,20 @@ namespace mathAlgo {
 	}
 
 	// Expected value
-	long double exvalue(double x[], double p[], const int _size) {
+	long double exvalue(double x[], double p[], const int size) {
 		long double _m = 0;
-		for (int i = 0; i < _size; ++i) {
+		for (int i = 0; i < size; ++i) {
 			_m += x[i] * p[i];
 		}
 		return _m;
 	}
 
 	// Dispersion
-	long double dispersion(double x[], double p[], const int _size) {
+	long double dispersion(double x[], double p[], const int size) {
 		long double _mx2 = 0;
-		long double _mx = pow(exvalue(x, p, _size), 2);
+		long double _mx = pow(exvalue(x, p, size), 2);
 
-		for (int i = 0; i < _size; i++) {
+		for (int i = 0; i < size; i++) {
 			_mx2 += x[i] * x[i] * p[i];
 		}
 
@@ -130,8 +130,8 @@ namespace mathAlgo {
 	}
 
 	// Standard deviation from the variance of a random variable
-	long double sdev(double x[], double p[], const int _size) {
-		return sqrt(dispersion(x, p, _size));
+	long double sdev(double x[], double p[], const int size) {
+		return sqrt(dispersion(x, p, size));
 	}
 
 	//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -175,76 +175,106 @@ namespace mathAlgo {
 
 		return fibonacci(number - 1) + fibonacci(number - 2);
 	}
-	
-	
+
+
 	//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 	//
 	// Numerical methods for solving nonlinear equations
 	//
 	//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-	
-	
+
+
 	// Half-Division method
 	template<typename F>
 	long double halfDivisionMethod(F func, long double a, long double b, long double e = 0.001) {
 		long double x;
 
-  		x = (a + b) / 2;
-  		while (fabs(b - a) > e){
-  			if (func(a) * func(x) <= 0) {
-     				b = x;
-  			}
-  			else {
-      				a = x;
-  			}
-  			x = (a + b) / 2;
-  		}
-  		return x;
+		x = (a + b) / 2;
+		while (fabs(b - a) > e) {
+			if (func(a) * func(x) <= 0) {
+				b = x;
+			}
+			else {
+				a = x;
+			}
+			x = (a + b) / 2;
+		}
+		return x;
 	}
-	
+
 	// Secant method
 	template<typename F>
 	long double secantMethod(F func, long double x0, long double x1, long double e = 0.001) {
-		while(fabs(x1 - x0) > e) {
+		while (fabs(x1 - x0) > e) {
 			long double tmp = x1;
-			x1 = x1 - (((x1 - x0) * func(x1)) / (func(x1) - func(x0))); 
+			x1 = x1 - (((x1 - x0) * func(x1)) / (func(x1) - func(x0)));
 			x0 = tmp;
 		}
 
 		return x1;
 	}
-	
+
 	// Parabola method
 	template<typename F>
 	long double parabolaMethod(F func, long double a, long double b, long double e = 0.001) {
 		long double x, c, A, B, C, x1, x2;
 
-		while(fabs(a - b) > e) {
+		while (fabs(a - b) > e) {
 			c = (a + b) / 2;
 
 			C = func(a);
 
 			B = ((func(c) - func(a)) / (c - a)) + ((((func(b) - func(c)) / (b - c)) - ((func(c) - func(a)) / (c - a))) / (b - a)) * (a - c);
-			
+
 			A = (((func(b) - func(c)) / (b - c)) - ((func(c) - func(a)) / (c - a))) / (b - a);
-			
+
 			x1 = a - ((2 * C) / (B + sqrt(pow(B, 2) - 4 * A * C)));
-			
+
 			x2 = a - ((2 * C) / (B - sqrt(pow(B, 2) - 4 * A * C)));
-			
-			if((a <= x1 && x1 <= b) || (a >= x1 && x1 >= b)) x = x1;			
-			
-			if((a <= x2 && x2 <= b) || (a >= x2 && x2 >= b)) x = x2;
-			
-			if(func(a) * func(x) < 0) b = x;
-			
-			if(func(x) * func(b) < 0) a = x;
-			
+
+			if ((a <= x1 && x1 <= b) || (a >= x1 && x1 >= b)) x = x1;
+
+			if ((a <= x2 && x2 <= b) || (a >= x2 && x2 >= b)) x = x2;
+
+			if (func(a) * func(x) < 0) b = x;
+
+			if (func(x) * func(b) < 0) a = x;
+
 		}
 
 		return x;
 	}
-	
+
+
+	//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+	//
+	// Array && matrix
+	//
+	//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+	// Array minimum value
+	template <typename typeArr>
+	typeArr amin(typeArr* arr, const int size) {
+		typeArr minimum = arr[0];
+		for (int i = 0; i < size; i++) {
+			if (arr[i] < minimum) {
+				minimum = arr[i];
+			}
+		}
+		return minimum;
+	}
+
+	// Maximum array value
+	template <typename typeArr>
+	typeArr amax(typeArr* arr, const int size) {
+		typeArr maximum = arr[0];
+		for (int i = 0; i < size; i++) {
+			if (arr[i] > maximum) {
+				maximum = arr[i];
+			}
+		}
+		return maximum;
+	}
 } // end namespace
 
 
