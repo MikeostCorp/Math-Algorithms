@@ -109,7 +109,8 @@ namespace mathAlgo {
 	}
 
 	// Expected value
-	long double exValue(double x[], double p[], const int size) {
+	template <typename typeArr1, typename typeArr2>
+	long double exvalue(typeArr1 x[], typeArr2 p[], const int size) {
 		long double m = 0;
 		for (int i = 0; i < size; ++i) {
 			m += x[i] * p[i];
@@ -118,11 +119,12 @@ namespace mathAlgo {
 	}
 
 	// Dispersion
-	long double dispersion(double x[], double p[], const int size) {
+	template <typename typeArr1, typename typeArr2>
+	long double dispersion(typeArr1 x[], typeArr2 p[], const int size) {
 		long double mx2 = 0;
-		long double mx = pow(exValue(x, p, size), 2);
+		long double mx = pow(exvalue(x, p, size), 2);
 
-		for (int i = 0; i < size; ++i) {
+		for (int i = 0; i < size; i++) {
 			mx2 += x[i] * x[i] * p[i];
 		}
 
@@ -130,7 +132,8 @@ namespace mathAlgo {
 	}
 
 	// Standard deviation from the variance of a random variable
-	long double sDev(double x[], double p[], const int size) {
+	template <typename typeArr1, typename typeArr2>
+	long double sdev(typeArr1 x[], typeArr2 p[], const int size) {
 		return sqrt(dispersion(x, p, size));
 	}
 
@@ -254,9 +257,9 @@ namespace mathAlgo {
 
 	// Array minimum value
 	template <typename typeArr>
-	typeArr aMin(typeArr* arr, const int size) {
+	typeArr amin(typeArr* arr, const int size) {
 		typeArr minimum = arr[0];
-		for (int i = 0; i < size; ++i) {
+		for (int i = 0; i < size; i++) {
 			if (arr[i] < minimum) {
 				minimum = arr[i];
 			}
@@ -266,15 +269,80 @@ namespace mathAlgo {
 
 	// Maximum array value
 	template <typename typeArr>
-	typeArr aMax(typeArr* arr, const int size) {
+	typeArr amax(typeArr* arr, const int size) {
 		typeArr maximum = arr[0];
-		for (int i = 0; i < size; ++i) {
+		for (int i = 0; i < size; i++) {
 			if (arr[i] > maximum) {
 				maximum = arr[i];
 			}
 		}
 		return maximum;
 	}
+
+	// Buble parametr method, the third parameter is optional
+	// True - sort in ascending order, false - sort in descending order
+	template<typename T>
+	void swap(T& val1, T& val2) {
+		T temp = val1;
+		val1 = val2;
+		val2 = temp;
+	}
+
+	template <typename typeArr>
+	typeArr* bsort(typeArr* arr, const int size, bool status = true) {
+		typeArr temp = 0;
+		for (int i = 1; i < size; ++i)
+		{
+			for (int j = 0; j < size - i; j++)
+			{
+				if (status) {
+					if (arr[j] > arr[j + 1]) swap(arr[j], arr[j + 1]);
+				}
+				else {
+					if (arr[j] < arr[j + 1]) swap(arr[j + 1], arr[j]);
+				}
+			}
+		}
+		return arr;
+	}
+
+	//Average of the array
+	template<typename typeArr>
+	typeArr avgArr(typeArr* arr, const int size) {
+		typeArr avg = 0;
+		
+		for (int i = 0; i < size; i++) avg += arr[i];
+		return avg / size;
+
+	}
+
+	// Most repeated number in array (number fashion)
+	// max - return mode, rmax - number of repetitions
+	template <typename typeArr>
+	typeArr modenum(typeArr* arr, const int size) {
+		typeArr max = arr[0], cmax = 0, rmax = 0;
+		for (int i = 0; i < size; i++) {
+			if (cmax > rmax) {
+				rmax = cmax;
+				max = arr[i - 1];
+			}
+			cmax = 0;
+			for (int j = i; j < size; j++)
+				if (arr[j] == arr[i])
+					cmax++;
+		}
+		return max;
+	}
+
+	// Median of numbers
+	template<typename typeArr>
+	typeArr median(typeArr* arr, const int size) {
+		if (size % 2 == 1)
+			return arr[size / 2];
+		else return (arr[size / 2 - 1] + arr[size / 2]) / 2;
+		
+	}
+
 } // end namespace
 
 
