@@ -254,7 +254,7 @@ namespace mathAlgo {
 
 	// Array minimum value
 	template <typename typeArr>
-	typeArr amin(typeArr* arr, const int size) {
+	typeArr aMin(typeArr* arr, const int size) {
 		typeArr minimum = arr[0];
 		for (int i = 0; i < size; ++i) {
 			if (arr[i] < minimum) {
@@ -266,7 +266,7 @@ namespace mathAlgo {
 
 	// Maximum array value
 	template <typename typeArr>
-	typeArr amax(typeArr* arr, const int size) {
+	typeArr aMax(typeArr* arr, const int size) {
 		typeArr maximum = arr[0];
 		for (int i = 0; i < size; ++i) {
 			if (arr[i] > maximum) {
