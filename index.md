@@ -27,33 +27,89 @@
   - [Метод секущих](https://mikeostcorp.github.io/Math-Algorithms/#%D0%BC%D0%B5%D1%82%D0%BE%D0%B4-%D1%81%D0%B5%D0%BA%D1%83%D1%89%D0%B8%D1%85)
   - [Метод парабол](https://mikeostcorp.github.io/Math-Algorithms/#%D0%BC%D0%B5%D1%82%D0%BE%D0%B4-%D0%BF%D0%B0%D1%80%D0%B0%D0%B1%D0%BE%D0%BB)
 
+<br/>
+
 # 🇺🇸 **English category**
+
 ## **Simple arithmetic**
+
 - ### _Prime number_
 ```c++ 
 bool isPrime(uint64_t number)
 ```
-The function takes as its input argument the number "number" to be checked. The function returns ``true`` if the number is prime and ``false`` if it is composite.
+The function takes as its input argument the ```number``` to be checked. The function returns ``true`` if the number is prime and ``false`` if it is composite.
+
+<br/>
+
+## **Arithmetic and geometric progressions**
+- ###  _N-th term of the arithmetic progression_
+```c++ 
+long double nTermOfASequence(long double a1, long double d, uint64_t n)
+```
+The function takes as input arguments the first element of the progression - ```a1```, the difference - ```d``` and the number of the sought element - ```n```. The function returns the value of the nth element.
+
+<br/>
+
+- ###  _Sum of members of an arithmetic progression_
+```c++ 
+long double sumAprogression(long double a1, long double an, uint64_t n)
+```
+The function takes as input arguments the first element of the progression - ```a1```, the value of the nth element - ```an``` and the number of elements - ```n```. The function returns the sum of the members of the sequence.
+
+<br/>
+
+- ###  _N-th term of the geometric progression_
+```c++ 
+long double nTermOfGSequence(long double a, long double q, uint64_t n)
+```
+The function takes as input arguments the first element of the progression - ```a```, the denominator of the progression - ```q``` and the number of the element sought - ```n```. The function returns the value of the nth element.
+
+<br/>
+
+- ###  _Sum of members of a geometric progression_
+```c++ 
+long double sumGprogression(long double a1, long double an, long double q)
+```
+The function takes as input arguments the first element of the progression - ```a1```, the value of the nth element - ```an``` and the denominator - ```q```. The function returns the sum of the members of the sequence.
+
+<br/>
 
 ## **Probability Theory and Combinatorics**
 - ### _Factorial_
 ```c++ 
 uint64_t fac(uint64_t number)
 ```
-As an input argument, the function takes the number "number" to be raised to the factorial. The function returns the factorial of the entered number.
+As an input argument, the function takes the ```number``` to be raised to the factorial. The function returns the factorial of the entered number.
+
+<br/>
 
 - ### _Probability_
 ```c++ 
 long double prob(long double m, long double n)
 ```
-As input arguments "m" takes the number of favorable outcomes, "n" takes the total number of test outcomes. The function returns the probability of the event.
+As input arguments ```m``` takes the number of favorable outcomes, ```n``` takes the total number of test outcomes. The function returns the probability of the event.
+
+<br/>
 
 - ### _Placement (order is important)_
 ```c++ 
-uint64_t comA(uint64_t n, uint64_t m)
+uint64_t comA(uint64_t m, uint64_t n)
 ```
 <img src="https://camo.githubusercontent.com/ed02a340a9f48b95bb35619ae2af7f29d6665a3536ed8df8b3986ba22c2189a4/68747470733a2f2f7374756466696c652e6e65742f68746d6c2f323730362f3533302f68746d6c5f6b5975646f34726c77552e327532682f696d672d495a6e6e524c2e706e67" alt="Формула размещения" data-canonical-src="https://studfile.net/html/2706/530/html_kYudo4rlwU.2u2h/img-IZnnRL.png" width="200" height="96">
-As input arguments "n" and "m", their meaning can be expressed by the question: how many ways can "m" of "m" different objects be chosen and placed in "n" different places? It is important that n > m. The function returns the number of placements.
+
+As input arguments ```n``` and ```m```, their meaning can be expressed by the question: how many ways can ```m``` different objects be chosen and placed in ```n``` different places? It is important that ```n``` > ```m```. The function returns the number of placements.
+
+<br/>
+
+- ### _Combination (order is NOT important)_
+```c++ 
+uint64_t comС(uint64_t n, uint64_t m)
+```
+<img src="https://fsd.kopilkaurokov.ru/uploads/user_file_55544ecc8a5d7/konspiekt-uchiebnogho-zaniatiia-po-matiematikie-po-tiemie-osnovnyie-poniatiia-kombinatoriki_8.png" alt="Combination" data-canonical-src="https://fsd.kopilkaurokov.ru/uploads/user_file_55544ecc8a5d7/konspiekt-uchiebnogho-zaniatiia-po-matiematikie-po-tiemie-osnovnyie-poniatiia-kombinatoriki_8.png" width="220" height="100">
+
+As input arguments ```n``` and ```m```, the number of combinations of ```n``` by ```m```. It is important that ```m``` > ```n```. The function returns the number of combinations.
+
+<br/>
 
 ## **Numerical methods for solving nonlinear equations**
 - ### _Half-division method_
@@ -61,7 +117,7 @@ As input arguments "n" and "m", their meaning can be expressed by the question: 
 template<typename F>
 long double halfDivisionMethod(F func, long double a, long double b, long double e = 0.001)
 ```
-The function takes as input arguments the equation "func", the left and right limits of the interval "a" & "b" and the optional precision parameter "e". The function returns the root of the equation on a given interval, with a given accuracy.
+The function takes as input arguments the equation ```func```, the left and right limits of the interval ```a``` & ```b``` and the optional precision parameter ```e```. The function returns the root of the equation on a given interval, with a given accuracy.
 
 Example of usage:
 ```c++
@@ -81,12 +137,14 @@ Output:
 halfDivisionMethod: 0.88623
 ```
 
+<br/>
+
 - ### _Secant method_
 ```c++
 template<typename F>
 long double secantMethod(F func, long double x0, long double x1, long double e = 0.001)
 ```
-The function takes as input arguments the equation "func", the left and right limits of the interval "x0" & "x1" and the optional precision parameter "e". The function returns the root of the equation on a given interval, with a given accuracy.
+The function takes as input arguments the equation ```func```, the left and right limits of the interval ```x0``` & ```x1``` and the optional precision parameter ```e```. The function returns the root of the equation on a given interval, with a given accuracy.
 
 Example of usage:
 ```c++
@@ -106,12 +164,14 @@ Output:
 secantMethod: 0.886345
 ```
 
+<br/>
+
 - ### _Parabola method_
 ```c++
 template<typename F>
 long double parabolaMethod(F func, long double a, long double b, long double e = 0.001)
 ```
-The function takes as input arguments the equation "func", the left and right limits of the interval "a" & "b" and the optional precision parameter "e". The function returns the root of the equation on a given interval, with a given accuracy.
+The function takes as input arguments the equation ```func```, the left and right limits of the interval ```a``` & ```b``` and the optional precision parameter ```e```. The function returns the root of the equation on a given interval, with a given accuracy.
 
 Example of usage:
 ```c++
@@ -131,6 +191,33 @@ Output:
 parabolaMethod: 0.886345
 ```
 
+<br/>
+
+## **Geometry**
+- ### _Cotangent_
+```c++
+long double cot(long double number)
+```
+The function takes as its input argument the ```number``` whose cotangent is to be obtained. The function returns the cotangent of the entered number.
+
+<br/>
+
+- ### _Arcotangent_
+```c++
+long double acot(long double number)
+```
+The function takes as its input argument the number ```number``` whose arcotangent is to be obtained. The function returns the arc tangent of the entered number.
+
+<br/>
+
+- ### _Calculating the length of the segment_
+```c++
+long double lengthOfLine(long double x1, long double x2, long double y1, long double y2, long double z1 = 0, long double z2 = 0)
+```
+The function takes the coordinates of points A(x1, y1) & B(x2, y2) as input arguments (z coordinates are entered for a three-dimensional coordinate system). The function returns the length of the segment.
+
+
+<br/>
 
 
 # 🇷🇺 **Русская категория**
@@ -139,27 +226,79 @@ parabolaMethod: 0.886345
 ```c++ 
 bool isPrime(uint64_t number)
 ```
-В качестве входного аргумента функция принимает число «number», которое нужно проверить. Функция возвращает ```true``` - если число простое и ```false``` - если составное.
+В качестве входного аргумента функция принимает число ```number```, которое нужно проверить. Функция возвращает ```true``` - если число простое и ```false``` - если составное.
+
+<br/>
+
+## **Арифметическая и геометрическая прогрессии**
+- ###  _N-ый член арифметической прогрессии_
+```c++ 
+long double nTermOfASequence(long double a1, long double d, uint64_t n)
+```
+В качестве входных аргументов функция принимает первый элемент прогрессии - ```a1```, разницу - ```d``` и номер искомого элемента - ```n```. Функция возвращает значение n-го элемента.
+
+<br/>
+
+- ###  _Сумма членов арифметической прогрессии_
+```c++ 
+long double sumAprogression(long double a1, long double an, uint64_t n)
+```
+В качестве входных аргументов функция принимает первый элемент прогрессии - ```a1```, значение n-го элемента - ```an``` и кол-во элементов - ```n```. Функция возвращает сумму членов последовательности.
+
+<br/>
+
+- ###  _N-ый член геометрической прогрессии_
+```c++ 
+long double nTermOfGSequence(long double a, long double q, uint64_t n)
+```
+В качестве входных аргументов функция принимает первый элемент прогрессии - ```a```, знаменатель прогрессии - ```q``` и номер искомого элемента - ```n```. Функция возвращает значение n-го элемента.
+
+<br/>
+
+- ###  _Сумма членов геометрической прогрессии_
+```c++ 
+long double sumGprogression(long double a1, long double an, long double q)
+```
+В качестве входных аргументов функция принимает первый элемент прогрессии - ```a1```, значение n-го элемента - ```an``` и знаменатель - ```q```. Функция возвращает сумму членов последовательности.
+
+<br/>
 
 ## **Теория вероятности и комбинаторика**
 - ### _Факториал_
 ```c++ 
 uint64_t fac(uint64_t number)
 ```
-В качестве входного аргумента функция принимает число «number», которое нужно возвести в факториал. Функция возвращает факториал введенного числа.
+В качестве входного аргумента функция принимает число ```number```, которое нужно возвести в факториал. Функция возвращает факториал введенного числа.
+
+<br/>
 
 - ### _Вероятность_
 ```c++ 
 long double prob(long double m, long double n)
 ```
-В качестве входных аргументов «m» принимает число благоприятных исходов, «n» - общее число исходов испытаний. Функция возвращает вероятность события.
+В качестве входных аргументов ```m``` принимает число благоприятных исходов, ```n``` - общее число исходов испытаний. Функция возвращает вероятность события.
+
+<br/>
 
 - ### _Размещение (порядок важен)_
 ```c++ 
-uint64_t comA(uint64_t n, uint64_t m)
+uint64_t comA(uint64_t m, uint64_t n)
 ```
 <img src="https://camo.githubusercontent.com/ed02a340a9f48b95bb35619ae2af7f29d6665a3536ed8df8b3986ba22c2189a4/68747470733a2f2f7374756466696c652e6e65742f68746d6c2f323730362f3533302f68746d6c5f6b5975646f34726c77552e327532682f696d672d495a6e6e524c2e706e67" alt="Формула размещения" data-canonical-src="https://studfile.net/html/2706/530/html_kYudo4rlwU.2u2h/img-IZnnRL.png" width="200" height="96">
-В качестве входных аргументов «n» и «m», их смысл можно выразить вопросом: сколькими способами можно выбрать и разместить по «m» различным местам «m» из «n» различных предметов? Важно, чтобы n > m. Функция возвращает количество размещений.
+
+В качестве входных аргументов ```n``` и ```m```, число размещений по ```m``` различным местам из ```n``` различных предметов. Важно, чтобы ```n``` > ```m```. Функция возвращает количество размещений.
+
+<br/>
+
+- ### _Сочетание (порядок НЕ важен)_
+```c++ 
+uint64_t comС(uint64_t n, uint64_t m)
+```
+<img src="https://fsd.kopilkaurokov.ru/uploads/user_file_55544ecc8a5d7/konspiekt-uchiebnogho-zaniatiia-po-matiematikie-po-tiemie-osnovnyie-poniatiia-kombinatoriki_8.png" alt="Формула сочетания" data-canonical-src="https://fsd.kopilkaurokov.ru/uploads/user_file_55544ecc8a5d7/konspiekt-uchiebnogho-zaniatiia-po-matiematikie-po-tiemie-osnovnyie-poniatiia-kombinatoriki_8.png" width="220" height="100">
+
+В качестве входных аргументов ```n``` и ```m```, число сочетаний ```n``` по ```m```. Важно, чтобы ```m``` > ```n```. Функция возвращает количество сочетаний.
+
+<br/>
 
 ## **Численные методы решения нелинейных уравнений**
 - ### _Метод бисекции(деление пополам)_
@@ -167,7 +306,7 @@ uint64_t comA(uint64_t n, uint64_t m)
 template<typename F>
 long double halfDivisionMethod(F func, long double a, long double b, long double e = 0.001)
 ```
-В качестве входных аргументов функция принимает уравнение «func», левую и правую границы отрезка «a» & «b» и необязательный параметр точности «e». Функция возвращает корень уравнения на заданном промежутке, с заданной точностью.
+В качестве входных аргументов функция принимает уравнение ```func```, левую и правую границы отрезка ```a``` & ```b``` и необязательный параметр точности ```e```. Функция возвращает корень уравнения на заданном промежутке, с заданной точностью.
 
 Пример использования:
 ```c++
@@ -187,12 +326,14 @@ int main
 halfDivisionMethod: 0.88623
 ```
 
+<br/>
+
 - ### _Метод секущих_
 ```c++
 template<typename F>
 long double secantMethod(F func, long double x0, long double x1, long double e = 0.001)
 ```
-В качестве входных аргументов функция принимает уравнение «func», левую и правую границы отрезка «x0» & «x1» и необязательный параметр точности «e». Функция возвращает корень уравнения на заданном промежутке, с заданной точностью.
+В качестве входных аргументов функция принимает уравнение ```func```, левую и правую границы отрезка ```x0``` & ```x1``` и необязательный параметр точности ```e```. Функция возвращает корень уравнения на заданном промежутке, с заданной точностью.
 
 Пример использования:
 ```c++
@@ -212,12 +353,14 @@ int main
 secantMethod: 0.886345
 ```
 
+<br/>
+
 - ### _Метод парабол_
 ```c++
 template<typename F>
 long double parabolaMethod(F func, long double a, long double b, long double e = 0.001)
 ```
-В качестве входных аргументов функция принимает уравнение «func», левую и правую границы отрезка «a» & «b» и необязательный параметр точности «e». Функция возвращает корень уравнения на заданном промежутке, с заданной точностью.
+В качестве входных аргументов функция принимает уравнение ```func```, левую и правую границы отрезка ```a``` & ```b``` и необязательный параметр точности ```e```. Функция возвращает корень уравнения на заданном промежутке, с заданной точностью.
 
 Пример использования:
 ```c++
@@ -236,3 +379,28 @@ int main
 ```
 parabolaMethod: 0.886345
 ```
+
+<br/>
+
+## **Геометрия**
+- ### _Котангенс_
+```c++
+long double cot(long double number)
+```
+В качестве входного аргумента функция принимает число ```number```, котангенс которого нужно получить. Функция возвращает котангенс введенного числа.
+
+<br/>
+
+- ### _Арккотангенс_
+```c++
+long double acot(long double number)
+```
+В качестве входного аргумента функция принимает число ```number```, арккотангенс которого нужно получить. Функция возвращает арккотангенс введенного числа.
+
+<br/>
+
+- ### _Расчет длины отрезка_
+```c++
+long double lengthOfLine(long double x1, long double x2, long double y1, long double y2, long double z1 = 0, long double z2 = 0)
+```
+В качестве входноых аргументов функция принимает координаты точек A(x1, y1) & B(x2, y2)(при трехмерной системе координат вводятся координаты z). Функция возвращает длину отрезка.
