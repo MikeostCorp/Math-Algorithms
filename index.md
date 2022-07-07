@@ -64,6 +64,7 @@ long double halfDivisionMethod(F func, long double a, long double b, long double
 The function takes as input arguments the equation "func", the left and right limits of the interval "a" & "b" and the optional precision parameter "e". The function returns the root of the equation on a given interval, with a given accuracy.
 <br/>
 > Example of usage:
+<br/>
 ```c++
 double f(double x)
 {
@@ -76,6 +77,7 @@ int main
 }
 ```
 > Output:
+<br/>
 ```
 halfDivisionMethod: 0.88623
 ```
