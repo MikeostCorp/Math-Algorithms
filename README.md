@@ -1,11 +1,35 @@
 # Math-Algorithms
 🇺🇸 Math library with algorithms for c++
 <br/>
-🇷🇺 С++ библиотека с математическими алгоритмами
+🇷🇺 Библиотека с++ с математическими алгоритмами
 
 🇺🇸 Currently the library includes algorithms and formulas for topics such as simple arithmetic, geometry, probability theory and combinatorics, arithmetic and geometric progressions, recursion.
 <br/>
 🇷🇺 На данный момент библиотека включает в себя алгоритмы и формулы таких тем: простая арифметика, геометрия, теория вероятности и комбинаторика, арифметическая и геометрическая прогрессии, рекурсия.
+
+🇺🇸 Navigation:
+- [Simple arithmetic](https://github.com/MikeostCorp/Math-Algorithms#simple-arithmetic)
+  - [Prime number](https://github.com/MikeostCorp/Math-Algorithms#prime-number)
+- [Probability Theory and Combinatorics](https://github.com/MikeostCorp/Math-Algorithms#probability-theory-and-combinatorics)
+  - [Factorial](https://github.com/MikeostCorp/Math-Algorithms#factorial)
+  - [Probability](https://github.com/MikeostCorp/Math-Algorithms#probability)
+  - [Placement (order is important)](https://github.com/MikeostCorp/Math-Algorithms#placement-order-is-important)
+- [Numerical methods for solving nonlinear equations](https://github.com/MikeostCorp/Math-Algorithms#numerical-methods-for-solving-nonlinear-equations)
+  - [Half-division method](https://github.com/MikeostCorp/Math-Algorithms#half-division-method)
+  - [Secant method](https://github.com/MikeostCorp/Math-Algorithms#secant-method)
+  - [Parabola method](https://github.com/MikeostCorp/Math-Algorithms#parabola-method)
+
+🇷🇺 Навигация:
+- [Простая арифметика](https://github.com/MikeostCorp/Math-Algorithms#%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%B0%D1%8F-%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B0)
+  - [Проверка числа на простоту](https://github.com/MikeostCorp/Math-Algorithms#%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0-%D1%87%D0%B8%D1%81%D0%BB%D0%B0-%D0%BD%D0%B0-%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%BE%D1%82%D1%83)
+- [Теория вероятности и комбинаторика](https://github.com/MikeostCorp/Math-Algorithms#%D1%82%D0%B5%D0%BE%D1%80%D0%B8%D1%8F-%D0%B2%D0%B5%D1%80%D0%BE%D1%8F%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B8-%D0%BA%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B0%D1%82%D0%BE%D1%80%D0%B8%D0%BA%D0%B0)
+  - [Факториал](https://github.com/MikeostCorp/Math-Algorithms#%D1%84%D0%B0%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D0%B0%D0%BB)
+  - [Вероятность](https://github.com/MikeostCorp/Math-Algorithms#%D0%B2%D0%B5%D1%80%D0%BE%D1%8F%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C)
+  - [Размещение (порядок важен)](https://github.com/MikeostCorp/Math-Algorithms#%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BE%D0%BA-%D0%B2%D0%B0%D0%B6%D0%B5%D0%BD)
+- [Численные методы решения нелинейных уравнений](https://github.com/MikeostCorp/Math-Algorithms#%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B-%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BD%D0%B5%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D1%85-%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9)
+  - [Метод бисекции(деление пополам)](https://github.com/MikeostCorp/Math-Algorithms#%D0%BC%D0%B5%D1%82%D0%BE%D0%B4-%D0%B1%D0%B8%D1%81%D0%B5%D0%BA%D1%86%D0%B8%D0%B8%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D0%BF%D0%BE%D0%BB%D0%B0%D0%BC)
+  - [Метод секущих](https://github.com/MikeostCorp/Math-Algorithms#%D0%BC%D0%B5%D1%82%D0%BE%D0%B4-%D1%81%D0%B5%D0%BA%D1%83%D1%89%D0%B8%D1%85)
+  - [Метод парабол](https://github.com/MikeostCorp/Math-Algorithms#%D0%BC%D0%B5%D1%82%D0%BE%D0%B4-%D0%BF%D0%B0%D1%80%D0%B0%D0%B1%D0%BE%D0%BB)
 
 # 🇺🇸 **English category**
 ## **Simple arithmetic**
