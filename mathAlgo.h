@@ -213,7 +213,6 @@ namespace mathAlgo {
 			x1 = x1 - (((x1 - x0) * func(x1)) / (func(x1) - func(x0)));
 			x0 = tmp;
 		}
-
 		return x1;
 	}
 
@@ -291,9 +290,9 @@ namespace mathAlgo {
 	template <typename typeArr>
 	typeArr* bsort(typeArr* arr, const int size, bool status = true) {
 		typeArr temp = 0;
-		for (int i = 0; i < size - 1; i++)
+		for (int i = 1; i < size; i++)
 		{
-			for (int j = 0; j < size - 1 - i; j++)
+			for (int j = 0; j < size - i; j++)
 			{
 				if (status) {
 					if (arr[j] > arr[j + 1]) swap(arr[j], arr[j + 1]);
@@ -310,7 +309,6 @@ namespace mathAlgo {
 	template<typename typeArr>
 	typeArr avgArr(typeArr* arr, const int size) {
 		typeArr avg = 0;
-		
 		for (int i = 0; i < size; i++) avg += arr[i];
 		return avg / size;
 
@@ -340,7 +338,23 @@ namespace mathAlgo {
 		if (size % 2 == 1)
 			return arr[size / 2];
 		else return (arr[size / 2 - 1] + arr[size / 2]) / 2;
-		
+	}
+
+	// Merge arrays(add)
+	// arr0, arr1 - Arrays to be stacked (Be sure to be the same size!)
+	// arr2 - Output array
+	// size - size of two arrays (Must be the same)
+	template <typename typeArr>
+	typeArr* addarr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size) {
+		for (int i = 0; i < size; i++) arr2[i] = arr1[i] + arr0[i];
+		return arr2;
+	}
+
+	// Merge arrays (minus)
+	template <typename typeArr>
+	typeArr* minarr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size) {
+		for (int i = 0; i < size; i++) arr2[i] = arr1[i] - arr0[i];
+		return arr2;
 	}
 
 } // end namespace
