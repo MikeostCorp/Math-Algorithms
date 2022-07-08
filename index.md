@@ -213,6 +213,16 @@ parabolaMethod: 0.886345
 
 <br/>
 
+## **Recursive algorithms**
+- ### _Fibonacci number_
+```c++
+uint64_t fibonacci(uint64_t n)
+```
+The function takes the number ```n``` as an input argument. The function returns the value of the Fibonacci sequence in the given 
+position.
+
+<br/>
+
 ## **Geometry**
 - ### _Cotangent_
 ```c++
@@ -401,7 +411,6 @@ parabolaMethod: 0.886345
 ```
 
 <br/>
-
 
 ## **Рекурсивные алгоритмы**
 - ### _Число Фибоначчи_
