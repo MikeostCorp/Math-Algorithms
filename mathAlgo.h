@@ -172,11 +172,11 @@ namespace mathAlgo {
 
 
     // Fibonacci number
-    uint64_t fibonacci(uint64_t number) {
-        if (number == 0) return 0;
-        if (number == 1) return 1;
+    uint64_t fibonacci(uint64_t n) {
+        if (n == 0) return 0;
+        if (n == 1) return 1;
 
-        return fibonacci(number - 1) + fibonacci(number - 2);
+        return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
 
