@@ -290,9 +290,9 @@ namespace mathAlgo {
     template <typename typeArr>
     typeArr* bsort(typeArr* arr, const int size, bool status = true) {
         typeArr temp = 0;
-        for (int i = 1; i < size; i++)
+        for (int i = 0; i < size - 1; i++)
         {
-            for (int j = 0; j < size - i; j++)
+            for (int j = 0; j < size - i - 1; j++)
             {
                 if (status) {
                     if (arr[j] > arr[j + 1]) swap(arr[j], arr[j + 1]);
