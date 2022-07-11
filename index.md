@@ -3,6 +3,8 @@
 <br/>
 🇷🇺 Библиотека с++ с математическими алгоритмами
 
+<!-- Nav -->
+
 🇺🇸 Navigation:
 - [Simple arithmetic](https://mikeostcorp.github.io/Math-Algorithms/#simple-arithmetic)
   - [Prime number](https://mikeostcorp.github.io/Math-Algorithms/#prime-number)
@@ -26,6 +28,8 @@
   - [Cotangent](https://mikeostcorp.github.io/Math-Algorithms/#cotangent)
   - [Arcotangent](https://mikeostcorp.github.io/Math-Algorithms/#arcotangent)
   - [Calculating the length of the segment](https://mikeostcorp.github.io/Math-Algorithms/#calculating-the-length-of-the-segment)
+
+<!-- Навигация -->
 
 🇷🇺 Навигация:
 - [Простая арифметика](https://mikeostcorp.github.io/Math-Algorithms/#%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%B0%D1%8F-%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B0)
@@ -52,6 +56,8 @@
   - [Расчет длины отрезка](https://mikeostcorp.github.io/Math-Algorithms/#расчет-длины-отрезка)
 
 <br/>
+
+<!-- English category function with code examples -->
 
 # 🇺🇸 **English category**
 
@@ -253,6 +259,7 @@ The function takes the coordinates of points A(x1, y1) & B(x2, y2) as input argu
 
 <br/>
 
+<!-- Русская категория функций с примерами кода -->
 
 # 🇷🇺 **Русская категория**
 ## **Простая арифметика**
