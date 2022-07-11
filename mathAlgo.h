@@ -433,6 +433,15 @@ namespace mathAlgo {
 		return arr;
 	}
 
+	// random nums array
+	template <typename typeArr>
+	typeArr* randarr(typeArr* arr, const int size) {
+		for (int i = 0; i < size; i++) {
+			arr[i] = rand() % 100 - 50;
+		}
+		return arr;
+	}
+
 	// union arrays (into one big)
 	// For correct operation, use an array whose 
 	// size is twice the size of one of the original
@@ -574,6 +583,17 @@ namespace mathAlgo {
 				else {
 					*(*(mat + i) + j) = -*(*(mat + i) + j);
 				}
+			}
+		}
+		return mat;
+	}
+
+	// Random numbers in matrix
+	template <typename typeArr>
+	typeArr* randmat(typeArr* mat, const int isize, const int jsize) {
+		for (int i = 0; i < isize; i++) {
+			for (int j = 0; j < jsize; j++) {
+				*(*(mat + i) + j) = rand()% 100 - 10;
 			}
 		}
 		return mat;
