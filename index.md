@@ -629,7 +629,7 @@ template <typename typeArr>
 ### Объеденить два массива в один большой
 ```c++
 template <typename typeArr>
-	typeArr* uniarr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size) {
+	typeArr* uniarr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
 ```
 В качестве аргументов arr0 и arr1 принимаются два одинаковых массива по типу данных и размеру, arr2 - выходной массив в котором будут элементы двух массивов, size - размер массивов (одинаковый для первых двух).
 Важно! Размер возвращеного массива составляет сумму размеров двух предыдущих массивов. Первые два массива должны быть одинаковы по размеру и типу.
