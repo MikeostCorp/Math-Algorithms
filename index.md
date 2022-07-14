@@ -459,6 +459,8 @@ long double lengthOfLine(long double x1, long double x2, long double y1, long do
 
 ## **Работа с массивами и матрицами**
 
+<br/>
+
 ### Поиск минимального значения в массиве
 ```c++
 template <typename typeArr>
@@ -466,6 +468,7 @@ template <typename typeArr>
 ```
 В качестве аргумента arr - принимается массив, size - размер массива. Возвращает минимальный элемент массива.
 
+<br/>
 
 ### Поиск максимального значения в массиве
 ```c++
@@ -474,26 +477,159 @@ template <typename typeArr>
 ```
 В качестве аргумента arr - принимается массив, size - размер массива. Возвращает максимальный элемент массива.
 
+<br/>
 
 ### Сортировка массива методом пузырька
 ```c++
 template <typename typeArr>
-	typeArr* bsort(typeArr* arr, const int size, bool status = true) {
+	typeArr* bsort(typeArr* arr, const int size, bool status = true)
 ```
 В качестве входного аргумента arr - принимается массив, size - размер массива, аргумент status не обязателен для заполнения, по-умолчанию true, отвечает в какую сторону будет сортировка (от большего к меньшего или наоборот). Возвращает отсортированный массив.
 
+<br/>
 
 ### Среднее значение массива
 ```c++
 template<typename typeArr>
-	typeArr avgArr(typeArr* arr, const int size) {
+	typeArr avgArr(typeArr* arr, const int size)
 ```
 В качестве аргумента arr - принимается массив, size - размер массива. Возвращает среднее значение массива.
 
+<br/>
 
 ###  Мода массива
 ```c++
 template <typename typeArr>
-	typeArr modenum(typeArr* arr, const int size) {
+	typeArr modenum(typeArr* arr, const int size)
 ```
 В качестве аргумента arr - принимается массив, size - размер массива. Возвращает наиболее частое число.
+
+<br/>
+
+###  Медиана массива
+```c++
+template<typename typeArr>
+	typeArr median(typeArr* arr, const int size)
+```
+В качестве аргумента arr - принимается массив, size - размер массива. Возвращает медиану массива.
+
+<br/>
+
+###  Суммирование двух массивов
+```c++
+template <typename typeArr>
+	typeArr* sumarr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
+```
+В качестве аргументов arr0 и arr1 принимаются два одинаковых массива по типу данных и размеру, arr2 - выходной массив в котором суммированы два предыдуших, size - размер массивов (одинаковый для троих).
+
+<br/>
+
+###  Разница двух массивов
+```c++
+template <typename typeArr>
+	typeArr* minarr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
+```
+В качестве аргументов arr0 и arr1 принимаются два одинаковых массива по типу данных и размеру, arr2 - выходной массив в котором будет разница два предыдуших массивов, size - размер массивов (одинаковый для троих).
+Важно! Разница элементов идёт по принципу: элемент первого массива - элемент второго массива.
+
+<br/>
+
+###  Умножение двух массивов
+```c++
+template <typename typeArr>
+	typeArr* mularr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
+```
+В качестве аргументов arr0 и arr1 принимаются два одинаковых массива по типу данных и размеру, arr2 - выходной массив в котором умножены два предыдуших, size - размер массивов (одинаковый для троих).
+
+<br/>
+
+###  Деление двух массивов
+```c++
+template <typename typeArr>
+	typeArr* divarr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
+```
+В качестве аргументов arr0 и arr1 принимаются два одинаковых массива по типу данных и размеру, arr2 - выходной массив в котором будет деление два предыдуших массивов, size - размер массивов (одинаковый для троих).
+Важно! Разница элементов идёт по принципу: элемент первого массива / элемент второго массива.
+
+<br/>
+
+###  Добавить ко всем элементам массива число
+```c++
+template <typename typeArr, typename typenum>
+	typeArr* inplusarr(typeArr* arr, const int size, typenum number)
+```
+В качестве аргумента arr - принимается массив, size - размер массива, number - число которое будет добавлено ко всем элементам. Возвращает массив с добавленным числом к элементам.
+
+<br/>
+
+### Отнять от всех элементам массива число
+```c++
+template <typename typeArr, typename typenum>
+	typeArr* inminarr(typeArr* arr, const int size, typenum number)
+```
+В качестве аргумента arr - принимается массив, size - размер массива, number - число которое будет отнято от всех элементов. Возвращает массив с отнятым от элементов числа.
+
+<br/>
+
+### Умножить все элементы массива на число
+```c++
+template <typename typeArr, typename typenum>
+	typeArr* inmularr(typeArr* arr, const int size, typenum number)
+```
+В качестве аргумента arr - принимается массив, size - размер массива, number - число которое будет умноженно на все элементы массива. Возвращает массив с умноженными на него числами.
+
+<br/>
+
+### Поделить все элементы массива на число
+```c++
+template <typename typeArr, typename typenum>
+	typeArr* indivarr(typeArr* arr, const int size, typenum number)
+```
+В качестве аргумента arr - принимается массив, size - размер массива, number - число на которое будут поделенны на все элементы массива. Возвращает массив с деленными элементами.
+
+<br/>
+
+### Возвести элементы массива в степень
+```c++
+template <typename typeArr, typename typenum>
+	typeArr* powarr(typeArr* arr, const int size, typenum gpow)
+```
+В качестве аргумента arr - принимается массив, size - размер массива, grow - степень в которую будут возведены все элементы массива. Возвращает массив с возведенными в степень элементами.
+
+
+<br/>
+
+### Модуль массива
+```c++
+template <typename typeArr>
+	typeArr* absarr(typeArr* arr, const int size)
+```
+В качестве аргумента arr - принимается массив, size - размер массива. Возвращает массив в модуле.
+
+
+<br/>
+
+### Поменять знаки перед числами в массиве
+```c++
+template <typename typeArr>
+	typeArr* swaparr(typeArr* arr, const int size)
+```
+В качестве аргумента arr - принимается массив, size - размер массива. Возвращает массив с поменяными знаками перед числами.
+
+<br/>
+
+### Рандомно заполнить массив элементами
+```c++
+template <typename typeArr>
+	typeArr* randarr(typeArr* arr, const int size)
+```
+В качестве аргумента arr - принимается массив, size - размер массива. Возвращает массив с рандомными элементами.
+
+
+### Объеденить два массива в один большой
+```c++
+template <typename typeArr>
+	typeArr* uniarr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size) {
+```
+В качестве аргументов arr0 и arr1 принимаются два одинаковых массива по типу данных и размеру, arr2 - выходной массив в котором будут элементы двух массивов, size - размер массивов (одинаковый для первых двух).
+Важно! Размер возвращеного массива составляет сумму размеров двух предыдущих массивов. Первые два массива должны быть одинаковы по размеру и типу.
