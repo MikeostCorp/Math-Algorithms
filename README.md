@@ -3,7 +3,7 @@
 C++ Library of various mathematical algorithms that will simplify your work 
 
 ### How to use:
-To use this library, download the mathAlgo.h file into the project folder
+To use this library, download the mathAlgo.h file into the project folder.
 You must use the namespace ```mathAlgo``` when calling the function
 
 <br/>
