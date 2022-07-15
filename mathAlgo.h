@@ -507,7 +507,7 @@ namespace mathAlgo {
 
 	// Adds a given number to all elements of a matrix
 	template <typename typeArr>
-	typeArr* inplusmat(typeArr* mat, const int isize, const int jsize, typeArr number) {
+	typeArr* inplusmat(typeArr* mat, const int isize, const int jsize, typename number) {
 		for (int i = 0; i < isize; i++) {
 			for (int j = 0; j < jsize; j++) {
 				*(*(mat + i) + j) += number;
@@ -518,7 +518,7 @@ namespace mathAlgo {
 
 	// Subtracts a given number from all matrix elements
 	template <typename typeArr>
-	typeArr* inmiusmat(typeArr* mat, const int isize, const int jsize, typeArr number) {
+	typeArr* inmiusmat(typeArr* mat, const int isize, const int jsize, typename number) {
 		for (int i = 0; i < isize; i++) {
 			for (int j = 0; j < jsize; j++) {
 				*(*(mat + i) + j) -= number;
@@ -529,7 +529,7 @@ namespace mathAlgo {
 
 	// Multiplies the given number by all matrix elements
 	template <typename typeArr>
-	typeArr* inmultmat(typeArr* mat, const int isize, const int jsize, typeArr number) {
+	typeArr* inmultmat(typeArr* mat, const int isize, const int jsize, typename number) {
 		for (int i = 0; i < isize; i++) {
 			for (int j = 0; j < jsize; j++) {
 				*(*(mat + i) + j) *= number;
@@ -540,7 +540,7 @@ namespace mathAlgo {
 
 	// Divides the elements of a matrix by a given number.
 	template <typename typeArr>
-	typeArr* indivmat(typeArr* mat, const int isize, const int jsize, typeArr number) {
+	typeArr* indivmat(typeArr* mat, const int isize, const int jsize, typename number) {
 		for (int i = 0; i < isize; i++) {
 			for (int j = 0; j < jsize; j++) {
 				*(*(mat + i) + j) /= number;
@@ -551,7 +551,7 @@ namespace mathAlgo {
 
 	// Raise a matrix to a given power
 	template <typename typeArr>
-	typeArr* powmat(typeArr* mat, const int isize, const int jsize, typeArr gpow) {
+	typeArr* powmat(typeArr* mat, const int isize, const int jsize, typename gpow) {
 		for (int i = 0; i < isize; i++) {
 			for (int j = 0; j < jsize; j++) {
 				*(*(mat + i) + j) = pow(*(*(mat + i) + j),gpow);
