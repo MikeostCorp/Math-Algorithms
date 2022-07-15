@@ -3,6 +3,12 @@
 <br/>
 🇷🇺 Библиотека с++ с математическими алгоритмами
 
+<br/>
+
+🇺🇸 Attention!!! Any function should be used with namespace ```mathAlgo::```
+<br/>
+🇷🇺 Внимание!!! Любую функцию нужно с использовать с пространством имён ```mathAlgo::```
+
 <!-- Nav -->
 
 🇺🇸 Navigation:
@@ -86,7 +92,7 @@
   - [Умножение двух массивов](https://mikeostcorp.github.io/Math-Algorithms/#умножение-двух-массивов)
   - [Деление двух массивов](https://mikeostcorp.github.io/Math-Algorithms/#деление-двух-массивов)
   - [Добавить ко всем элементам массива число](https://mikeostcorp.github.io/Math-Algorithms/#добавить-ко-всем-элементам-массива-число)
-  - [Отнять от всех элементам массива число](https://mikeostcorp.github.io/Math-Algorithms/#отнять-от-всех-элементам-массива-число)
+  - [Отнять от всех элементов массива число](https://mikeostcorp.github.io/Math-Algorithms/#отнять-от-всех-элементов-массива-число)
   - [Умножить все элементы массива на число](https://mikeostcorp.github.io/Math-Algorithms/#умножить-все-элементы-массива-на-число)
   - [Поделить все элементы массива на число](https://mikeostcorp.github.io/Math-Algorithms/#поделить-все-элементы-массива-на-число)
   - [Возвести элементы массива в степень](https://mikeostcorp.github.io/Math-Algorithms/#возвести-элементы-массива-в-степень)
@@ -320,9 +326,9 @@ As an argument ```arr``` is taken an array, ```size``` is the size of the array.
 - ### _Sorting an array using the bubble method_
 ```c++
 template <typename typeArr>
-typeArr* bsort(typeArr* arr, const int size, bool status = true)
+typeArr* bsort(typeArr* arr, const int size, bool asc = true)
 ```
-As an input argument ```arr``` is taken an array, ```size``` is the size of the array, the argument ```status``` is optional, by default ```true```, answers in which direction the array will be sorted (from more to less or vice versa). Returns a sorted array.
+As an input argument ```arr``` is taken an array, ```size``` is the size of the array, the argument ```asc``` is optional, by default ```true```, answers in which direction the array will be sorted (from more to less or vice versa). Returns a sorted array.
 
 <br/>
 
@@ -393,8 +399,8 @@ Important: The difference of elements is based on the principle: element of the 
 
 - ###  _Add a number to all elements of the array_
 ```c++
-template <typename typeArr, typename typenum>
-typeArr* inplusarr(typeArr* arr, const int size, typenum number)
+template <typename typeArr>
+typeArr* inplusarr(typeArr* arr, const int size, typeArr number)
 ```
 The argument ```arr``` takes an array, ```size``` is the size of the array, ```number``` is the number to be added to all elements. Returns the array with the number added to the elements.
 
@@ -402,8 +408,8 @@ The argument ```arr``` takes an array, ```size``` is the size of the array, ```n
 
 - ### _Subtract a number from all elements of the array_
 ```c++
-template <typename typeArr, typename typenum>
-typeArr* inminarr(typeArr* arr, const int size, typenum number)
+template <typename typeArr>
+typeArr* inminarr(typeArr* arr, const int size, typeArr number)
 ```
 The argument ``arr`` is an array, ```size``` is the size of the array, ```number``` is the number to be subtracted from all elements. Returns the array with the number to be subtracted from the elements.
 
@@ -411,8 +417,8 @@ The argument ``arr`` is an array, ```size``` is the size of the array, ```number
 
 - ### _Multiply all elements of the array by a number_
 ```c++
-template <typename typeArr, typename typenum>
-typeArr* inmularr(typeArr* arr, const int size, typenum number)
+template <typename typeArr>
+typeArr* inmularr(typeArr* arr, const int size, typeArr number)
 ```
 The argument ```arr``` takes an array, ```size``` is the size of the array, ```number``` is the number that will be multiplied by all elements of the array. Returns the array with the numbers multiplied by it.
 
@@ -420,8 +426,8 @@ The argument ```arr``` takes an array, ```size``` is the size of the array, ```n
 
 - ### _Divide all elements of the array by a number_
 ```c++
-template <typename typeArr, typename typenum>
-typeArr* indivarr(typeArr* arr, const int size, typenum number)
+template <typename typeArr>
+typeArr* indivarr(typeArr* arr, const int size, typeArr number)
 ```
 As an argument ```arr``` is taken an array, ```size``` is the size of the array, ```number``` is the number by which all elements of the array will be divided by. Returns array with divided elements.
 
@@ -429,8 +435,8 @@ As an argument ```arr``` is taken an array, ```size``` is the size of the array,
 
 - ### _Expand the elements of the array_
 ```c++
-template <typename typeArr, typename typenum>
-typeArr* powarr(typeArr* arr, const int size, typenum gpow)
+template <typename typeArr>
+typeArr* powarr(typeArr* arr, const int size, typeArr gpow)
 ```
 The argument ```arr``` is an array, ```size``` is the size of the array, ```grow``` is the degree to which all elements of the array will be raised. Returns the array with the elements taken to a degree.
 
@@ -461,6 +467,7 @@ typeArr* randarr(typeArr* arr, const int size)
 ```
 As an argument ```arr``` is taken an array, ```size``` is the size of the array. Returns array with random elements.
 
+<br/>
 
 - ### _Combine two arrays into one large array_
 ```c++
@@ -693,9 +700,9 @@ typeArr amax(typeArr* arr, const int size)
 - ### _Сортировка массива методом пузырька_
 ```c++
 template <typename typeArr>
-typeArr* bsort(typeArr* arr, const int size, bool status = true)
+typeArr* bsort(typeArr* arr, const int size, bool asc = true)
 ```
-В качестве входного аргумента ```arr``` - принимается массив, ```size``` - размер массива, аргумент ```status``` не обязателен для заполнения, по-умолчанию ```true```, отвечает в какую сторону будет сортировка (от большего к меньшего или наоборот). Возвращает отсортированный массив.
+В качестве входного аргумента ```arr``` - принимается массив, ```size``` - размер массива, аргумент ```asc``` не обязателен для заполнения, по-умолчанию ```true```, отвечает в какую сторону будет сортировка (от большего к меньшего или наоборот). Возвращает отсортированный массив.
 
 <br/>
 
@@ -740,7 +747,7 @@ typeArr* sumarr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
 template <typename typeArr>
 typeArr* minarr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
 ```
-В качестве аргументов ```arr0``` и ```arr1``` принимаются два одинаковых массива по типу данных и размеру, ```arr2``` - выходной массив, в котором будет разница два предыдущих массивов, ```size``` - размер массивов (одинаковый для троих).
+В качестве аргументов ```arr0``` и ```arr1``` принимаются два одинаковых массива по типу данных и размеру, ```arr2``` - выходной массив, в котором будет разница двух предыдущих массивов, ```size``` - размер массивов (одинаковый для троих).
 Важно! Разница элементов идёт по принципу: элемент первого массива - элемент второго массива.
 
 <br/>
@@ -766,17 +773,17 @@ typeArr* divarr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
 
 - ###  _Добавить ко всем элементам массива число_
 ```c++
-template <typename typeArr, typename typenum>
-typeArr* inplusarr(typeArr* arr, const int size, typenum number)
+template <typename typeArr>
+typeArr* inplusarr(typeArr* arr, const int size, typeArr number)
 ```
 В качестве аргумента ```arr``` - принимается массив, ```size``` - размер массива, ```number``` - число которое будет добавлено ко всем элементам. Возвращает массив с добавленным числом к элементам.
 
 <br/>
 
-- ### _Отнять от всех элементам массива число_
+- ### _Отнять от всех элементов массива число_
 ```c++
-template <typename typeArr, typename typenum>
-typeArr* inminarr(typeArr* arr, const int size, typenum number)
+template <typename typeArr>
+typeArr* inminarr(typeArr* arr, const int size, typeArr number)
 ```
 В качестве аргумента ```arr``` - принимается массив, ```size``` - размер массива, ```number``` - число которое будет отнято от всех элементов. Возвращает массив с отнятым от элементов числа.
 
@@ -784,8 +791,8 @@ typeArr* inminarr(typeArr* arr, const int size, typenum number)
 
 - ### _Умножить все элементы массива на число_
 ```c++
-template <typename typeArr, typename typenum>
-typeArr* inmularr(typeArr* arr, const int size, typenum number)
+template <typename typeArr>
+typeArr* inmularr(typeArr* arr, const int size, typeArr number)
 ```
 В качестве аргумента ```arr``` - принимается массив, ```size``` - размер массива, ```number``` - число которое будет умноженно на все элементы массива. Возвращает массив с умноженными на него числами.
 
@@ -793,8 +800,8 @@ typeArr* inmularr(typeArr* arr, const int size, typenum number)
 
 - ### _Поделить все элементы массива на число_
 ```c++
-template <typename typeArr, typename typenum>
-typeArr* indivarr(typeArr* arr, const int size, typenum number)
+template <typename typeArr>
+typeArr* indivarr(typeArr* arr, const int size, typeArr number)
 ```
 В качестве аргумента ```arr``` - принимается массив, ```size``` - размер массива, ```number``` - число на которое будут поделенны на все элементы массива. Возвращает массив с деленными элементами.
 
@@ -802,11 +809,10 @@ typeArr* indivarr(typeArr* arr, const int size, typenum number)
 
 - ### _Возвести элементы массива в степень_
 ```c++
-template <typename typeArr, typename typenum>
-typeArr* powarr(typeArr* arr, const int size, typenum gpow)
+template <typename typeArr>
+typeArr* powarr(typeArr* arr, const int size, typeArr gpow)
 ```
 В качестве аргумента ```arr``` - принимается массив, ```size``` - размер массива, ```grow``` - степень в которую будут возведены все элементы массива. Возвращает массив с возведенными в степень элементами.
-
 
 <br/>
 
@@ -836,6 +842,7 @@ typeArr* randarr(typeArr* arr, const int size)
 ```
 В качестве аргумента ```arr``` - принимается массив, ```size``` - размер массива. Возвращает массив с рандомными элементами.
 
+<br/>
 
 - ### _Объеденить два массива в один большой_
 ```c++
