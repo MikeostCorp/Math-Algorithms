@@ -429,7 +429,7 @@ namespace mathAlgo {
 			else {
 				arr[i] = -(arr[i]);
 			}
-			}
+		}
 		return arr;
 	}
 
