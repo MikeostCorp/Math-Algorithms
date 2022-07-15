@@ -299,7 +299,7 @@ The function takes the coordinates of points A(x1, y1) & B(x2, y2) as input argu
 <br/>
 
 ## **Working with arrays and matrices**
-- ### _Search for the minimum value in an array_
+- ### _Finding the minimum value in an array_
 ```c++
 template <typename typeArr>
 typeArr amin(typeArr* arr, const int size)
