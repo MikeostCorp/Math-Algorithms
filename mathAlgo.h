@@ -507,7 +507,7 @@ namespace mathAlgo {
 	}
 
 	// Adds a given number to all elements of a matrix
-	template <typename typeMat, typename typeMat>
+	template <typename typeMat>
 	typeMat* inplusmat(typeMat* mat, const int isize, const int jsize, typeMat number) {
 		for (int i = 0; i < isize; i++) {
 			for (int j = 0; j < jsize; j++) {
