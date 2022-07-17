@@ -54,7 +54,7 @@ namespace mathAlgo {
 	// Factorial
 	uint64_t fac(uint64_t number) {
 		if (number <= 1) return 1;
-		else return number * fac(number - 1);
+		return number * fac(number - 1);
 	}
 
 	// Probability
@@ -288,13 +288,13 @@ namespace mathAlgo {
 	}
 
 	template <typename typeArr>
-	typeArr* bsort(typeArr* arr, const int size, bool status = true) {
+	typeArr* bsort(typeArr* arr, const int size, bool asc = true) {
 		typeArr temp = 0;
 		for (int i = 1; i < size; i++)
 		{
 			for (int j = 0; j < size - i; j++)
 			{
-				if (status) {
+				if (asc) {
 					if (arr[j] > arr[j + 1]) swap(arr[j], arr[j + 1]);
 				}
 				else {
@@ -377,39 +377,39 @@ namespace mathAlgo {
 	
 	// Add a number to array elements
 	// number - The number to be added to the elements of the array
-	template <typename typeArr, typename typenum>
-	typeArr* inplusarr(typeArr* arr, const int size, typenum number) {
+	template <typename typeArr>
+	typeArr* inplusarr(typeArr* arr, const int size, typeArr number) {
 		for (int i = 0; i < size; i++) arr[i] += number;
 		return arr;
 	}
 
 	// Subtract a number from the array elements
     // number - the number to be subtracted from the array elements
-	template <typename typeArr, typename typenum>
-	typeArr* inminarr(typeArr* arr, const int size, typenum number) {
+	template <typename typeArr>
+	typeArr* inminarr(typeArr* arr, const int size, typeArr number) {
 		for (int i = 0; i < size; i++) arr[i] -= number;
 		return arr;
 	}
 
 	// Multiply a number by an array element
     // number - the number by which to multiply the elements of the array
-	template <typename typeArr, typename typenum>
-	typeArr* inmularr(typeArr* arr, const int size, typenum number) {
+	template <typename typeArr>
+	typeArr* inmularr(typeArr* arr, const int size, typeArr number) {
 		for (int i = 0; i < size; i++) arr[i] *= number;
 		return arr;
 	}
 
 	// Divide the array numbers by the given number 
 	// number - the number by which the array elements will be divided
-	template <typename typeArr, typename typenum>
-	typeArr* indivarr(typeArr* arr, const int size, typenum number) {
+	template <typename typeArr>
+	typeArr* indivarr(typeArr* arr, const int size, typeArr number) {
 		for (int i = 0; i < size; i++) arr[i] /= number;
 		return arr;
 	}
 
 	// Raising an array to a given power
-	template <typename typeArr, typename typenum>
-	typeArr* powarr(typeArr* arr, const int size, typenum gpow) {
+	template <typename typeArr>
+	typeArr* powarr(typeArr* arr, const int size, typeArr gpow) {
 		for (int i = 0; i < size; i++) arr[i] = pow(arr[i],gpow);
 		return arr;
 	}
@@ -507,8 +507,8 @@ namespace mathAlgo {
 	}
 
 	// Adds a given number to all elements of a matrix
-	template <typename typeMat, typename typenum>
-	typeMat* inplusmat(typeMat* mat, const int isize, const int jsize, typenum number) {
+	template <typename typeMat, typename typeMat>
+	typeMat* inplusmat(typeMat* mat, const int isize, const int jsize, typeMat number) {
 		for (int i = 0; i < isize; i++) {
 			for (int j = 0; j < jsize; j++) {
 				*(*(mat + i) + j) += number;
@@ -518,8 +518,8 @@ namespace mathAlgo {
 	}
 
 	// Subtracts a given number from all matrix elements
-	template <typename typeMat, typename typenum>
-	typeMat* inmiusmat(typeMat* mat, const int isize, const int jsize, typenum number) {
+	template <typename typeMat>
+	typeMat* inmiusmat(typeMat* mat, const int isize, const int jsize, typeMat number) {
 		for (int i = 0; i < isize; i++) {
 			for (int j = 0; j < jsize; j++) {
 				*(*(mat + i) + j) -= number;
@@ -529,8 +529,8 @@ namespace mathAlgo {
 	}
 
 	// Multiplies the given number by all matrix elements
-	template <typename typeMat, typename typenum>
-	typeMat* inmultmat(typeMat* mat, const int isize, const int jsize, typenum number) {
+	template <typename typeMat>
+	typeMat* inmultmat(typeMat* mat, const int isize, const int jsize, typeMat number) {
 		for (int i = 0; i < isize; i++) {
 			for (int j = 0; j < jsize; j++) {
 				*(*(mat + i) + j) *= number;
@@ -540,8 +540,8 @@ namespace mathAlgo {
 	}
 
 	// Divides the elements of a matrix by a given number.
-	template <typename typeMat, typename typenum>
-	typeMat* indivmat(typeMat* mat, const int isize, const int jsize, typenum number) {
+	template <typename typeMat>
+	typeMat* indivmat(typeMat* mat, const int isize, const int jsize, typeMat number) {
 		for (int i = 0; i < isize; i++) {
 			for (int j = 0; j < jsize; j++) {
 				*(*(mat + i) + j) /= number;
@@ -551,8 +551,8 @@ namespace mathAlgo {
 	}
 
 	// Raise a matrix to a given power
-	template <typename typeMat, typename typenum>
-	typeMat* powmat(typeMat* mat, const int isize, const int jsize, typenum gpow) {
+	template <typename typeMat>
+	typeMat* powmat(typeMat* mat, const int isize, const int jsize, typeMat gpow) {
 		for (int i = 0; i < isize; i++) {
 			for (int j = 0; j < jsize; j++) {
 				*(*(mat + i) + j) = pow(*(*(mat + i) + j),gpow);
