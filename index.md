@@ -857,8 +857,8 @@ typeArr* uniarr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
 
 - ### _Объеденить два матрицы (суммировать)_
 ```c++
-template <typename typeArr>
-	typeArr* summat(typeArr *mat0, typeArr *mat1, typeArr *mat2, const int isize, const int jsize)
+template <typename typeMat>
+	typeMat* summat(typeMat *mat0, typeMat*mat1, typeMat*mat2, const int isize, const int jsize) 
 ```
 В качестве аргументов ```mat0``` и ```mat1``` принимаются две одинаковые матрицы по типу данных и размеру, ```mat2``` - выходная матрица, в котором будет результат выполнения, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице. 
 Функция возвращает суммированние двух матриц.
@@ -867,8 +867,8 @@ template <typename typeArr>
 
 - ### _Объеденить два матрицы (минусовать)_
 ```c++
-template <typename typeArr>
-	typeArr* minmat(typeArr* mat0, typeArr* mat1, typeArr* mat2, const int isize, const int jsize) 
+template <typename typeMat>
+	typeMat* minmat(typeMat* mat0, typeMat* mat1, typeMat* mat2, const int isize, const int jsize)
 ```
 В качестве аргументов ```mat0``` и ```mat1``` принимаются две одинаковые матрицы по типу данных и размеру, ```mat2``` - выходная матрица, в котором будет результат выполнения, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице. 
 ВАЖНО! Функция возвращает матрицу по принципу элемент первой матрицы - элемент второй матрицы.
@@ -877,19 +877,96 @@ template <typename typeArr>
 
 - ### _Объеденить два матрицы (перемножить)_
 ```c++
-template <typename typeArr>
-	typeArr* mulmat(typeArr* mat0, typeArr* mat1, typeArr* mat2, const int isize, const int jsize)
+template <typename typeMat>
+	typeMat* mulmat(typeMat* mat0, typeMat* mat1, typeMat* mat2, const int isize, const int jsize)
 ```
 В качестве аргументов ```mat0``` и ```mat1``` принимаются две одинаковые матрицы по типу данных и размеру, ```mat2``` - выходной массив, в котором будет результат выполнения,  ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице. 
 Функция возвращает перемноженные две матрицы.
-
 
 <br/>
 
 - ### _Объеденить два матрицы (поделить)_
 ```c++
-template <typename typeArr>
-	typeArr* divmat(typeArr* mat0, typeArr* mat1, typeArr* mat2, const int isize, const int jsize) 
+template <typename typeMat>
+	typeMat* divmat(typeMat* mat0, typeMat* mat1, typeMat* mat2, const int isize, const int jsize) 
 ```
 В качестве аргументов ```mat0``` и ```mat1``` принимаются две одинаковые матрицы по типу данных и размеру, ```mat2``` - выходная матрица, в котором будет результат выполнения, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице. 
 ВАЖНО! Функция возвращает матрицу по принципу элемент первой матрицы / элемент второй матрицы.
+
+<br/>
+
+- ### _Добавить число ко всем элементам матрицы_
+```c++
+template <typename typeMat, typename typenum>
+	typeMat* inplusmat(typeMat* mat, const int isize, const int jsize, typenum number)
+```
+В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице,  ```number``` - нужное число для действия над матрицой. 
+Функция возвращает указатель на изменённую матрицу.
+
+<br/>
+
+- ### _Отнять число от всех элементов матрицы_
+```c++
+template <typename typeMat, typename typenum>
+	typeMat* inmiusmat(typeMat* mat, const int isize, const int jsize, typenum number)
+```
+В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице,  ```number``` - нужное число для действия над матрицой. 
+Функция возвращает указатель на изменённую матрицу.
+
+<br/>
+
+- ### _Умножить число на все элементы матрицы_
+```c++
+template <typename typeMat, typename typenum>
+	typeMat* inmultmat(typeMat* mat, const int isize, const int jsize, typenum number)
+```
+В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице,  ```number``` - нужное число для действия над матрицой. 
+Функция возвращает указатель на изменённую матрицу.
+
+<br/>
+
+- ### _Поделить число на все элементы матрицы_
+```c++
+template <typename typeMat, typename typenum>
+	typeMat* indivmat(typeMat* mat, const int isize, const int jsize, typenum number)
+```
+В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице,  ```number``` - нужное число для действия над матрицой. 
+Функция возвращает указатель на изменённую матрицу.
+
+<br/>
+
+- ### _Возвести элементы матрицы в степень_
+```c++
+template <typename typeMat, typename typenum>
+	typeMat* powmat(typeMat* mat, const int isize, const int jsize, typenum gpow)
+```
+В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице,  ```number``` - число в степень которую будут возведенны элементы.
+Функция возвращает указатель на матрицу с возведёнными элеменами в степень.
+
+<br/>
+
+- ### _Модуль элементов матрицы_
+```c++
+template <typename typeMat>
+	typeMat* absmat(typeMat* mat, const int isize, const int jsize)
+```
+В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице.
+Функция возвращает указатель на матрицу с элементами в модуле.
+
+<br/>
+
+- ### _Смена знаков перед числами в матрице_
+```c++
+template <typename typeMat>
+	typeMat* swapmat(typeMat* mat, const int isize, const int jsize)
+```
+В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице.
+Функция возвращает указатель на матрицу с измененами знаками перед числами.
+
+- ### _Смена знаков перед числами в матрице_
+```c++
+template <typename typeMat>
+	typeMat* randmat(typeMat* mat, const int isize, const int jsize)
+```
+В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице.
+Функция возвращает указатель на матрицу с радномными элементами.
