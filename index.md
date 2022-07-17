@@ -897,8 +897,8 @@ typeMat* divmat(typeMat* mat0, typeMat* mat1, typeMat* mat2, const int isize, co
 
 - ### _Добавить число ко всем элементам матрицы_
 ```c++
-template <typename typeMat, typename typenum>
-typeMat* inplusmat(typeMat* mat, const int isize, const int jsize, typenum number)
+template <typename typeMat>
+typeMat* inplusmat(typeMat* mat, const int isize, const int jsize, typeMat number)
 ```
 В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице,  ```number``` - нужное число для действия над матрицой. 
 Функция возвращает указатель на изменённую матрицу.
@@ -907,30 +907,30 @@ typeMat* inplusmat(typeMat* mat, const int isize, const int jsize, typenum numbe
 
 - ### _Отнять число от всех элементов матрицы_
 ```c++
-template <typename typeMat, typename typenum>
-typeMat* inmiusmat(typeMat* mat, const int isize, const int jsize, typenum number)
+template <typename typeMat>
+typeMat* inmiusmat(typeMat* mat, const int isize, const int jsize, typeMat number)
 ```
-В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице,  ```number``` - нужное число для действия над матрицой. 
+В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице, ```number``` - нужное число для действия над матрицой. 
 Функция возвращает указатель на изменённую матрицу.
 
 <br/>
 
 - ### _Умножить число на все элементы матрицы_
 ```c++
-template <typename typeMat, typename typenum>
-typeMat* inmultmat(typeMat* mat, const int isize, const int jsize, typenum number)
+template <typename typeMat>
+typeMat* inmultmat(typeMat* mat, const int isize, const int jsize, typeMat number)
 ```
-В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице,  ```number``` - нужное число для действия над матрицой. 
+В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице, ```number``` - нужное число для действия над матрицой. 
 Функция возвращает указатель на изменённую матрицу.
 
 <br/>
 
 - ### _Поделить все элементы матрицы на число_
 ```c++
-template <typename typeMat, typename typenum>
-typeMat* indivmat(typeMat* mat, const int isize, const int jsize, typenum number)
+template <typename typeMat>
+typeMat* indivmat(typeMat* mat, const int isize, const int jsize, typeMat number)
 ```
-В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице,  ```number``` - нужное число для действия над матрицой. 
+В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице, ```number``` - нужное число для действия над матрицой. 
 Функция возвращает указатель на изменённую матрицу.
 
 <br/>
@@ -940,7 +940,7 @@ typeMat* indivmat(typeMat* mat, const int isize, const int jsize, typenum number
 template <typename typeMat, typename typenum>
 typeMat* powmat(typeMat* mat, const int isize, const int jsize, typenum gpow)
 ```
-В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице,  ```number``` - число в степень которую будут возведенны элементы.
+В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице, ```number``` - число в степень которую будут возведенны элементы.
 Функция возвращает указатель на матрицу с возведёнными элеменами в степень.
 
 <br/>
