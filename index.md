@@ -172,9 +172,9 @@ As input arguments ```m``` takes the number of favorable outcomes, ```n``` takes
 ```c++ 
 uint64_t comA(uint64_t m, uint64_t n)
 ```
-<img src="https://camo.githubusercontent.com/ed02a340a9f48b95bb35619ae2af7f29d6665a3536ed8df8b3986ba22c2189a4/68747470733a2f2f7374756466696c652e6e65742f68746d6c2f323730362f3533302f68746d6c5f6b5975646f34726c77552e327532682f696d672d495a6e6e524c2e706e67" alt="Формула размещения" data-canonical-src="https://studfile.net/html/2706/530/html_kYudo4rlwU.2u2h/img-IZnnRL.png" width="200" height="96">
+<img src="https://camo.githubusercontent.com/ed02a340a9f48b95bb35619ae2af7f29d6665a3536ed8df8b3986ba22c2189a4/68747470733a2f2f7374756466696c652e6e65742f68746d6c2f323730362f3533302f68746d6c5f6b5975646f34726c77552e327532682f696d672d495a6e6e524c2e706e67" alt="Placemnt" data-canonical-src="https://studfile.net/html/2706/530/html_kYudo4rlwU.2u2h/img-IZnnRL.png" width="200" height="96">
 
-As input arguments ```n``` and ```m```, their meaning can be expressed by the question: how many ways can ```m``` different objects be chosen and placed in ```n``` different places? It is important that ```n``` > ```m```. The function returns the number of placements.
+As input arguments ```m``` and ```n```, an ordered set of ```m``` different elements from some set of different ```n``` elements. It is important that ```n``` > ```m```. The function returns the number of placements.
 
 <br/>
 
@@ -184,7 +184,7 @@ uint64_t comС(uint64_t n, uint64_t m)
 ```
 <img src="https://fsd.kopilkaurokov.ru/uploads/user_file_55544ecc8a5d7/konspiekt-uchiebnogho-zaniatiia-po-matiematikie-po-tiemie-osnovnyie-poniatiia-kombinatoriki_8.png" alt="Combination" data-canonical-src="https://fsd.kopilkaurokov.ru/uploads/user_file_55544ecc8a5d7/konspiekt-uchiebnogho-zaniatiia-po-matiematikie-po-tiemie-osnovnyie-poniatiia-kombinatoriki_8.png" width="220" height="100">
 
-As input arguments ```n``` and ```m```, the number of combinations of ```n``` by ```m```. It is important that ```m``` > ```n```. The function returns the number of combinations.
+As input arguments ```n``` and ```m```, a set of ```n``` elements chosen from the ```m``` element set, which does not take into account the order of elements. It is important that ```m``` > ```n```. The function returns the number of combinations.
 
 <br/>
 
@@ -309,7 +309,7 @@ The function takes the coordinates of points A(x1, y1) & B(x2, y2) as input argu
 - ### _Finding the minimum value in an array_
 ```c++
 template <typename typeArr>
-typeArr amin(typeArr* arr, const int size)
+typeArr aMin(typeArr* arr, const int size)
 ```
 As an argument ```arr``` is taken an array, ```size``` is the size of the array. Returns the minimum element of the array.
 
@@ -318,7 +318,7 @@ As an argument ```arr``` is taken an array, ```size``` is the size of the array.
 - ### _Finding the maximum value in an array_
 ```c++
 template <typename typeArr>
-typeArr amax(typeArr* arr, const int size)
+typeArr aMax(typeArr* arr, const int size)
 ```
 As an argument ```arr``` is taken an array, ```size``` is the size of the array. Returns the maximum element of the array.
 
@@ -327,9 +327,9 @@ As an argument ```arr``` is taken an array, ```size``` is the size of the array.
 - ### _Sorting an array using the bubble method_
 ```c++
 template <typename typeArr>
-typeArr* bsort(typeArr* arr, const int size, bool asc = true)
+typeArr* bSort(typeArr* arr, const int size, bool asc = true)
 ```
-As an input argument ```arr``` is taken an array, ```size``` is the size of the array, the argument ```asc``` is optional, by default ```true```, answers in which direction the array will be sorted (from more to less or vice versa). Returns a sorted array.
+The function takes ```arr``` - pointer to the beginning of the array, ```size``` - size of the array, the argument ```asc``` is optional, by default ```true``` - ascending sorting, ```false``` - descending sorting. The function returns a pointer to the first element of the sorted array.
 
 <br/>
 
@@ -363,120 +363,120 @@ As an argument ``arr`` is taken an array, ```size``` is the size of the array. R
 - ###  _Summing two arrays_
 ```c++
 template <typename typeArr>
-typeArr* sumarr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
+typeArr* sumArr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
 ```
-The arguments ```arr0``` and ```arr1``` are two arrays of the same data type and size, ```arr2``` is the output array in which the previous two arrays are summed, ```size``` is the size of the arrays (the same for the three).
+As input arguments the function takes ```arr0``` and ```arr1``` - pointers to the beginning of the arrays, ```arr2``` - pointer to the first element of the array in which the previous two are summed, ```size``` - size of the arrays (the same for three). The function returns a pointer to the first element of the modified array.
 
 <br/>
 
 - ###  _The difference between the two arrays_
 ```c++
 template <typename typeArr>
-typeArr* minarr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
+typeArr* minArr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
 ```
-The arguments ```arr0``` and ```arr1``` are two arrays of the same data type and size, ```arr2``` is the output array with the difference of the previous two arrays, ```size``` is the size of arrays (the same for the three).
-Important: The difference of elements is based on the principle: element of the first array - element of the second array.
+As input arguments the function takes ```arr0``` and ```arr1``` - pointers to the beginning of arrays, ```arr2``` - pointer to the first element of the array, which will be the difference of two previous arrays, ```size``` - size of arrays (the same for three).
+Important: The difference of elements works on the principle: the element of the first array - the element of the second array. The function returns a pointer to the first element of the modified array.
 
 <br/>
 
 - ###  _Multiplying two arrays_
 ```c++
 template <typename typeArr>
-typeArr* mularr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
+typeArr* mulArr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
 ```
-The arguments ```arr0``` and ```arr1``` take two arrays of the same data type and size, ```arr2``` is the output array in which the previous two arrays are multiplied, ```size``` is the size of the arrays (the same for the three).
+As input arguments the function takes ```arr0``` and ```arr1``` - pointers to the beginning of arrays, ```arr2``` - pointer to the first element of the array in which the previous two will be multiplied, ```size``` - size of arrays (the same for three). The function returns a pointer to the first element of the modified array.
 
 <br/>
 
 - ###  _Dividing two arrays_
 ```c++
 template <typename typeArr>
-typeArr* divarr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
+typeArr* divArr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
 ```
-The arguments ```arr0``` and ```arr1``` are two arrays of the same data type and size, ```arr2``` is the output array in which the previous two arrays will be divided, ```size``` is the size of arrays (the same for three).
-Important: The difference of elements is based on the principle: element of the first array / element of the second array.
+As input arguments the function takes ```arr0``` and ```arr1``` - pointers to the beginning of the arrays, ```arr2``` - pointer to the first element of the array, which will divide the two previous arrays, ```size``` - size of the arrays (the same for three). The function returns a pointer to the first element of the changed array.
+Important: The division of elements works according to the principle: element of the first array / element of the second array.
 
 <br/>
 
-- ###  _Add a number to all elements of the array_
+- ###  _Adding a number to all elements of an array_
 ```c++
 template <typename typeArr>
-typeArr* inplusarr(typeArr* arr, const int size, typeArr number)
+typeArr* inPlusArr(typeArr* arr, const int size, typeArr number)
 ```
-The argument ```arr``` takes an array, ```size``` is the size of the array, ```number``` is the number to be added to all elements. Returns the array with the number added to the elements.
+As input arguments the function takes ```arr``` - pointer to the beginning of the array, ```size``` - size of the array, ```number``` - number to be added to all elements. The function returns a pointer to the first element of the modified array.
 
 <br/>
 
-- ### _Subtract a number from all elements of the array_
+- ### _Subtracting a number from all elements of an array_
 ```c++
 template <typename typeArr>
-typeArr* inminarr(typeArr* arr, const int size, typeArr number)
+typeArr* inMinArr(typeArr* arr, const int size, typeArr number)
 ```
-The argument ``arr`` is an array, ```size``` is the size of the array, ```number``` is the number to be subtracted from all elements. Returns the array with the number to be subtracted from the elements.
+As input arguments the function takes ```arr``` - pointer to the beginning of the array, ```size``` - size of the array, ```number``` - number to be subtracted from all elements. The function returns a pointer to the first element of the modified array.
 
 <br/>
 
-- ### _Multiply all elements of the array by a number_
+- ### _Multiplying all elements of the array by a number_
 ```c++
 template <typename typeArr>
-typeArr* inmularr(typeArr* arr, const int size, typeArr number)
+typeArr* inMulArr(typeArr* arr, const int size, typeArr number)
 ```
-The argument ```arr``` takes an array, ```size``` is the size of the array, ```number``` is the number that will be multiplied by all elements of the array. Returns the array with the numbers multiplied by it.
+As input arguments the function takes ```arr``` - pointer to the beginning of the array, ```size``` - size of the array, ```number``` - number to be multiplied by all elements of the array. The function returns a pointer to the first element of the modified array.
 
 <br/>
 
-- ### _Divide all elements of the array by a number_
+- ### _Dividing all elements of an array by a number_
 ```c++
 template <typename typeArr>
-typeArr* indivarr(typeArr* arr, const int size, typeArr number)
+typeArr* inDivArr(typeArr* arr, const int size, typeArr number)
 ```
-As an argument ```arr``` is taken an array, ```size``` is the size of the array, ```number``` is the number by which all elements of the array will be divided by. Returns array with divided elements.
+As input arguments the function takes ```arr``` - pointer to the beginning of the array, ```size``` - size of the array, ```number``` - number by which all array elements will be divided. The function returns a pointer to the first element of the modified array.
 
 <br/>
 
-- ### _Expand the elements of the array_
+- ### _Array elements to a power_
 ```c++
 template <typename typeArr>
-typeArr* powarr(typeArr* arr, const int size, typeArr gpow)
+typeArr* powArr(typeArr* arr, const int size, typeArr gpow)
 ```
-The argument ```arr``` is an array, ```size``` is the size of the array, ```grow``` is the degree to which all elements of the array will be raised. Returns the array with the elements taken to a degree.
+As input arguments the function takes ```arr``` - pointer to the beginning of the array, ```size``` - size of the array, ```gpow``` - degree to which all elements of the array will be raised. The function returns a pointer to the first element of the modified array.
 
 <br/>
 
-- ### _Array module_
+- ### _Array element module_
 ```c++
 template <typename typeArr>
-typeArr* absarr(typeArr* arr, const int size)
+typeArr* absArr(typeArr* arr, const int size)
 ```
-As an argument ```arr``` is taken an array, ```size``` is the size of the array. Returns the array in the module.
+As input arguments the function takes ```arr``` - pointer to the beginning of the array, ```size``` - size of the array. The function returns a pointer to the first element of the modified array.
 
 <br/>
 
-- ### _Change the signs before the numbers in the array_
+- ### _Changing signs before elements in an array_
 ```c++
 template <typename typeArr>
-typeArr* swaparr(typeArr* arr, const int size)
+typeArr* swapArr(typeArr* arr, const int size)
 ```
-As an argument ```arr``` is taken an array, ```size``` is the size of the array. Returns array with changed signs before numbers.
+As input arguments the function takes ```arr``` - pointer to the beginning of the array, ```size``` - size of the array. The function returns a pointer to the first element of the modified array.
 
 <br/>
 
-- ### _Randomly fill an array with elements_
+- ### _Filling an array with random elements_
 ```c++
 template <typename typeArr>
-typeArr* randarr(typeArr* arr, const int size)
+typeArr* randArr(typeArr* arr, const int size)
 ```
-As an argument ```arr``` is taken an array, ```size``` is the size of the array. Returns array with random elements.
+As input arguments the function takes ```arr``` - pointer to the beginning of the array, ```size``` - size of the array. The function returns a pointer to the first element of the modified array.
 
 <br/>
 
-- ### _Combine two arrays into one large array_
+- ### _Combining two arrays into one large one_
 ```c++
 template <typename typeArr>
-typeArr* uniarr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
+typeArr* uniArr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
 ```
-As arguments ```arr0``` and ```arr1``` take two arrays of the same data type and size, ```arr2``` is an output array which will contain elements of two arrays, ```size``` is the size of arrays (the same for the first two).
-Important! The size of the returned array is the sum of the sizes of the two previous arrays. The first two arrays must be the same size and type.
+As input arguments the function takes ```arr0``` and ```arr1``` - pointers to the beginning of the arrays, ```arr2``` - pointer to the first element of the array, which will be the result of combining two arrays, ```size``` - size of arrays (the same for the first two). The function returns a pointer to the first element of the modified array.
+Note: The final array is the sum of the sizes of the previous two arrays. The first two arrays must be the same size and type.
 
 <br/>
 
@@ -548,17 +548,17 @@ uint64_t comA(uint64_t m, uint64_t n)
 ```
 <img src="https://camo.githubusercontent.com/ed02a340a9f48b95bb35619ae2af7f29d6665a3536ed8df8b3986ba22c2189a4/68747470733a2f2f7374756466696c652e6e65742f68746d6c2f323730362f3533302f68746d6c5f6b5975646f34726c77552e327532682f696d672d495a6e6e524c2e706e67" alt="Формула размещения" data-canonical-src="https://studfile.net/html/2706/530/html_kYudo4rlwU.2u2h/img-IZnnRL.png" width="200" height="96">
 
-В качестве входных аргументов ```n``` и ```m```, число размещений по ```m``` различным местам из ```n``` различных предметов. Важно, чтобы ```n``` > ```m```. Функция возвращает количество размещений.
+В качестве входных аргументов ```m``` и ```n```, упорядоченный набор из ```m``` различных элементов из некоторого множества различных ```n``` элементов. Важно, чтобы ```n``` > ```m```. Функция возвращает количество размещений.
 
 <br/>
 
 - ### _Сочетание (порядок НЕ важен)_
 ```c++ 
-uint64_t comС(uint64_t n, uint64_t m)
+uint64_t comC(uint64_t n, uint64_t m)
 ```
 <img src="https://fsd.kopilkaurokov.ru/uploads/user_file_55544ecc8a5d7/konspiekt-uchiebnogho-zaniatiia-po-matiematikie-po-tiemie-osnovnyie-poniatiia-kombinatoriki_8.png" alt="Формула сочетания" data-canonical-src="https://fsd.kopilkaurokov.ru/uploads/user_file_55544ecc8a5d7/konspiekt-uchiebnogho-zaniatiia-po-matiematikie-po-tiemie-osnovnyie-poniatiia-kombinatoriki_8.png" width="220" height="100">
 
-В качестве входных аргументов ```n``` и ```m```, число сочетаний ```n``` по ```m```. Важно, чтобы ```m``` > ```n```. Функция возвращает количество сочетаний.
+В качестве входных аргументов ```n``` и ```m```, набор из ```n``` элементов, выбранных из ```m```-элементного множества, в котором не учитывается порядок элементов. Важно, чтобы ```m``` > ```n```. Функция возвращает количество сочетаний.
 
 <br/>
 
@@ -683,27 +683,27 @@ long double lengthOfLine(long double x1, long double x2, long double y1, long do
 - ### _Поиск минимального значения в массиве_
 ```c++
 template <typename typeArr>
-typeArr amin(typeArr* arr, const int size)
+typeArr aMin(typeArr* arr, const int size)
 ```
-В качестве аргумента ```arr``` - принимается массив, ```size``` - размер массива. Возвращает минимальный элемент массива.
+В качестве входных аргументов функция принимает ```arr``` - указатель на начало массива, ```size``` - размер массива. Функция возвращает минимальный элемент массива.
 
 <br/>
 
 - ### _Поиск максимального значения в массиве_
 ```c++
 template <typename typeArr>
-typeArr amax(typeArr* arr, const int size)
+typeArr aMax(typeArr* arr, const int size)
 ```
-В качестве аргумента ```arr``` - принимается массив, ```size``` - размер массива. Возвращает максимальный элемент массива.
+В качестве входных аргументов функция принимает ```arr``` - указатель на начало массива, ```size``` - размер массива. Функция возвращает максимальный элемент массива.
 
 <br/>
 
 - ### _Сортировка массива методом пузырька_
 ```c++
 template <typename typeArr>
-typeArr* bsort(typeArr* arr, const int size, bool asc = true)
+typeArr* bSort(typeArr* arr, const int size, bool asc = true)
 ```
-В качестве входного аргумента ```arr``` - принимается массив, ```size``` - размер массива, аргумент ```asc``` не обязателен для заполнения, по-умолчанию ```true```, отвечает в какую сторону будет сортировка (от большего к меньшего или наоборот). Возвращает отсортированный массив.
+В качестве входных аргументов функция принимает ```arr``` - указатель на начало массива, ```size``` - размер массива, аргумент ```asc``` не обязателен для заполнения, по-умолчанию ```true``` - сортировка по-возрастанию, ```false``` - по-убыванию. Функция возвращает указатель на первый элемент отсортированного массива.
 
 <br/>
 
@@ -712,7 +712,7 @@ typeArr* bsort(typeArr* arr, const int size, bool asc = true)
 template<typename typeArr>
 typeArr avgArr(typeArr* arr, const int size)
 ```
-В качестве аргумента ```arr``` - принимается массив, ```size``` - размер массива. Возвращает среднее значение массива.
+В качестве входных аргументов функция принимает ```arr``` - указатель на начало массива, ```size``` - размер массива. Функция возвращает среднее значение массива.
 
 <br/>
 
@@ -721,7 +721,7 @@ typeArr avgArr(typeArr* arr, const int size)
 template <typename typeArr>
 typeArr modenum(typeArr* arr, const int size)
 ```
-В качестве аргумента ```arr``` - принимается массив, ```size``` - размер массива. Возвращает наиболее частое число.
+В качестве входных аргументов функция принимает ```arr``` - указатель на начало массива, ```size``` - размер массива. Функция возвращает наиболее часто встречающееся число.
 
 <br/>
 
@@ -730,243 +730,235 @@ typeArr modenum(typeArr* arr, const int size)
 template<typename typeArr>
 typeArr median(typeArr* arr, const int size)
 ```
-В качестве аргумента ```arr``` - принимается массив, ```size``` - размер массива. Возвращает медиану массива.
+В качестве входных аргументов функция принимает ```arr``` - указатель на начало массива, ```size``` - размер массива. Функция возвращает медиану массива.
 
 <br/>
 
 - ###  _Суммирование двух массивов_
 ```c++
 template <typename typeArr>
-typeArr* sumarr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
+typeArr* sumArr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
 ```
-В качестве аргументов ```arr0``` и ```arr1``` принимаются два одинаковых массива по типу данных и размеру, ```arr2``` - выходной массив в котором суммированы два предыдуших, ```size``` - размер массивов (одинаковый для троих).
+В качестве входных аргументов функция принимает ```arr0``` и ```arr1``` - указатели на начало массивов, ```arr2``` - указатель на первый элемент массива, в котором будут суммированы два предыдуших, ```size``` - размер массивов (одинаковый для троих). Функция возвращает указатель на первый элемент измененного массива.
 
 <br/>
 
 - ###  _Разница двух массивов_
 ```c++
 template <typename typeArr>
-typeArr* minarr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
+typeArr* minArr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
 ```
-В качестве аргументов ```arr0``` и ```arr1``` принимаются два одинаковых массива по типу данных и размеру, ```arr2``` - выходной массив, в котором будет разница двух предыдущих массивов, ```size``` - размер массивов (одинаковый для троих).
-Важно! Разница элементов идёт по принципу: элемент первого массива - элемент второго массива.
+В качестве входных аргументов функция принимает ```arr0``` и ```arr1``` - указатели на начало массивов, ```arr2``` - указатель на первый элемент массива, в котором будет разница двух предыдущих массивов, ```size``` - размер массивов (одинаковый для троих).
+Важно! Разница элементов работает по принципу: элемент первого массива - элемент второго массива. Функция возвращает указатель на первый элемент измененного массива.
 
 <br/>
 
 - ###  _Умножение двух массивов_
 ```c++
 template <typename typeArr>
-typeArr* mularr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
+typeArr* mulArr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
 ```
-В качестве аргументов ```arr0``` и ```arr1``` принимаются два одинаковых массива по типу данных и размеру, ```arr2``` - выходной массив в котором умножены два предыдуших, ```size``` - размер массивов (одинаковый для троих).
+В качестве входных аргументов функция принимает ```arr0``` и ```arr1``` - указатели на начало массивов, ```arr2``` - указатель на первый элемент массива, в котором будут умножены два предыдуших, ```size``` - размер массивов (одинаковый для троих). Функция возвращает указатель на первый элемент измененного массива.
 
 <br/>
 
 - ###  _Деление двух массивов_
 ```c++
 template <typename typeArr>
-typeArr* divarr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
+typeArr* divArr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
 ```
-В качестве аргументов ```arr0``` и ```arr1``` принимаются два одинаковых массива по типу данных и размеру, ```arr2``` - выходной массив в котором будет деление два предыдущих массивов, ```size``` - размер массивов (одинаковый для троих).
-Важно! Разница элементов идёт по принципу: элемент первого массива / элемент второго массива.
+В качестве входных аргументов функция принимает ```arr0``` и ```arr1``` - указатели на начало массивов, ```arr2``` - указатель на первый элемент массива, в котором будет деление двух предыдущих массивов, ```size``` - размер массивов (одинаковый для троих). Функция возвращает указатель на первый элемент измененного массива.
+Важно! Деление элементов работает по принципу: элемент первого массива / элемент второго массива.
 
 <br/>
 
-- ###  _Добавить ко всем элементам массива число_
+- ###  _Добавление числа ко всем элементам массива_
 ```c++
 template <typename typeArr>
-typeArr* inplusarr(typeArr* arr, const int size, typeArr number)
+typeArr* inPlusArr(typeArr* arr, const int size, typeArr number)
 ```
-В качестве аргумента ```arr``` - принимается массив, ```size``` - размер массива, ```number``` - число которое будет добавлено ко всем элементам. Возвращает массив с добавленным числом к элементам.
+В качестве входных аргументов функция принимает ```arr``` - указатель на начало массива, ```size``` - размер массива, ```number``` - число, которое будет добавлено ко всем элементам. Функция возвращает указатель на первый элемент измененного массива.
 
 <br/>
 
-- ### _Отнять от всех элементов массива число_
+- ### _Вычитание числа из всех элементов массива_
 ```c++
 template <typename typeArr>
-typeArr* inminarr(typeArr* arr, const int size, typeArr number)
+typeArr* inMinArr(typeArr* arr, const int size, typeArr number)
 ```
-В качестве аргумента ```arr``` - принимается массив, ```size``` - размер массива, ```number``` - число которое будет отнято от всех элементов. Возвращает массив с отнятым от элементов числа.
+В качестве входных аргументов функция принимает ```arr``` - указатель на начало массива, ```size``` - размер массива, ```number``` - число, которое будет вычтено из всех элементов. Функция возвращает указатель на первый элемент измененного массива.
 
 <br/>
 
-- ### _Умножить все элементы массива на число_
+- ### _Умножение числа на все элементы массива_
 ```c++
 template <typename typeArr>
-typeArr* inmularr(typeArr* arr, const int size, typeArr number)
+typeArr* inMulArr(typeArr* arr, const int size, typeArr number)
 ```
-В качестве аргумента ```arr``` - принимается массив, ```size``` - размер массива, ```number``` - число которое будет умноженно на все элементы массива. Возвращает массив с умноженными на него числами.
+В качестве входных аргументов функция принимает ```arr``` - указатель на начало массива, ```size``` - размер массива, ```number``` - число, которое будет умноженно на все элементы массива. Функция возвращает указатель на первый элемент измененного массива.
 
 <br/>
 
-- ### _Поделить все элементы массива на число_
+- ### _Деление всех элементов массива на число_
 ```c++
 template <typename typeArr>
-typeArr* indivarr(typeArr* arr, const int size, typeArr number)
+typeArr* inDivArr(typeArr* arr, const int size, typeArr number)
 ```
-В качестве аргумента ```arr``` - принимается массив, ```size``` - размер массива, ```number``` - число на которое будут поделенны на все элементы массива. Возвращает массив с деленными элементами.
+В качестве входных аргументов функция принимает ```arr``` - указатель на начало массива, ```size``` - размер массива, ```number``` - число, на которое будут поделенны все элементы массива. Функция возвращает указатель на первый элемент измененного массива.
 
 <br/>
 
-- ### _Возвести элементы массива в степень_
+- ### _Возведение элементов массива в степень_
 ```c++
 template <typename typeArr>
-typeArr* powarr(typeArr* arr, const int size, typeArr gpow)
+typeArr* powArr(typeArr* arr, const int size, typeArr gpow)
 ```
-В качестве аргумента ```arr``` - принимается массив, ```size``` - размер массива, ```grow``` - степень в которую будут возведены все элементы массива. Возвращает массив с возведенными в степень элементами.
+В качестве входных аргументов функция принимает ```arr``` - указатель на начало массива, ```size``` - размер массива, ```gpow``` - степень, в которую будут возведены все элементы массива. Функция возвращает указатель на первый элемент измененного массива.
 
 <br/>
 
-- ### _Модуль массива_
+- ### _Модуль элементов массива_
 ```c++
 template <typename typeArr>
-typeArr* absarr(typeArr* arr, const int size)
+typeArr* absArr(typeArr* arr, const int size)
 ```
-В качестве аргумента ```arr``` - принимается массив, ```size``` - размер массива. Возвращает массив в модуле.
-
+В качестве входных аргументов функция принимает ```arr``` - указатель на начало массива, ```size``` - размер массива. Функция возвращает указатель на первый элемент измененного массива.
 
 <br/>
 
-- ### _Поменять знаки перед числами в массиве_
+- ### _Изменение знаков перед элементами в массиве_
 ```c++
 template <typename typeArr>
-typeArr* swaparr(typeArr* arr, const int size)
+typeArr* swapArr(typeArr* arr, const int size)
 ```
-В качестве аргумента ```arr``` - принимается массив, ```size``` - размер массива. Возвращает массив с поменяными знаками перед числами.
+В качестве входных аргументов функция принимает ```arr``` - указатель на начало массива, ```size``` - размер массива. Функция возвращает указатель на первый элемент измененного массива.
 
 <br/>
 
-- ### _Рандомно заполнить массив элементами_
+- ### _Заполнение массива рандомными элементами_
 ```c++
 template <typename typeArr>
-typeArr* randarr(typeArr* arr, const int size)
+typeArr* randArr(typeArr* arr, const int size)
 ```
-В качестве аргумента ```arr``` - принимается массив, ```size``` - размер массива. Возвращает массив с рандомными элементами.
+В качестве входных аргументов функция принимает ```arr``` - указатель на начало массива, ```size``` - размер массива. Функция возвращает указатель на первый элемент измененного массива.
 
 <br/>
 
-- ### _Объеденить два массива в один большой_
+- ### _Объединение двух массивов в один большой_
 ```c++
 template <typename typeArr>
-typeArr* uniarr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
+typeArr* uniArr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
 ```
-В качестве аргументов ```arr0``` и ```arr1``` принимаются два одинаковых массива по типу данных и размеру, ```arr2``` - выходной массив, в котором будут элементы двух массивов, ```size``` - размер массивов (одинаковый для первых двух).
-Важно! Размер возвращеного массива составляет сумму размеров двух предыдущих массивов. Первые два массива должны быть одинаковы по размеру и типу.
+В качестве входных аргументов функция принимает ```arr0``` и ```arr1``` - указатели на начало массивов, ```arr2``` - указатель на первый элемент массива, в котором будет результат объединения двух массивов, ```size``` - размер массивов (одинаковый для первых двух). Функция возвращает указатель на первый элемент измененного массива.
+Важно! Итоговый массив составляет сумму размеров двух предыдущих массивов. Первые два массива должны быть одинаковы по размеру и типу.
 
 <br/>
 
-- ### _Объеденить две матрицы (суммировать)_
+- ### _Объединение двух матриц (сумма)_
 ```c++
 template <typename typeMat>
-typeMat* summat(typeMat *mat0, typeMat*mat1, typeMat*mat2, const int isize, const int jsize) 
+typeMat* sumMat(typeMat* mat0, typeMat* mat1, typeMat* mat2, const int isize, const int jsize) 
 ```
-В качестве аргументов ```mat0``` и ```mat1``` принимаются две одинаковые матрицы по типу данных и размеру, ```mat2``` - выходная матрица, в котором будет результат выполнения, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице. 
-Функция возвращает суммированние двух матриц.
+В качестве входных аргументов функция принимает ```mat0``` и ```mat1``` - указатели на начало матриц, ```mat2``` - указатель на первый элемент матрицы, в которой будет результат суммы элементов двух матриц, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице. 
+Функция возвращает указатель на первый элемент итоговой матрицы.
 
 <br/>
 
-- ### _Объеденить две матрицы (минусовать)_
+- ### _Объединение двух матриц (разница)_
 ```c++
 template <typename typeMat>
-typeMat* minmat(typeMat* mat0, typeMat* mat1, typeMat* mat2, const int isize, const int jsize)
+typeMat* minMat(typeMat* mat0, typeMat* mat1, typeMat* mat2, const int isize, const int jsize)
 ```
-В качестве аргументов ```mat0``` и ```mat1``` принимаются две одинаковые матрицы по типу данных и размеру, ```mat2``` - выходная матрица, в котором будет результат выполнения, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице. 
-ВАЖНО! Функция возвращает матрицу по принципу элемент первой матрицы - элемент второй матрицы.
+В качестве входных аргументов функция принимает ```mat0``` и ```mat1``` - указатели на начало матриц, ```mat2``` - указатель на первый элемент матрицы, в которой будет результат разницы элементов двух матриц, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице. Функция возвращает указатель на первый элемент итоговой матрицы.
 
 <br/>
 
-- ### _Объеденить две матрицы (перемножить)_
+- ### _Объединение двух матриц (произведение)_
 ```c++
 template <typename typeMat>
-typeMat* mulmat(typeMat* mat0, typeMat* mat1, typeMat* mat2, const int isize, const int jsize)
+typeMat* mulMat(typeMat* mat0, typeMat* mat1, typeMat* mat2, const int isize, const int jsize)
 ```
-В качестве аргументов ```mat0``` и ```mat1``` принимаются две одинаковые матрицы по типу данных и размеру, ```mat2``` - выходной массив, в котором будет результат выполнения,  ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице. 
-Функция возвращает перемноженные две матрицы.
+В качестве входных аргументов функция принимает ```mat0``` и ```mat1``` - указатели на начало матриц, ```mat2``` - указатель на первый элемент матрицы, в которой будет результат произведения элементов двух матриц,  ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице. 
+Функция возвращает указатель на первый элемент итоговой матрицы.
 
 <br/>
 
-- ### _Объеденить две матрицы (поделить)_
+- ### _Объединение двух матриц (деление)_
 ```c++
 template <typename typeMat>
-typeMat* divmat(typeMat* mat0, typeMat* mat1, typeMat* mat2, const int isize, const int jsize) 
+typeMat* divMat(typeMat* mat0, typeMat* mat1, typeMat* mat2, const int isize, const int jsize) 
 ```
-В качестве аргументов ```mat0``` и ```mat1``` принимаются две одинаковые матрицы по типу данных и размеру, ```mat2``` - выходная матрица, в котором будет результат выполнения, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице. 
-ВАЖНО! Функция возвращает матрицу по принципу элемент первой матрицы / элемент второй матрицы.
+В качестве входных аргументов функция принимает ```mat0``` и ```mat1``` - указатели на начало матриц, ```mat2``` - указатель на первый элемент матрицы, в которой будет результат деления элементов двух матриц, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице. Функция возвращает указатель на первый элемент итоговой матрицы.
+ВАЖНО! Функция работает по принципу деления элемента первой матрицы на элемент второй матрицы.
 
 <br/>
 
-- ### _Добавить число ко всем элементам матрицы_
+- ### _Добавление числа ко всем элементам матрицы_
 ```c++
 template <typename typeMat>
-typeMat* inplusmat(typeMat* mat, const int isize, const int jsize, typeMat number)
+typeMat* inPlusMat(typeMat* mat, const int isize, const int jsize, typeMat number)
 ```
-В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице,  ```number``` - нужное число для действия над матрицой. 
-Функция возвращает указатель на изменённую матрицу.
+В качестве входных аргументов функция принимает ```mat``` - указатель на начало матрицы, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице, ```number``` - добавляемое число. Функция возвращает указатель на первый элемент итоговой матрицы.
 
 <br/>
 
-- ### _Отнять число от всех элементов матрицы_
+- ### _Вычитание числа из всех элементов матрицы_
 ```c++
 template <typename typeMat>
-typeMat* inmiusmat(typeMat* mat, const int isize, const int jsize, typeMat number)
+typeMat* inMinMat(typeMat* mat, const int isize, const int jsize, typeMat number)
 ```
-В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице, ```number``` - нужное число для действия над матрицой. 
-Функция возвращает указатель на изменённую матрицу.
+В качестве входных аргументов функция принимает ```mat``` - указатель на начало матрицы, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице, ```number``` - вычитаемое число. Функция возвращает указатель на первый элемент итоговой матрицы.
 
 <br/>
 
-- ### _Умножить число на все элементы матрицы_
+- ### _Умножение числа на все элементы матрицы_
 ```c++
 template <typename typeMat>
-typeMat* inmultmat(typeMat* mat, const int isize, const int jsize, typeMat number)
+typeMat* inMulMat(typeMat* mat, const int isize, const int jsize, typeMat number)
 ```
-В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице, ```number``` - нужное число для действия над матрицой. 
-Функция возвращает указатель на изменённую матрицу.
+В качестве входных аргументов функция принимает ```mat``` - указатель на начало матрицы, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице, ```number``` - число, на которое нужно умножить элементы матрицы. Функция возвращает указатель на первый элемент итоговой матрицы.
 
 <br/>
 
-- ### _Поделить все элементы матрицы на число_
+- ### _Деление всех элементов матрицы на число_
 ```c++
 template <typename typeMat>
-typeMat* indivmat(typeMat* mat, const int isize, const int jsize, typeMat number)
+typeMat* inDivMat(typeMat* mat, const int isize, const int jsize, typeMat number)
 ```
-В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице, ```number``` - нужное число для действия над матрицой. 
-Функция возвращает указатель на изменённую матрицу.
+В качестве входных аргументов функция принимает ```mat``` - указатель на начало матрицы, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице, ```number``` - число, на которое будут поделены все элементы матрицы. Функция возвращает указатель на первый элемент итоговой матрицы.
 
 <br/>
 
-- ### _Возвести элементы матрицы в степень_
+- ### _Возведение элементов матрицы в степень_
 ```c++
 template <typename typeMat, typename typenum>
-typeMat* powmat(typeMat* mat, const int isize, const int jsize, typenum gpow)
+typeMat* powMat(typeMat* mat, const int isize, const int jsize, typenum gpow)
 ```
-В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице, ```number``` - число в степень которую будут возведенны элементы.
-Функция возвращает указатель на матрицу с возведёнными элеменами в степень.
+В качестве входных аргументов функция принимает ```mat``` - указатель на начало матрицы, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице, ```gpow``` - степень, в которую будут возведены все элементы массива. Функция возвращает указатель на первый элемент итоговой матрицы.
 
 <br/>
 
 - ### _Модуль элементов матрицы_
 ```c++
 template <typename typeMat>
-typeMat* absmat(typeMat* mat, const int isize, const int jsize)
+typeMat* absMat(typeMat* mat, const int isize, const int jsize)
 ```
-В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице.
-Функция возвращает указатель на матрицу с элементами в модуле.
+В качестве входных аргументов функция принимает ```mat``` - указатель на начало матрицы, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице. Функция возвращает указатель на первый элемент итоговой матрицы.
 
 <br/>
 
 - ### _Смена знаков перед числами в матрице_
 ```c++
 template <typename typeMat>
-typeMat* swapmat(typeMat* mat, const int isize, const int jsize)
+typeMat* swapMat(typeMat* mat, const int isize, const int jsize)
 ```
-В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице.
-Функция возвращает указатель на матрицу с измененами знаками перед числами.
+В качестве входных аргументов функция принимает ```mat``` - указатель на начало матрицы, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице. Функция возвращает указатель на первый элемент итоговой матрицы.
 
-- ### _Рандомно заполнить матрицу числами_
+<br/>
+
+- ### _Заполнение матрицы рандомными элементами_
 ```c++
 template <typename typeMat>
-typeMat* randmat(typeMat* mat, const int isize, const int jsize)
+typeMat* randMat(typeMat* mat, const int isize, const int jsize)
 ```
-В качестве аргумента ```mat``` принимается матрица, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице.
-Функция возвращает указатель на матрицу с радномными элементами.
+В качестве входных аргументов функция принимает ```mat``` - указатель на начало матрицы, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице.  Функция возвращает указатель на первый элемент итоговой матрицы.
