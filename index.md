@@ -480,6 +480,114 @@ Note: The final array is the sum of the sizes of the previous two arrays. The fi
 
 <br/>
 
+- ### _Combining two matrices (sum)_
+```c++
+template <typename typeMat>
+typeMat* sumMat(typeMat* mat0, typeMat* mat1, typeMat* mat2, const int isize, const int jsize) 
+```
+As input arguments the function takes ```mat0``` and ```mat1``` - pointers to the beginning of matrices, ```mat2``` - pointer to the first element of the matrix which will be the result of sum of elements of two matrices, ```isize``` - number of lines in matrix, ```jsize``` - number of columns in matrix. The function returns a pointer to the first element of the final matrix.
+
+<br/>
+
+- ### _Combining two matrices (difference)_
+```c++
+template <typename typeMat>
+typeMat* minMat(typeMat* mat0, typeMat* mat1, typeMat* mat2, const int isize, const int jsize)
+```
+As input arguments the function takes ```mat0``` and ```mat1``` - pointers to the beginning of matrices, ```mat2``` - pointer to the first element of the matrix, which will be the result of the difference of elements of two matrices, ```isize``` - number of lines in matrix, ```jsize``` - number of columns in matrix. The function returns a pointer to the first element of the resulting matrix.
+
+<br/>
+
+- ### _The union of two matrices (multiplication)_
+```c++
+template <typename typeMat>
+typeMat* mulMat(typeMat* mat0, typeMat* mat1, typeMat* mat2, const int isize, const int jsize)
+```
+As input arguments the function takes ```mat0``` and ```mat1``` - pointers to the beginning of matrices, ```mat2``` - pointer to the first element of the matrix which will be the result of product of elements of two matrices, ```isize``` - number of lines in matrix, ```jsize``` - number of columns in matrix. The function returns a pointer to the first element of the resulting matrix.
+
+<br/>
+
+- ### _Combining two matrices (division)_
+```c++
+template <typename typeMat>
+typeMat* divMat(typeMat* mat0, typeMat* mat1, typeMat* mat2, const int isize, const int jsize) 
+```
+As input arguments the function takes ```mat0``` and ```mat1``` - pointers to the beginning of matrices, ```mat2``` - pointer to the first element of the matrix, which will be the result of division of elements of two matrices, ```isize``` - number of lines in matrix, ```jsize``` - number of columns in matrix. The function returns a pointer to the first element of the final matrix.
+Important: The function works on the principle of dividing the element of the first matrix by the element of the second matrix.
+
+<br/>
+
+- ### _Adding a number to all matrix elements_
+```c++
+template <typename typeMat>
+typeMat* inPlusMat(typeMat* mat, const int isize, const int jsize, typeMat number)
+```
+As input arguments the function takes ```mat``` - pointer to the beginning of the matrix, ```isize``` - number of rows in the matrix, ```jsize``` - number of columns in the matrix, ```number``` - number to add. The function returns a pointer to the first element of the resulting matrix.
+
+<br/>
+
+- ### _Subtracting a number from all matrix elements_
+```c++
+template <typename typeMat>
+typeMat* inMinMat(typeMat* mat, const int isize, const int jsize, typeMat number)
+```
+As input arguments the function takes ```mat``` - pointer to the beginning of the matrix, ```isize``` - number of rows in the matrix, ```jsize``` - number of columns in the matrix, ```number``` - subtracted number. The function returns a pointer to the first element of the resulting matrix.
+
+<br/>
+
+- ### _Multiplying a number by all matrix elements_
+```c++
+template <typename typeMat>
+typeMat* inMulMat(typeMat* mat, const int isize, const int jsize, typeMat number)
+```
+As input arguments the function takes ```mat``` - pointer to the beginning of the matrix, ```isize``` - number of rows in the matrix, ```jsize``` - number of columns in the matrix, ```number``` - number by which the matrix elements should be multiplied. The function returns a pointer to the first element of the resulting matrix.
+
+<br/>
+
+- ### _Dividing all matrix elements by a number_
+```c++
+template <typename typeMat>
+typeMat* inDivMat(typeMat* mat, const int isize, const int jsize, typeMat number)
+```
+As input arguments the function takes ```mat``` - pointer to the beginning of the matrix, ```isize``` - number of rows in the matrix, ```jsize``` - number of columns in the matrix, ```number``` - number by which all matrix elements will be divided. The function returns a pointer to the first element of the final matrix.
+
+<br/>
+
+- ### _Expanding matrix elements_
+```c++
+template <typename typeMat, typename typenum>
+typeMat* powMat(typeMat* mat, const int isize, const int jsize, typenum gpow)
+```
+As input arguments the function takes ```mat``` - pointer to the beginning of the matrix, ```isize``` - number of rows in the matrix, ```jsize``` - number of columns in the matrix, ```gpow``` - degree to which all elements of the array will be raised. The function returns a pointer to the first element of the resulting matrix.
+
+<br/>
+
+- ### _Module of matrix elements_
+```c++
+template <typename typeMat>
+typeMat* absMat(typeMat* mat, const int isize, const int jsize)
+```
+As input arguments the function takes ```mat``` - pointer to the beginning of the matrix, ```isize``` - number of rows in the matrix, ```jsize``` - number of columns in the matrix. The function returns a pointer to the first element of the final matrix.
+
+<br/>
+
+- ### _Changing signs before numbers in the matrix_
+```c++
+template <typename typeMat>
+typeMat* swapMat(typeMat* mat, const int isize, const int jsize)
+```
+As input arguments the function takes ```mat``` - pointer to the beginning of the matrix, ```isize``` - number of rows in the matrix, ```jsize``` - number of columns in the matrix. The function returns a pointer to the first element of the final matrix.
+
+<br/>
+
+- ### _Filling a matrix with random elements_
+```c++
+template <typename typeMat>
+typeMat* randMat(typeMat* mat, const int isize, const int jsize)
+```
+As input arguments the function takes ```mat``` - pointer to the beginning of the matrix, ```isize``` - number of rows in the matrix, ```jsize``` - number of columns in the matrix.  The function returns a pointer to the first element of the final matrix.
+
+<br/>
 <!-- Русская категория функций с примерами кода -->
 
 # 🇷🇺 **Русская категория**
