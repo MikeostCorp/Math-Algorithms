@@ -603,4 +603,4 @@ namespace mathAlgo {
 
 /*
     GitHub: https://github.com/MikeostCorp/Math-Algorithms
-*/ 
+*/
