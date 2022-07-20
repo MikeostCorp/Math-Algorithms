@@ -372,7 +372,7 @@ namespace mathAlgo {
         for (int i = 0; i < size; i++) arr2[i] = arr0[i] / arr1[i];
         return arr2;
     }
-    
+
     // Add a number to array elements
     // number - The number to be added to the elements of the array
     template <typename typeArr>
@@ -408,7 +408,7 @@ namespace mathAlgo {
     // Raising an array to a given power
     template <typename typeArr>
     typeArr* powArr(typeArr* arr, const int size, typeArr gpow) {
-        for (int i = 0; i < size; i++) arr[i] = pow(arr[i],gpow);
+        for (int i = 0; i < size; i++) arr[i] = pow(arr[i], gpow);
         return arr;
     }
 
@@ -460,7 +460,7 @@ namespace mathAlgo {
     // jsize - Second parameter of matrix size
     // IMPORTANT! Matrices must be exactly the same size
     template <typename typeMat>
-    typeMat* sumMat(typeMat *mat0, typeMat*mat1, typeMat*mat2, const int isize, const int jsize) {
+    typeMat* sumMat(typeMat* mat0, typeMat* mat1, typeMat* mat2, const int isize, const int jsize) {
         for (int i = 0; i < isize; i++) {
             for (int j = 0; j < jsize; j++) {
                 *(*(mat2 + i) + j) = *(*(mat0 + i) + j) + *(*(mat1 + i) + j);
@@ -553,7 +553,7 @@ namespace mathAlgo {
     typeMat* powMat(typeMat* mat, const int isize, const int jsize, typeMat gpow) {
         for (int i = 0; i < isize; i++) {
             for (int j = 0; j < jsize; j++) {
-                *(*(mat + i) + j) = pow(*(*(mat + i) + j),gpow);
+                *(*(mat + i) + j) = pow(*(*(mat + i) + j), gpow);
             }
         }
         return mat;
@@ -591,7 +591,7 @@ namespace mathAlgo {
     typeMat* randMat(typeMat* mat, const int isize, const int jsize) {
         for (int i = 0; i < isize; i++) {
             for (int j = 0; j < jsize; j++) {
-                *(*(mat + i) + j) = rand()% 100 - 10;
+                *(*(mat + i) + j) = rand() % 100 - 10;
             }
         }
         return mat;
@@ -603,4 +603,4 @@ namespace mathAlgo {
 
 /*
     GitHub: https://github.com/MikeostCorp/Math-Algorithms
-*/
+*/ 
