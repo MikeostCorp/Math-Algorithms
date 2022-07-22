@@ -213,68 +213,63 @@ As input arguments ```n``` and ```m```, a set of ```n``` elements chosen from th
 <br/>
 
 - ### _Bernoulli formula_
-```c++
-long double bern(uint64_t n, uint64_t k, long double p)
+```C++
+long double burn (uint64_t n, uint64_t k, long double p)
 ```
-The argument ```n``` is the total number of trials, ```k``` is the number of favorable trials, ```p``` is the chance of a favorable outcome. The function returns the probability of the given event.
+The argument "n" is the number of tests, "k" is the number of production tests, "p" is the probability of obtaining a result. The function confirms the probability of a given event.
 
 <br/>
 
-- ### _Laplace's local theorem_
-```c++
-long double lLaplace(long double n, long double p, long double k)
-```
-The argument ```n``` is the total number of trials, ```k``` is the number of favorable trials, ```p``` is the chance of a favorable outcome. The function returns the probability of the given event.
-
-Important! The function has a subfunction to help with calculations.
-
-Example:
-```c++
+- ### _Local number Phi_
+```C++
 long double fiLocal(long double x)
 ```
-Phi number for the local Laplace theorem.
+The ```x``` argument takes any number. The function returns the conditional number Phi from the given number.
 
 <br/>
 
-- ### _Laplace's integral theorem_
-```c++
-long double iLaplace(long double k1, long double k2, long double n, long double p)
+- ### _Phi number for Laplace integral formula_
+```C++
+long double fiIntegral(long double x)
 ```
-As an argument ```k1``` - the event will occur at least n times ```k2``` - the event will occur no more than m times, the total number of trials is taken as the argument ```n```, ```p ``` - chance of a favorable outcome. The function returns the probability of the given event.
+The ```x``` argument takes any number. The function returns the value of the Phi number from the given number for the Laplace integral formula.
 
-Important! The function has subfunctions that aid in probability calculations.
+<br/>
 
-List :
-```c++
- long double fiIntegral(long double x)
+- ### _The final part of the function for the Laplace integral formula_
+```C++
+ double end Laplace's theorem (double x)
 ```
-Needed to find the phi integral.
-```c++
-double endLaplaceTheorem(double x)
+The ```x``` argument takes any number. The function returns the final number in the Laplace integral formula.
+
+_Comment: practical application of the function This is useless, the function is needed only for calculation in the Laplace integral formula._
+
+<br/>
+
+- ### _Local Laplace statistics_
+```C++
+long double lLaplace (long double n, long double k, long double p)
 ```
-The final part of the function for the number phi.
+The argument ```n``` is the number of tests, ```k``` is the number of production tests, ```p``` is the probability of obtaining a result. The function confirms the probability of a given event.
+
+<br/>
+
+- ### _Integral observation of Laplace_
+```C++
+long double iLaplace (long double knit 1, long double knit 2, long double n, long double purl)
+```
+As an argument ```k1``` - the event occurs at least once ```k2``` - the event occurs no more than m times, as the argument ```n``` the total number of occurrences is taken, ```p``` is the chance of the expected outcome. The function confirms the probability of a given event.
 
 <br/>
 
 - ### _Dispersion_
-```c++
+```C++
 template <typename typeArr1, typename typeArr2>
-long double dispersion(typeArr1 x[], typeArr2 p[], const int size)
+long double variance (typeArr1* x, typeArr2* p, const int size)
 ```
-As an argument ```x``` - an array with numbers, ```p``` - the probability of numbers, ```size``` - the size of one of the arrays. The function returns the variance of the value.
+The argument ```x``` is an array of numbers, ```p``` is the probability of numbers, ```size``` is the size from the array of a single number. The function returns the variance of the value.
 
-Important! The size of both arrays must be the same.
-
-<br/>
-
-- ### _Standard deviation of variance from random variable_
-```c++
-template <typename typeArr1, typename typeArr2>
-long double sDev(typeArr1 x[], typeArr2 p[], const int size)
-```
-As an argument ```x``` - an array with numbers, ```p``` - the probability of numbers, ```size``` - the size of one of the arrays. The function returns the deviation of the variance from a random variable.
-
-Important! The size of both arrays must be the same.
+Important! The size of the array must be taken.
 
 <br/>
 
@@ -768,19 +763,37 @@ long double bern(uint64_t n, uint64_t k, long double p)
 
 <br/>
 
-- ### _Локальная теорема Лапласа_
-```c++ 
-long double lLaplace(long double n, long double p, long double k)
-```
-В качестве аргумента ```n``` принимается общее количество испытаний, ```k``` - количество благоприятных испытаний, ```p``` - шанс благоприятного исхода. Функция возвращает вероятность заданого события.
-
-Важно! Функция имеет подфункцию для помощи в вычеслениях.
-
-Пример: 
+- ### _Локальное число Фи_
 ```c++ 
 long double fiLocal(long double x)
 ```
-Число фи для локальной теоремы Лапласа.
+В качестве аргумента ```x``` принимается любое число. Функция возвращает значение локального числа Фи от заданого числа.
+
+<br/>
+
+- ### _Число Фи для интегральной формулы Лапласа_
+```c++ 
+long double fiIntegral(long double x)
+```
+В качестве аргумента ```x``` принимается любое число. Функция возвращает значение числа Фи от заданого числа для интегральной формулы Лапласа.
+
+<br/>
+
+- ### _Конечная часть функции для числа интегральной формулы лапласа_
+```c++ 
+ double endLaplaceTheorem(double x) 
+```
+В качестве аргумента ```x``` принимается любое число. Функция возвращает конечное число в интегральной формуле Лапласа.
+
+_Комментарий: практическое применение данной функции бесполезно, функция нужна лишь для расчетов в интегральной формуле Лапласа._
+
+<br/>
+
+- ### _Локальная теорема Лапласа_
+```c++ 
+long double lLaplace(long double n, long double k, long double p)
+```
+В качестве аргумента ```n``` принимается общее количество испытаний, ```k``` - количество благоприятных испытаний, ```p``` - шанс благоприятного исхода. Функция возвращает вероятность заданого события.
 
 <br/>
 
@@ -790,24 +803,12 @@ long double iLaplace(long double k1, long double k2, long double n, long double 
 ```
 В качестве аргумента ```k1``` - событие наступит n не менее раз ```k2``` - событие наступит не более m раз, за аргумент ```n``` принимается общее количество испытаний, ```p``` - шанс благоприятного исхода. Функция возвращает вероятность заданого события.
 
-Важно! Функция имеет подфункции которые помогают в вычеслениях вероятности. 
-
-Список : 
-```c++ 
- long double fiIntegral(long double x)
-```
-Нужна для поиска фи интеграла.
-```c++ 
-double endLaplaceTheorem(double x)
-```
-Конечная часть функции для числа фи.
-
 <br/>
 
 - ### _Дисперсия_
 ```c++ 
 template <typename typeArr1, typename typeArr2>
-long double dispersion(typeArr1 x[], typeArr2 p[], const int size)
+long double dispersion(typeArr1* x, typeArr2* p, const int size)
 ```
 В качестве аргумента ```x``` - принимается массив с числами, ```p``` - вероятность чисел,  ```size``` - размер одного из массивов. Функция возвращает дисперсию величины.
 
@@ -818,7 +819,7 @@ long double dispersion(typeArr1 x[], typeArr2 p[], const int size)
 - ### _Стандартное отклонение дисперсии от случайной величины_
 ```c++ 
 template <typename typeArr1, typename typeArr2>
-long double sDev(typeArr1 x[], typeArr2 p[], const int size)
+long double sDev(typeArr1* x, typeArr2* p, const int size)
 ```
 В качестве аргумента ```x``` - принимается массив с числами, ```p``` - вероятность чисел,  ```size``` - размер одного из массивов. Функция возвращает отклонение дисперсии от случайной величины.
 
