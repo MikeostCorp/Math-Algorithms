@@ -212,6 +212,72 @@ As input arguments ```n``` and ```m```, a set of ```n``` elements chosen from th
 
 <br/>
 
+- ### _Bernoulli formula_
+```c++
+long double bern(uint64_t n, uint64_t k, long double p)
+```
+The argument ```n``` is the total number of trials, ```k``` is the number of favorable trials, ```p``` is the chance of a favorable outcome. The function returns the probability of the given event.
+
+<br/>
+
+- ### _Laplace's local theorem_
+```c++
+long double lLaplace(long double n, long double p, long double k)
+```
+The argument ```n``` is the total number of trials, ```k``` is the number of favorable trials, ```p``` is the chance of a favorable outcome. The function returns the probability of the given event.
+
+Important! The function has a subfunction to help with calculations.
+
+Example:
+```c++
+long double fiLocal(long double x)
+```
+Phi number for the local Laplace theorem.
+
+<br/>
+
+- ### _Laplace's integral theorem_
+```c++
+long double iLaplace(long double k1, long double k2, long double n, long double p)
+```
+As an argument ```k1``` - the event will occur at least n times ```k2``` - the event will occur no more than m times, the total number of trials is taken as the argument ```n```, ```p ``` - chance of a favorable outcome. The function returns the probability of the given event.
+
+Important! The function has subfunctions that aid in probability calculations.
+
+List :
+```c++
+ long double fiIntegral(long double x)
+```
+Needed to find the phi integral.
+```c++
+double endLaplaceTheorem(double x)
+```
+The final part of the function for the number phi.
+
+<br/>
+
+- ### _Dispersion_
+```c++
+template <typename typeArr1, typename typeArr2>
+long double dispersion(typeArr1 x[], typeArr2 p[], const int size)
+```
+As an argument ```x``` - an array with numbers, ```p``` - the probability of numbers, ```size``` - the size of one of the arrays. The function returns the variance of the value.
+
+Important! The size of both arrays must be the same.
+
+<br/>
+
+- ### _Standard deviation of variance from random variable_
+```c++
+template <typename typeArr1, typename typeArr2>
+long double sDev(typeArr1 x[], typeArr2 p[], const int size)
+```
+As an argument ```x``` - an array with numbers, ```p``` - the probability of numbers, ```size``` - the size of one of the arrays. The function returns the deviation of the variance from a random variable.
+
+Important! The size of both arrays must be the same.
+
+<br/>
+
 ## **Numerical methods for solving nonlinear equations**
 - ### _Half-division method_
 ```c++
