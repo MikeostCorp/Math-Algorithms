@@ -83,7 +83,7 @@ namespace mathAlgo {
     }
 
     //Local Laplace theorem
-    long double lLaplace(long double p, long double n, long double k) {
+    long double lLaplace(long double n, long double k, long double p) {
         return fiLocal((k - n * p) / sqrt(n * p * (1 - p))) / sqrt(n * p * (1 - p));
     }
 
@@ -98,6 +98,7 @@ namespace mathAlgo {
         double a = 0.0, b = fabs(x);
         double h = 0.01;
         double n = (b - a) / h;
+        
         for (int i = 1; i <= n; i++)
             Integral = Integral + h * endLaplaceTheorem(a + h * (i - 0.5));
         return 1 / sqrt(2 * _pi) * Integral;
@@ -110,7 +111,7 @@ namespace mathAlgo {
 
     // Expected value
     template <typename typeArr1, typename typeArr2>
-    long double exValue(typeArr1 x[], typeArr2 p[], const int size) {
+    long double exValue(typeArr1* x, typeArr2* p, const int size) {
         long double m = 0;
         for (int i = 0; i < size; i++) {
             m += x[i] * p[i];
@@ -120,7 +121,7 @@ namespace mathAlgo {
 
     // Dispersion
     template <typename typeArr1, typename typeArr2>
-    long double dispersion(typeArr1 x[], typeArr2 p[], const int size) {
+    long double dispersion(typeArr1* x, typeArr2* p, const int size) {
         long double mx2 = 0;
         long double mx = pow(exValue(x, p, size), 2);
 
@@ -133,7 +134,7 @@ namespace mathAlgo {
 
     // Standard deviation from the variance of a random variable
     template <typename typeArr1, typename typeArr2>
-    long double sDev(typeArr1 x[], typeArr2 p[], const int size) {
+    long double sDev(typeArr1* x, typeArr2* p, const int size) {
         return sqrt(dispersion(x, p, size));
     }
 
