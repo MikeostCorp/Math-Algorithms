@@ -302,7 +302,9 @@ template<typename F>
 long double halfDivisionMethod(F func, long double a, long double b, long double e = 0.001)
 ```
 The function takes as input arguments the equation ```func```, the left and right limits of the interval ```a``` & ```b``` and the optional precision parameter ```e```. The function returns the root of the equation on a given interval, with a given accuracy.<br/>
-<br/>Example of usage:<br/>
+
+Example of usage:
+
 ```c++
 double f(double x)
 {
@@ -314,7 +316,9 @@ int main
   cout << "halfDivisionMethod: " << mathAlgo::halfDivisionMethod(&f, 0, 2) << endl;
 }
 ```
-<br/>Output:<br/>
+
+Output:
+
 ```
 halfDivisionMethod: 0.88623
 ```
@@ -327,7 +331,9 @@ template<typename F>
 long double secantMethod(F func, long double x0, long double x1, long double e = 0.001)
 ```
 The function takes as input arguments the equation ```func```, the left and right limits of the interval ```x0``` & ```x1``` and the optional precision parameter ```e```. The function returns the root of the equation on a given interval, with a given accuracy.<br/>
-<br/>Example of usage:<br/>
+
+Example of usage:
+
 ```c++
 double f(double x)
 {
@@ -339,7 +345,9 @@ int main
   cout << "secantMethod: " << mathAlgo::secantMethod(&f, 0, 2) << endl;
 }
 ```
-<br/>Output:<br/>
+
+Output:
+
 ```
 secantMethod: 0.886345
 ```
@@ -352,7 +360,9 @@ template<typename F>
 long double parabolaMethod(F func, long double a, long double b, long double e = 0.001)
 ```
 The function takes as input arguments the equation ```func```, the left and right limits of the interval ```a``` & ```b``` and the optional precision parameter ```e```. The function returns the root of the equation on a given interval, with a given accuracy.<br/>
-<br/>Example of usage:<br/>
+
+Example of usage:
+
 ```c++
 double f(double x)
 {
@@ -364,7 +374,9 @@ int main
   cout << "parabolaMethod: " << mathAlgo::parabolaMethod(&f, 0, 2) << endl;
 }
 ```
-<br/>Output:<br/>
+
+Output:
+
 ```
 parabolaMethod: 0.886345
 ```
@@ -847,7 +859,9 @@ template<typename F>
 long double halfDivisionMethod(F func, long double a, long double b, long double e = 0.001)
 ```
 В качестве входных аргументов функция принимает уравнение ```func```, левую и правую границы отрезка ```a``` & ```b``` и необязательный параметр точности ```e```. Функция возвращает корень уравнения на заданном промежутке, с заданной точностью.<br/>
-<br/>Пример использования:<br/>
+
+Пример использования:
+
 ```c++
 double f(double x)
 {
@@ -859,7 +873,9 @@ int main
   cout << "halfDivisionMethod: " << mathAlgo::halfDivisionMethod(&f, 0, 2) << endl;
 }
 ```
-<br/>Вывод:<br/>
+
+Вывод:
+
 ```
 halfDivisionMethod: 0.88623
 ```
@@ -872,7 +888,9 @@ template<typename F>
 long double secantMethod(F func, long double x0, long double x1, long double e = 0.001)
 ```
 В качестве входных аргументов функция принимает уравнение ```func```, левую и правую границы отрезка ```x0``` & ```x1``` и необязательный параметр точности ```e```. Функция возвращает корень уравнения на заданном промежутке, с заданной точностью.<br/>
-<br/>Пример использования:<br/>
+
+Пример использования:
+
 ```c++
 double f(double x)
 {
@@ -884,7 +902,9 @@ int main
   cout << "secantMethod: " << mathAlgo::secantMethod(&f, 0, 2) << endl;
 }
 ```
-<br/>Вывод:<br/>
+
+Вывод:
+
 ```
 secantMethod: 0.886345
 ```
@@ -897,7 +917,9 @@ template<typename F>
 long double parabolaMethod(F func, long double a, long double b, long double e = 0.001)
 ```
 В качестве входных аргументов функция принимает уравнение ```func```, левую и правую границы отрезка ```a``` & ```b``` и необязательный параметр точности ```e```. Функция возвращает корень уравнения на заданном промежутке, с заданной точностью.<br/>
-<br/>Пример использования:<br/>
+
+Пример использования:
+
 ```c++
 double f(double x)
 {
@@ -909,7 +931,9 @@ int main
   cout << "parabolaMethod: " << mathAlgo::parabolaMethod(&f, 0, 2) << endl;
 }
 ```
-<br/>Вывод:<br/>
+
+Вывод:
+
 ```
 parabolaMethod: 0.886345
 ```
