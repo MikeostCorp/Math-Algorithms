@@ -220,11 +220,11 @@ As input arguments ```m``` and ```n```, an ordered set of ```m``` different elem
 
 - ### _Combination (order is NOT important)_
 ```c++ 
-uint64_t comС(uint64_t n, uint64_t m)
+uint64_t comС(uint64_t m, uint64_t n)
 ```
-<img src="https://fsd.kopilkaurokov.ru/uploads/user_file_55544ecc8a5d7/konspiekt-uchiebnogho-zaniatiia-po-matiematikie-po-tiemie-osnovnyie-poniatiia-kombinatoriki_8.png" alt="Combination" data-canonical-src="https://fsd.kopilkaurokov.ru/uploads/user_file_55544ecc8a5d7/konspiekt-uchiebnogho-zaniatiia-po-matiematikie-po-tiemie-osnovnyie-poniatiia-kombinatoriki_8.png" width="220" height="100">
+<img src="https://xn----8sbanwvcjzh9e.xn--p1ai/wp-content/uploads/formula-sochetaniya-kombinatorika_57.jpg" alt="Combination" data-canonical-src="https://xn----8sbanwvcjzh9e.xn--p1ai/wp-content/uploads/formula-sochetaniya-kombinatorika_57.jpg" width="240" height="100">
 
-As input arguments ```n``` and ```m```, a set of ```n``` elements chosen from the ```m``` element set, which does not take into account the order of elements. It is important that ```m``` > ```n```. The function returns the number of combinations.
+As input arguments ```m``` and ```n```, a set of ```m``` elements chosen from the ```n``` element set, which does not take into account the order of elements. It is important that ```n``` > ```m```. The function returns the number of combinations.
 
 <br/>
 
@@ -408,7 +408,9 @@ The function takes as its input argument the number ```number``` whose arcotange
 
 - ### _Calculating the length of the segment_
 ```c++
-long double lengthOfLine(long double x1, long double x2, long double y1, long double y2, long double z1 = 0, long double z2 = 0)
+long double lengthOfLine(long double x1, long double x2, 
+                         long double y1, long double y2, 
+                         long double z1 = 0, long double z2 = 0)
 ```
 The function takes the coordinates of points A(x1, y1) & B(x2, y2) as input arguments (z coordinates are entered for a three-dimensional coordinate system). The function returns the length of the segment.
 
@@ -509,8 +511,8 @@ Important: The division of elements works according to the principle: element of
 
 - ###  _Adding a number to all elements of an array_
 ```c++
-template <typename typeArr>
-typeArr* inPlusArr(typeArr* arr, const int size, typeArr number)
+template <typename typeArr, typename typeNum>
+typeArr* inPlusArr(typeArr* arr, const int size, typeNum number)
 ```
 As input arguments the function takes ```arr``` - pointer to the beginning of the array, ```size``` - size of the array, ```number``` - number to be added to all elements. The function returns a pointer to the first element of the modified array.
 
@@ -518,8 +520,8 @@ As input arguments the function takes ```arr``` - pointer to the beginning of th
 
 - ### _Subtracting a number from all elements of an array_
 ```c++
-template <typename typeArr>
-typeArr* inMinArr(typeArr* arr, const int size, typeArr number)
+template <typename typeArr, typename typeNum>
+typeArr* inMinArr(typeArr* arr, const int size, typeNum number)
 ```
 As input arguments the function takes ```arr``` - pointer to the beginning of the array, ```size``` - size of the array, ```number``` - number to be subtracted from all elements. The function returns a pointer to the first element of the modified array.
 
@@ -527,8 +529,8 @@ As input arguments the function takes ```arr``` - pointer to the beginning of th
 
 - ### _Multiplying all elements of the array by a number_
 ```c++
-template <typename typeArr>
-typeArr* inMulArr(typeArr* arr, const int size, typeArr number)
+template <typename typeArr, typename typeNum>
+typeArr* inMulArr(typeArr* arr, const int size, typeNum number)
 ```
 As input arguments the function takes ```arr``` - pointer to the beginning of the array, ```size``` - size of the array, ```number``` - number to be multiplied by all elements of the array. The function returns a pointer to the first element of the modified array.
 
@@ -536,8 +538,8 @@ As input arguments the function takes ```arr``` - pointer to the beginning of th
 
 - ### _Dividing all elements of an array by a number_
 ```c++
-template <typename typeArr>
-typeArr* inDivArr(typeArr* arr, const int size, typeArr number)
+template <typename typeArr, typename typeNum>
+typeArr* inDivArr(typeArr* arr, const int size, typeNum number)
 ```
 As input arguments the function takes ```arr``` - pointer to the beginning of the array, ```size``` - size of the array, ```number``` - number by which all array elements will be divided. The function returns a pointer to the first element of the modified array.
 
@@ -545,8 +547,8 @@ As input arguments the function takes ```arr``` - pointer to the beginning of th
 
 - ### _Array elements to a power_
 ```c++
-template <typename typeArr>
-typeArr* powArr(typeArr* arr, const int size, typeArr gpow)
+template <typename typeArr, typename typeNum>
+typeArr* powArr(typeArr* arr, const int size, typeNum gpow)
 ```
 As input arguments the function takes ```arr``` - pointer to the beginning of the array, ```size``` - size of the array, ```gpow``` - degree to which all elements of the array will be raised. The function returns a pointer to the first element of the modified array.
 
@@ -628,8 +630,8 @@ Important: The function works on the principle of dividing the element of the fi
 
 - ### _Adding a number to all matrix elements_
 ```c++
-template <typename typeMat>
-typeMat* inPlusMat(typeMat* mat, const int isize, const int jsize, typeMat number)
+template <typename typeMat, typename typeNum>
+typeMat* inPlusMat(typeMat* mat, const int isize, const int jsize, typeNum number)
 ```
 As input arguments the function takes ```mat``` - pointer to the beginning of the matrix, ```isize``` - number of rows in the matrix, ```jsize``` - number of columns in the matrix, ```number``` - number to add. The function returns a pointer to the first element of the resulting matrix.
 
@@ -637,8 +639,8 @@ As input arguments the function takes ```mat``` - pointer to the beginning of th
 
 - ### _Subtracting a number from all matrix elements_
 ```c++
-template <typename typeMat>
-typeMat* inMinMat(typeMat* mat, const int isize, const int jsize, typeMat number)
+template <typename typeMat, typename typeNum>
+typeMat* inMinMat(typeMat* mat, const int isize, const int jsize, typeNum number)
 ```
 As input arguments the function takes ```mat``` - pointer to the beginning of the matrix, ```isize``` - number of rows in the matrix, ```jsize``` - number of columns in the matrix, ```number``` - subtracted number. The function returns a pointer to the first element of the resulting matrix.
 
@@ -646,8 +648,8 @@ As input arguments the function takes ```mat``` - pointer to the beginning of th
 
 - ### _Multiplying a number by all matrix elements_
 ```c++
-template <typename typeMat>
-typeMat* inMulMat(typeMat* mat, const int isize, const int jsize, typeMat number)
+template <typename typeMat, typename typeNum>
+typeMat* inMulMat(typeMat* mat, const int isize, const int jsize, typeNum number)
 ```
 As input arguments the function takes ```mat``` - pointer to the beginning of the matrix, ```isize``` - number of rows in the matrix, ```jsize``` - number of columns in the matrix, ```number``` - number by which the matrix elements should be multiplied. The function returns a pointer to the first element of the resulting matrix.
 
@@ -655,8 +657,8 @@ As input arguments the function takes ```mat``` - pointer to the beginning of th
 
 - ### _Dividing all matrix elements by a number_
 ```c++
-template <typename typeMat>
-typeMat* inDivMat(typeMat* mat, const int isize, const int jsize, typeMat number)
+template <typename typeMat, typename typeNum>
+typeMat* inDivMat(typeMat* mat, const int isize, const int jsize, typeNum number)
 ```
 As input arguments the function takes ```mat``` - pointer to the beginning of the matrix, ```isize``` - number of rows in the matrix, ```jsize``` - number of columns in the matrix, ```number``` - number by which all matrix elements will be divided. The function returns a pointer to the first element of the final matrix.
 
@@ -664,8 +666,8 @@ As input arguments the function takes ```mat``` - pointer to the beginning of th
 
 - ### _Expanding matrix elements_
 ```c++
-template <typename typeMat, typename typenum>
-typeMat* powMat(typeMat* mat, const int isize, const int jsize, typenum gpow)
+template <typename typeMat, typename typeNum>
+typeMat* powMat(typeMat* mat, const int isize, const int jsize, typeNum gpow)
 ```
 As input arguments the function takes ```mat``` - pointer to the beginning of the matrix, ```isize``` - number of rows in the matrix, ```jsize``` - number of columns in the matrix, ```gpow``` - degree to which all elements of the array will be raised. The function returns a pointer to the first element of the resulting matrix.
 
@@ -771,11 +773,11 @@ uint64_t comA(uint64_t m, uint64_t n)
 
 - ### _Сочетание (порядок НЕ важен)_
 ```c++ 
-uint64_t comC(uint64_t n, uint64_t m)
+uint64_t comC(uint64_t m, uint64_t n)
 ```
-<img src="https://fsd.kopilkaurokov.ru/uploads/user_file_55544ecc8a5d7/konspiekt-uchiebnogho-zaniatiia-po-matiematikie-po-tiemie-osnovnyie-poniatiia-kombinatoriki_8.png" alt="Формула сочетания" data-canonical-src="https://fsd.kopilkaurokov.ru/uploads/user_file_55544ecc8a5d7/konspiekt-uchiebnogho-zaniatiia-po-matiematikie-po-tiemie-osnovnyie-poniatiia-kombinatoriki_8.png" width="220" height="100">
+<img src="https://xn----8sbanwvcjzh9e.xn--p1ai/wp-content/uploads/formula-sochetaniya-kombinatorika_57.jpg" alt="Формула сочетания" data-canonical-src="https://xn----8sbanwvcjzh9e.xn--p1ai/wp-content/uploads/formula-sochetaniya-kombinatorika_57.jpg" width="240" height="100">
 
-В качестве входных аргументов ```n``` и ```m```, набор из ```n``` элементов, выбранных из ```m```-элементного множества, в котором не учитывается порядок элементов. Важно, чтобы ```m``` > ```n```. Функция возвращает количество сочетаний.
+В качестве входных аргументов ```m``` и ```n```, набор из ```m``` элементов, выбранных из ```n```-элементного множества, в котором не учитывается порядок элементов. Важно, чтобы ```n``` > ```m```. Функция возвращает количество сочетаний.
 
 <br/>
 
@@ -959,7 +961,9 @@ long double acot(long double number)
 
 - ### _Расчет длины отрезка_
 ```c++
-long double lengthOfLine(long double x1, long double x2, long double y1, long double y2, long double z1 = 0, long double z2 = 0)
+long double lengthOfLine(long double x1, long double x2, 
+                         long double y1, long double y2, 
+                         long double z1 = 0, long double z2 = 0)
 ```
 В качестве входных аргументов функция принимает координаты точек A(x1, y1) & B(x2, y2)(при трехмерной системе координат вводятся координаты z). Функция возвращает длину отрезка.
 
@@ -1060,8 +1064,8 @@ typeArr* divArr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
 
 - ###  _Добавление числа ко всем элементам массива_
 ```c++
-template <typename typeArr>
-typeArr* inPlusArr(typeArr* arr, const int size, typeArr number)
+template <typename typeArr, typename typeNum>
+typeArr* inPlusArr(typeArr* arr, const int size, typeNum number)
 ```
 В качестве входных аргументов функция принимает ```arr``` - указатель на начало массива, ```size``` - размер массива, ```number``` - число, которое будет добавлено ко всем элементам. Функция возвращает указатель на первый элемент измененного массива.
 
@@ -1069,8 +1073,8 @@ typeArr* inPlusArr(typeArr* arr, const int size, typeArr number)
 
 - ### _Вычитание числа из всех элементов массива_
 ```c++
-template <typename typeArr>
-typeArr* inMinArr(typeArr* arr, const int size, typeArr number)
+template <typename typeArr, typename typeNum>
+typeArr* inMinArr(typeArr* arr, const int size, typeNum number)
 ```
 В качестве входных аргументов функция принимает ```arr``` - указатель на начало массива, ```size``` - размер массива, ```number``` - число, которое будет вычтено из всех элементов. Функция возвращает указатель на первый элемент измененного массива.
 
@@ -1078,8 +1082,8 @@ typeArr* inMinArr(typeArr* arr, const int size, typeArr number)
 
 - ### _Умножение числа на все элементы массива_
 ```c++
-template <typename typeArr>
-typeArr* inMulArr(typeArr* arr, const int size, typeArr number)
+template <typename typeArr, typename typeNum>
+typeArr* inMulArr(typeArr* arr, const int size, typeNum number)
 ```
 В качестве входных аргументов функция принимает ```arr``` - указатель на начало массива, ```size``` - размер массива, ```number``` - число, которое будет умноженно на все элементы массива. Функция возвращает указатель на первый элемент измененного массива.
 
@@ -1087,8 +1091,8 @@ typeArr* inMulArr(typeArr* arr, const int size, typeArr number)
 
 - ### _Деление всех элементов массива на число_
 ```c++
-template <typename typeArr>
-typeArr* inDivArr(typeArr* arr, const int size, typeArr number)
+template <typename typeArr, typename typeNum>
+typeArr* inDivArr(typeArr* arr, const int size, typeNum number)
 ```
 В качестве входных аргументов функция принимает ```arr``` - указатель на начало массива, ```size``` - размер массива, ```number``` - число, на которое будут поделенны все элементы массива. Функция возвращает указатель на первый элемент измененного массива.
 
@@ -1096,8 +1100,8 @@ typeArr* inDivArr(typeArr* arr, const int size, typeArr number)
 
 - ### _Возведение элементов массива в степень_
 ```c++
-template <typename typeArr>
-typeArr* powArr(typeArr* arr, const int size, typeArr gpow)
+template <typename typeArr, typename typeNum>
+typeArr* powArr(typeArr* arr, const int size, typeNum gpow)
 ```
 В качестве входных аргументов функция принимает ```arr``` - указатель на начало массива, ```size``` - размер массива, ```gpow``` - степень, в которую будут возведены все элементы массива. Функция возвращает указатель на первый элемент измененного массива.
 
@@ -1181,8 +1185,8 @@ typeMat* divMat(typeMat* mat0, typeMat* mat1, typeMat* mat2, const int isize, co
 
 - ### _Добавление числа ко всем элементам матрицы_
 ```c++
-template <typename typeMat>
-typeMat* inPlusMat(typeMat* mat, const int isize, const int jsize, typeMat number)
+template <typename typeMat, typename typeNum>
+typeMat* inPlusMat(typeMat* mat, const int isize, const int jsize, typeNum number)
 ```
 В качестве входных аргументов функция принимает ```mat``` - указатель на начало матрицы, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице, ```number``` - добавляемое число. Функция возвращает указатель на первый элемент итоговой матрицы.
 
@@ -1190,8 +1194,8 @@ typeMat* inPlusMat(typeMat* mat, const int isize, const int jsize, typeMat numbe
 
 - ### _Вычитание числа из всех элементов матрицы_
 ```c++
-template <typename typeMat>
-typeMat* inMinMat(typeMat* mat, const int isize, const int jsize, typeMat number)
+template <typename typeMat, typename typeNum>
+typeMat* inMinMat(typeMat* mat, const int isize, const int jsize, typeNum number)
 ```
 В качестве входных аргументов функция принимает ```mat``` - указатель на начало матрицы, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице, ```number``` - вычитаемое число. Функция возвращает указатель на первый элемент итоговой матрицы.
 
@@ -1199,8 +1203,8 @@ typeMat* inMinMat(typeMat* mat, const int isize, const int jsize, typeMat number
 
 - ### _Умножение числа на все элементы матрицы_
 ```c++
-template <typename typeMat>
-typeMat* inMulMat(typeMat* mat, const int isize, const int jsize, typeMat number)
+template <typename typeMat, typename typeNum>
+typeMat* inMulMat(typeMat* mat, const int isize, const int jsize, typeNum number)
 ```
 В качестве входных аргументов функция принимает ```mat``` - указатель на начало матрицы, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице, ```number``` - число, на которое нужно умножить элементы матрицы. Функция возвращает указатель на первый элемент итоговой матрицы.
 
@@ -1208,8 +1212,8 @@ typeMat* inMulMat(typeMat* mat, const int isize, const int jsize, typeMat number
 
 - ### _Деление всех элементов матрицы на число_
 ```c++
-template <typename typeMat>
-typeMat* inDivMat(typeMat* mat, const int isize, const int jsize, typeMat number)
+template <typename typeMat, typename typeNum>
+typeMat* inDivMat(typeMat* mat, const int isize, const int jsize, typeNum number)
 ```
 В качестве входных аргументов функция принимает ```mat``` - указатель на начало матрицы, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице, ```number``` - число, на которое будут поделены все элементы матрицы. Функция возвращает указатель на первый элемент итоговой матрицы.
 
@@ -1217,8 +1221,8 @@ typeMat* inDivMat(typeMat* mat, const int isize, const int jsize, typeMat number
 
 - ### _Возведение элементов матрицы в степень_
 ```c++
-template <typename typeMat, typename typenum>
-typeMat* powMat(typeMat* mat, const int isize, const int jsize, typenum gpow)
+template <typename typeMat, typename typeNum>
+typeMat* powMat(typeMat* mat, const int isize, const int jsize, typeNum gpow)
 ```
 В качестве входных аргументов функция принимает ```mat``` - указатель на начало матрицы, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице, ```gpow``` - степень, в которую будут возведены все элементы массива. Функция возвращает указатель на первый элемент итоговой матрицы.
 
