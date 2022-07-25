@@ -41,7 +41,9 @@ namespace mathAlgo {
     }
 
     // Finding the length of a line segment
-    long double lengthOfLine(long double x1, long double x2, long double y1, long double y2, long double z1 = 0, long double z2 = 0) {
+    long double lengthOfLine(long double x1, long double x2,
+                             long double y1, long double y2,
+                             long double z1 = 0, long double z2 = 0) {
         return sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2) + pow((z2 - z1), 2));
     }
 
@@ -68,13 +70,13 @@ namespace mathAlgo {
     }
 
     // Number of placements, order is NOT important
-    uint64_t comС(uint64_t n, uint64_t m) {
+    uint64_t comС(uint64_t m, uint64_t n) {
         return fac(n) / (fac(m) * fac(n - m));
     }
 
     // Default Bernoulli's formula
     long double bern(uint64_t n, uint64_t k, long double p) {
-        return comС(n, k) * pow(p, k) * pow(p, n - k);
+        return comС(k, n) * pow(p, k) * pow(p, n - k);
     }
 
     //phi number for local Laplace theorem
@@ -99,7 +101,7 @@ namespace mathAlgo {
         double h = 0.01;
         double n = (b - a) / h;
         
-        for (int i = 1; i <= n; i++)
+        for (int i = 0; i < n; i++)
             Integral = Integral + h * endLaplaceTheorem(a + h * (i - 0.5));
         return 1 / sqrt(2 * _pi) * Integral;
     }
@@ -192,7 +194,7 @@ namespace mathAlgo {
     template<typename F>
     long double halfDivisionMethod(F func, long double a, long double b, long double e = 0.001) {
         long double x;
-        x = (a + b) / 2;
+        x = a + (b - a) / 2;
         while (fabs(b - a) > e) {
             if (func(a) * func(x) <= 0) {
                 b = x;
@@ -200,7 +202,7 @@ namespace mathAlgo {
             else {
                 a = x;
             }
-            x = (a + b) / 2;
+            x = a + (b - a) / 2;
         }
         return x;
     }
@@ -240,7 +242,7 @@ namespace mathAlgo {
 
             if (func(a) * func(x) < 0) b = x;
 
-            if (func(x) * func(b) < 0) a = x;
+            if (func(b) * func(x) < 0) a = x;
 
         }
 
@@ -289,9 +291,9 @@ namespace mathAlgo {
 
     template <typename typeArr>
     typeArr* bSort(typeArr* arr, const int size, bool asc = true) {
-        for (int i = 1; i < size; i++)
+        for (int i = 0; i < size - 1; i++)
         {
-            for (int j = 0; j < size - i; j++)
+            for (int j = 0; j < size - i - 1; j++)
             {
                 if (asc) {
                     if (arr[j] > arr[j + 1]) swap(arr[j], arr[j + 1]);
@@ -336,7 +338,7 @@ namespace mathAlgo {
     typeArr median(typeArr* arr, const int size) {
         if (size % 2 == 1)
             return arr[size / 2];
-        else return (arr[size / 2 - 1] + arr[size / 2]) / 2;
+        return (arr[size / 2 - 1] + arr[size / 2]) / 2;
     }
 
     // Merge arrays(add)
@@ -376,39 +378,39 @@ namespace mathAlgo {
 
     // Add a number to array elements
     // number - The number to be added to the elements of the array
-    template <typename typeArr>
-    typeArr* inPlusArr(typeArr* arr, const int size, typeArr number) {
+    template <typename typeArr, typename typeNum>
+    typeArr* inPlusArr(typeArr* arr, const int size, typeNum number) {
         for (int i = 0; i < size; i++) arr[i] += number;
         return arr;
     }
 
     // Subtract a number from the array elements
     // number - the number to be subtracted from the array elements
-    template <typename typeArr>
-    typeArr* inMinArr(typeArr* arr, const int size, typeArr number) {
+template <typename typeArr, typename typeNum>
+    typeArr* inMinArr(typeArr* arr, const int size, typeNum number) {
         for (int i = 0; i < size; i++) arr[i] -= number;
         return arr;
     }
 
     // Multiply a number by an array element
     // number - the number by which to multiply the elements of the array
-    template <typename typeArr>
-    typeArr* inMulArr(typeArr* arr, const int size, typeArr number) {
+    template <typename typeArr, typename typeNum>
+    typeArr* inMulArr(typeArr* arr, const int size, typeNum number) {
         for (int i = 0; i < size; i++) arr[i] *= number;
         return arr;
     }
 
     // Divide the array numbers by the given number
     // number - the number by which the array elements will be divided
-    template <typename typeArr>
-    typeArr* inDivArr(typeArr* arr, const int size, typeArr number) {
+    template <typename typeArr, typename typeNum>
+    typeArr* inDivArr(typeArr* arr, const int size, typeNum number) {
         for (int i = 0; i < size; i++) arr[i] /= number;
         return arr;
     }
 
     // Raising an array to a given power
-    template <typename typeArr>
-    typeArr* powArr(typeArr* arr, const int size, typeArr gpow) {
+    template <typename typeArr, typename typeNum>
+    typeArr* powArr(typeArr* arr, const int size, typeNum gpow) {
         for (int i = 0; i < size; i++) arr[i] = pow(arr[i], gpow);
         return arr;
     }
@@ -424,10 +426,7 @@ namespace mathAlgo {
     template <typename typeArr>
     typeArr* swapArr(typeArr* arr, const int size) {
         for (int i = 0; i < size; i++) {
-            if (arr[i] < 0) arr[i] = abs(arr[i]);
-            else {
-                arr[i] = -(arr[i]);
-            }
+            arr[i] *= -1;
         }
         return arr;
     }
@@ -506,8 +505,8 @@ namespace mathAlgo {
     }
 
     // Adds a given number to all elements of a matrix
-    template <typename typeMat>
-    typeMat* inPlusMat(typeMat* mat, const int isize, const int jsize, typeMat number) {
+    template <typename typeMat, typename typeNum>
+    typeMat* inPlusMat(typeMat* mat, const int isize, const int jsize, typeNum number) {
         for (int i = 0; i < isize; i++) {
             for (int j = 0; j < jsize; j++) {
                 *(*(mat + i) + j) += number;
@@ -517,8 +516,8 @@ namespace mathAlgo {
     }
 
     // Subtracts a given number from all matrix elements
-    template <typename typeMat>
-    typeMat* inMinMat(typeMat* mat, const int isize, const int jsize, typeMat number) {
+    template <typename typeMat, typename typeNum>
+    typeMat* inMinMat(typeMat* mat, const int isize, const int jsize, typeNum number) {
         for (int i = 0; i < isize; i++) {
             for (int j = 0; j < jsize; j++) {
                 *(*(mat + i) + j) -= number;
@@ -528,8 +527,8 @@ namespace mathAlgo {
     }
 
     // Multiplies the given number by all matrix elements
-    template <typename typeMat>
-    typeMat* inMulMat(typeMat* mat, const int isize, const int jsize, typeMat number) {
+    template <typename typeMat, typename typeNum>
+    typeMat* inMulMat(typeMat* mat, const int isize, const int jsize, typeNum number) {
         for (int i = 0; i < isize; i++) {
             for (int j = 0; j < jsize; j++) {
                 *(*(mat + i) + j) *= number;
@@ -539,8 +538,8 @@ namespace mathAlgo {
     }
 
     // Divides the elements of a matrix by a given number.
-    template <typename typeMat>
-    typeMat* inDivMat(typeMat* mat, const int isize, const int jsize, typeMat number) {
+    template <typename typeMat, typename typeNum>
+    typeMat* inDivMat(typeMat* mat, const int isize, const int jsize, typeNum number) {
         for (int i = 0; i < isize; i++) {
             for (int j = 0; j < jsize; j++) {
                 *(*(mat + i) + j) /= number;
@@ -550,8 +549,8 @@ namespace mathAlgo {
     }
 
     // Raise a matrix to a given power
-    template <typename typeMat>
-    typeMat* powMat(typeMat* mat, const int isize, const int jsize, typeMat gpow) {
+    template <typename typeMat, typename typeNum>
+    typeMat* powMat(typeMat* mat, const int isize, const int jsize, typeNum gpow) {
         for (int i = 0; i < isize; i++) {
             for (int j = 0; j < jsize; j++) {
                 *(*(mat + i) + j) = pow(*(*(mat + i) + j), gpow);
@@ -576,12 +575,7 @@ namespace mathAlgo {
     typeMat* swapMat(typeMat* mat, const int isize, const int jsize) {
         for (int i = 0; i < isize; i++) {
             for (int j = 0; j < jsize; j++) {
-                if (*(*(mat + i) + j) < 0) {
-                    *(*(mat + i) + j) = abs(*(*(mat + i) + j));
-                }
-                else {
-                    *(*(mat + i) + j) = -*(*(mat + i) + j);
-                }
+                *(*(mat + i) + j) *= -1;
             }
         }
         return mat;
