@@ -212,8 +212,7 @@ As input arguments ```m``` takes the number of favorable outcomes, ```n``` takes
 ```c++ 
 uint64_t comA(uint64_t m, uint64_t n)
 ```
-<img src="https://camo.githubusercontent.com/ed02a340a9f48b95bb35619ae2af7f29d6665a3536ed8df8b3986ba22c2189a4/68747470733a2f2f7374756466696c652e6e65742f68746d6c2f323730362f3533302f68746d6c5f6b5975646f34726c77552e327532682f696d672d495a6e6e524c2e706e67" alt="Placemnt" data-canonical-src="https://studfile.net/html/2706/530/html_kYudo4rlwU.2u2h/img-IZnnRL.png" width="200" height="96">
-
+<img src="https://camo.githubusercontent.com/ed02a340a9f48b95bb35619ae2af7f29d6665a3536ed8df8b3986ba22c2189a4/68747470733a2f2f7374756466696c652e6e65742f68746d6c2f323730362f3533302f68746d6c5f6b5975646f34726c77552e327532682f696d672d495a6e6e524c2e706e67" alt="Placemnt" data-canonical-src="https://studfile.net/html/2706/530/html_kYudo4rlwU.2u2h/img-IZnnRL.png" width="200" height="96"><br/>
 As input arguments ```m``` and ```n```, an ordered set of ```m``` different elements from some set of different ```n``` elements. It is important that ```n``` > ```m```. The function returns the number of placements.
 
 <br/>
@@ -222,8 +221,7 @@ As input arguments ```m``` and ```n```, an ordered set of ```m``` different elem
 ```c++ 
 uint64_t comС(uint64_t m, uint64_t n)
 ```
-<img src="https://xn----8sbanwvcjzh9e.xn--p1ai/wp-content/uploads/formula-sochetaniya-kombinatorika_57.jpg" alt="Combination" data-canonical-src="https://xn----8sbanwvcjzh9e.xn--p1ai/wp-content/uploads/formula-sochetaniya-kombinatorika_57.jpg" width="240" height="100">
-
+<img src="https://xn----8sbanwvcjzh9e.xn--p1ai/wp-content/uploads/formula-sochetaniya-kombinatorika_57.jpg" alt="Combination" data-canonical-src="https://xn----8sbanwvcjzh9e.xn--p1ai/wp-content/uploads/formula-sochetaniya-kombinatorika_57.jpg" width="240" height="100"><br/>
 As input arguments ```m``` and ```n```, a set of ```m``` elements chosen from the ```n``` element set, which does not take into account the order of elements. It is important that ```n``` > ```m```. The function returns the number of combinations.
 
 <br/>
@@ -304,7 +302,6 @@ template<typename F>
 long double halfDivisionMethod(F func, long double a, long double b, long double e = 0.001)
 ```
 The function takes as input arguments the equation ```func```, the left and right limits of the interval ```a``` & ```b``` and the optional precision parameter ```e```. The function returns the root of the equation on a given interval, with a given accuracy.
-
 Example of usage:
 ```c++
 double f(double x)
@@ -317,7 +314,6 @@ int main
   cout << "halfDivisionMethod: " << mathAlgo::halfDivisionMethod(&f, 0, 2) << endl;
 }
 ```
-
 Output:
 ```
 halfDivisionMethod: 0.88623
@@ -331,7 +327,6 @@ template<typename F>
 long double secantMethod(F func, long double x0, long double x1, long double e = 0.001)
 ```
 The function takes as input arguments the equation ```func```, the left and right limits of the interval ```x0``` & ```x1``` and the optional precision parameter ```e```. The function returns the root of the equation on a given interval, with a given accuracy.
-
 Example of usage:
 ```c++
 double f(double x)
@@ -344,7 +339,6 @@ int main
   cout << "secantMethod: " << mathAlgo::secantMethod(&f, 0, 2) << endl;
 }
 ```
-
 Output:
 ```
 secantMethod: 0.886345
@@ -358,7 +352,6 @@ template<typename F>
 long double parabolaMethod(F func, long double a, long double b, long double e = 0.001)
 ```
 The function takes as input arguments the equation ```func```, the left and right limits of the interval ```a``` & ```b``` and the optional precision parameter ```e```. The function returns the root of the equation on a given interval, with a given accuracy.
-
 Example of usage:
 ```c++
 double f(double x)
@@ -371,7 +364,6 @@ int main
   cout << "parabolaMethod: " << mathAlgo::parabolaMethod(&f, 0, 2) << endl;
 }
 ```
-
 Output:
 ```
 parabolaMethod: 0.886345
@@ -765,8 +757,7 @@ long double prob(long double m, long double n)
 ```c++ 
 uint64_t comA(uint64_t m, uint64_t n)
 ```
-<img src="https://camo.githubusercontent.com/ed02a340a9f48b95bb35619ae2af7f29d6665a3536ed8df8b3986ba22c2189a4/68747470733a2f2f7374756466696c652e6e65742f68746d6c2f323730362f3533302f68746d6c5f6b5975646f34726c77552e327532682f696d672d495a6e6e524c2e706e67" alt="Формула размещения" data-canonical-src="https://studfile.net/html/2706/530/html_kYudo4rlwU.2u2h/img-IZnnRL.png" width="200" height="96">
-
+<img src="https://camo.githubusercontent.com/ed02a340a9f48b95bb35619ae2af7f29d6665a3536ed8df8b3986ba22c2189a4/68747470733a2f2f7374756466696c652e6e65742f68746d6c2f323730362f3533302f68746d6c5f6b5975646f34726c77552e327532682f696d672d495a6e6e524c2e706e67" alt="Формула размещения" data-canonical-src="https://studfile.net/html/2706/530/html_kYudo4rlwU.2u2h/img-IZnnRL.png" width="200" height="96"><br/>
 В качестве входных аргументов ```m``` и ```n```, упорядоченный набор из ```m``` различных элементов из некоторого множества различных ```n``` элементов. Важно, чтобы ```n``` > ```m```. Функция возвращает количество размещений.
 
 <br/>
@@ -775,8 +766,7 @@ uint64_t comA(uint64_t m, uint64_t n)
 ```c++ 
 uint64_t comC(uint64_t m, uint64_t n)
 ```
-<img src="https://xn----8sbanwvcjzh9e.xn--p1ai/wp-content/uploads/formula-sochetaniya-kombinatorika_57.jpg" alt="Формула сочетания" data-canonical-src="https://xn----8sbanwvcjzh9e.xn--p1ai/wp-content/uploads/formula-sochetaniya-kombinatorika_57.jpg" width="240" height="100">
-
+<img src="https://xn----8sbanwvcjzh9e.xn--p1ai/wp-content/uploads/formula-sochetaniya-kombinatorika_57.jpg" alt="Формула сочетания" data-canonical-src="https://xn----8sbanwvcjzh9e.xn--p1ai/wp-content/uploads/formula-sochetaniya-kombinatorika_57.jpg" width="240" height="100"><br/>
 В качестве входных аргументов ```m``` и ```n```, набор из ```m``` элементов, выбранных из ```n```-элементного множества, в котором не учитывается порядок элементов. Важно, чтобы ```n``` > ```m```. Функция возвращает количество сочетаний.
 
 <br/>
@@ -857,7 +847,6 @@ template<typename F>
 long double halfDivisionMethod(F func, long double a, long double b, long double e = 0.001)
 ```
 В качестве входных аргументов функция принимает уравнение ```func```, левую и правую границы отрезка ```a``` & ```b``` и необязательный параметр точности ```e```. Функция возвращает корень уравнения на заданном промежутке, с заданной точностью.
-
 Пример использования:
 ```c++
 double f(double x)
@@ -870,7 +859,6 @@ int main
   cout << "halfDivisionMethod: " << mathAlgo::halfDivisionMethod(&f, 0, 2) << endl;
 }
 ```
-
 Вывод:
 ```
 halfDivisionMethod: 0.88623
@@ -884,7 +872,6 @@ template<typename F>
 long double secantMethod(F func, long double x0, long double x1, long double e = 0.001)
 ```
 В качестве входных аргументов функция принимает уравнение ```func```, левую и правую границы отрезка ```x0``` & ```x1``` и необязательный параметр точности ```e```. Функция возвращает корень уравнения на заданном промежутке, с заданной точностью.
-
 Пример использования:
 ```c++
 double f(double x)
@@ -897,7 +884,6 @@ int main
   cout << "secantMethod: " << mathAlgo::secantMethod(&f, 0, 2) << endl;
 }
 ```
-
 Вывод:
 ```
 secantMethod: 0.886345
@@ -911,7 +897,6 @@ template<typename F>
 long double parabolaMethod(F func, long double a, long double b, long double e = 0.001)
 ```
 В качестве входных аргументов функция принимает уравнение ```func```, левую и правую границы отрезка ```a``` & ```b``` и необязательный параметр точности ```e```. Функция возвращает корень уравнения на заданном промежутке, с заданной точностью.
-
 Пример использования:
 ```c++
 double f(double x)
@@ -924,7 +909,6 @@ int main
   cout << "parabolaMethod: " << mathAlgo::parabolaMethod(&f, 0, 2) << endl;
 }
 ```
-
 Вывод:
 ```
 parabolaMethod: 0.886345
