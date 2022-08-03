@@ -152,7 +152,7 @@
 
 - ### _Prime number_
 ```c++ 
-bool isPrime(uint64_t number)
+bool isPrime(const int64_t& number)
 ```
 The function takes as its input argument the ```number``` to be checked. The function returns ``true`` if the number is prime and ``false`` if it is composite.
 
@@ -161,7 +161,7 @@ The function takes as its input argument the ```number``` to be checked. The fun
 ## **Arithmetic and geometric progressions**
 - ###  _N-th term of the arithmetic progression_
 ```c++ 
-long double nTermOfASequence(long double a1, long double d, uint64_t n)
+long double nTermOfASequence(const long double a1, const long double d, const int64_t n)
 ```
 The function takes as input arguments the first element of the progression - ```a1```, the difference - ```d``` and the number of the sought element - ```n```. The function returns the value of the nth element.
 
@@ -169,7 +169,7 @@ The function takes as input arguments the first element of the progression - ```
 
 - ###  _Sum of members of an arithmetic progression_
 ```c++ 
-long double sumAprogression(long double a1, long double an, uint64_t n)
+long double sumAprogression(const long double a1, const long double an, const int64_t n)
 ```
 The function takes as input arguments the first element of the progression - ```a1```, the value of the nth element - ```an``` and the number of elements - ```n```. The function returns the sum of the members of the sequence.
 
@@ -177,7 +177,7 @@ The function takes as input arguments the first element of the progression - ```
 
 - ###  _N-th term of the geometric progression_
 ```c++ 
-long double nTermOfGSequence(long double a, long double q, uint64_t n)
+long double nTermOfGSequence(const long double a, const long double q, const int64_t n)
 ```
 The function takes as input arguments the first element of the progression - ```a```, the denominator of the progression - ```q``` and the number of the element sought - ```n```. The function returns the value of the nth element.
 
@@ -185,7 +185,7 @@ The function takes as input arguments the first element of the progression - ```
 
 - ###  _Sum of members of a geometric progression_
 ```c++ 
-long double sumGprogression(long double a1, long double an, long double q)
+long double sumGprogression(const long double a1, const long double an, const long double q)
 ```
 The function takes as input arguments the first element of the progression - ```a1```, the value of the nth element - ```an``` and the denominator - ```q```. The function returns the sum of the members of the sequence.
 
@@ -194,7 +194,7 @@ The function takes as input arguments the first element of the progression - ```
 ## **Probability Theory and Combinatorics**
 - ### _Factorial_
 ```c++ 
-uint64_t fac(uint64_t number)
+int64_t fac(const int64_t number)
 ```
 As an input argument, the function takes the ```number``` to be raised to the factorial. The function returns the factorial of the entered number.
 
@@ -202,7 +202,7 @@ As an input argument, the function takes the ```number``` to be raised to the fa
 
 - ### _Probability_
 ```c++ 
-long double prob(long double m, long double n)
+long double prob(const long double m, const long double n)
 ```
 As input arguments ```m``` takes the number of favorable outcomes, ```n``` takes the total number of test outcomes. The function returns the probability of the event.
 
@@ -210,7 +210,7 @@ As input arguments ```m``` takes the number of favorable outcomes, ```n``` takes
 
 - ### _Placement (order is important)_
 ```c++ 
-uint64_t comA(uint64_t m, uint64_t n)
+int64_t comA(const int64_t m, const int64_t n)
 ```
 <img src="https://camo.githubusercontent.com/ed02a340a9f48b95bb35619ae2af7f29d6665a3536ed8df8b3986ba22c2189a4/68747470733a2f2f7374756466696c652e6e65742f68746d6c2f323730362f3533302f68746d6c5f6b5975646f34726c77552e327532682f696d672d495a6e6e524c2e706e67" alt="Placemnt" data-canonical-src="https://studfile.net/html/2706/530/html_kYudo4rlwU.2u2h/img-IZnnRL.png" width="200" height="96"><br/><br/>
 As input arguments ```m``` and ```n```, an ordered set of ```m``` different elements from some set of different ```n``` elements. It is important that ```n``` > ```m```. The function returns the number of placements.
@@ -219,7 +219,7 @@ As input arguments ```m``` and ```n```, an ordered set of ```m``` different elem
 
 - ### _Combination (order is NOT important)_
 ```c++ 
-uint64_t comС(uint64_t m, uint64_t n)
+int64_t comС(const int64_t m, const int64_t n)
 ```
 <img src="https://xn----8sbanwvcjzh9e.xn--p1ai/wp-content/uploads/formula-sochetaniya-kombinatorika_57.jpg" alt="Combination" data-canonical-src="https://xn----8sbanwvcjzh9e.xn--p1ai/wp-content/uploads/formula-sochetaniya-kombinatorika_57.jpg" width="240" height="100"><br/><br/>
 As input arguments ```m``` and ```n```, a set of ```m``` elements chosen from the ```n``` element set, which does not take into account the order of elements. It is important that ```n``` > ```m```. The function returns the number of combinations.
@@ -228,7 +228,7 @@ As input arguments ```m``` and ```n```, a set of ```m``` elements chosen from th
 
 - ### _Bernoulli formula_
 ```c++ 
-long double bern(uint64_t n, uint64_t k, long double p)
+long double bern(const int64_t n, const int64_t k, const long double p)
 ```
 As input arguments the function takes ```n``` - total number of trials, ```k``` - number of favorable trials, ```p``` - chance of favorable outcome. The function returns the probability of a given event.
 
@@ -236,7 +236,7 @@ As input arguments the function takes ```n``` - total number of trials, ```k``` 
 
 - ### _Local Phi number_
 ```c++ 
-long double fiLocal(long double x)
+long double fiLocal(const long double x)
 ```
 The function takes ```x``` - any number as an input argument. The function returns the value of the local number Phi from the given number.
 
@@ -244,7 +244,7 @@ The function takes ```x``` - any number as an input argument. The function retur
 
 - ### _The Phi number for the Laplace integral formula_
 ```c++ 
-long double fiIntegral(long double x)
+long double fiIntegral(const long double x)
 ```
 The function takes ```x``` - any number as an input argument. The function returns the value of Phi from the given number for the Laplace integral formula.
 
@@ -252,7 +252,7 @@ The function takes ```x``` - any number as an input argument. The function retur
 
 - ### _The finite part of the function for the number of the Laplace integral formula_
 ```c++ 
- double endLaplaceTheorem(double x) 
+double endLaplaceTheorem(const double x)
 ```
 The function takes ```x``` - any number as an input argument. The function returns a finite number in the Laplace integral formula.
 _Comment: A useful practical application of this function is in calculations in the Laplace integral formula._
@@ -261,7 +261,7 @@ _Comment: A useful practical application of this function is in calculations in 
 
 - ### _Laplace's local theorem_
 ```c++ 
-long double lLaplace(long double n, long double k, long double p)
+long double lLaplace(const long double n, const long double k, const long double p)
 ```
 As input arguments the function takes ```n``` - total number of trials, ```k``` - number of favorable trials, ```p``` - chance of favorable outcome. The function returns the probability of a given event.
 
@@ -269,7 +269,7 @@ As input arguments the function takes ```n``` - total number of trials, ```k``` 
 
 - ### _Laplace integral theorem_
 ```c++ 
-long double iLaplace(long double k1, long double k2, long double n, long double p)
+long double iLaplace(const long double k1, const long double k2, const long double n, const long double p)
 ```
 As input arguments the function takes ```k1``` - number of times at least the event will occur, ```k2``` - number of times at most the event will occur, ```n``` - total number of trials, ```p``` - chance of favorable outcome. The function returns the probability of a given event.
 
@@ -299,7 +299,7 @@ Important: The size of both arrays must be the same.
 - ### _Half-division method_
 ```c++
 template<typename F>
-long double halfDivisionMethod(F func, long double a, long double b, long double e = 0.001)
+long double halfDivisionMethod(const F func, long double a, long double b, const long double e = 0.001)
 ```
 The function takes as input arguments the equation ```func```, the left and right limits of the interval ```a``` & ```b``` and the optional precision parameter ```e```. The function returns the root of the equation on a given interval, with a given accuracy.<br/>
 
@@ -328,7 +328,7 @@ halfDivisionMethod: 0.88623
 - ### _Secant method_
 ```c++
 template<typename F>
-long double secantMethod(F func, long double x0, long double x1, long double e = 0.001)
+long double secantMethod(const F func, long double x0, long double x1, const long double e = 0.001)
 ```
 The function takes as input arguments the equation ```func```, the left and right limits of the interval ```x0``` & ```x1``` and the optional precision parameter ```e```. The function returns the root of the equation on a given interval, with a given accuracy.<br/>
 
@@ -357,7 +357,7 @@ secantMethod: 0.886345
 - ### _Parabola method_
 ```c++
 template<typename F>
-long double parabolaMethod(F func, long double a, long double b, long double e = 0.001)
+long double parabolaMethod(const F func, long double a, long double b, const long double e = 0.001)
 ```
 The function takes as input arguments the equation ```func```, the left and right limits of the interval ```a``` & ```b``` and the optional precision parameter ```e```. The function returns the root of the equation on a given interval, with a given accuracy.<br/>
 
@@ -386,7 +386,7 @@ parabolaMethod: 0.886345
 ## **Recursive algorithms**
 - ### _Fibonacci number_
 ```c++
-uint64_t fibonacci(uint64_t n)
+int64_t fibonacci(const int64_t number)
 ```
 The function takes the number ```n``` as an input argument. The function returns the value of the Fibonacci sequence in the given 
 position.
@@ -396,7 +396,7 @@ position.
 ## **Geometry**
 - ### _Cotangent_
 ```c++
-long double cot(long double number)
+long double cot(const long double number)
 ```
 The function takes as its input argument the ```number``` whose cotangent is to be obtained. The function returns the cotangent of the entered number.
 
@@ -404,7 +404,7 @@ The function takes as its input argument the ```number``` whose cotangent is to 
 
 - ### _Arcotangent_
 ```c++
-long double acot(long double number)
+long double acot(const long double number)
 ```
 The function takes as its input argument the number ```number``` whose arcotangent is to be obtained. The function returns the arc tangent of the entered number.
 
@@ -412,9 +412,9 @@ The function takes as its input argument the number ```number``` whose arcotange
 
 - ### _Calculating the length of the segment_
 ```c++
-long double lengthOfLine(long double x1, long double x2, 
-                         long double y1, long double y2, 
-                         long double z1 = 0, long double z2 = 0)
+long double lengthOfLine(const long double x1, const long double x2,
+                         const long double y1, const long double y2,
+                         const long double z1 = 0, const long double z2 = 0)
 ```
 The function takes the coordinates of points A(x1, y1) & B(x2, y2) as input arguments (z coordinates are entered for a three-dimensional coordinate system). The function returns the length of the segment.
 
@@ -516,7 +516,7 @@ Important: The division of elements works according to the principle: element of
 - ###  _Adding a number to all elements of an array_
 ```c++
 template <typename typeArr, typename typeNum>
-typeArr* inPlusArr(typeArr* arr, const int size, typeNum number)
+typeArr* inPlusArr(typeArr* arr, const int size, const typeNum& number)
 ```
 As input arguments the function takes ```arr``` - pointer to the beginning of the array, ```size``` - size of the array, ```number``` - number to be added to all elements. The function returns a pointer to the first element of the modified array.
 
@@ -525,7 +525,7 @@ As input arguments the function takes ```arr``` - pointer to the beginning of th
 - ### _Subtracting a number from all elements of an array_
 ```c++
 template <typename typeArr, typename typeNum>
-typeArr* inMinArr(typeArr* arr, const int size, typeNum number)
+typeArr* inMinArr(typeArr* arr, const int size, const typeNum& number)
 ```
 As input arguments the function takes ```arr``` - pointer to the beginning of the array, ```size``` - size of the array, ```number``` - number to be subtracted from all elements. The function returns a pointer to the first element of the modified array.
 
@@ -534,7 +534,7 @@ As input arguments the function takes ```arr``` - pointer to the beginning of th
 - ### _Multiplying all elements of the array by a number_
 ```c++
 template <typename typeArr, typename typeNum>
-typeArr* inMulArr(typeArr* arr, const int size, typeNum number)
+typeArr* inMulArr(typeArr* arr, const int size, const typeNum& number)
 ```
 As input arguments the function takes ```arr``` - pointer to the beginning of the array, ```size``` - size of the array, ```number``` - number to be multiplied by all elements of the array. The function returns a pointer to the first element of the modified array.
 
@@ -543,7 +543,7 @@ As input arguments the function takes ```arr``` - pointer to the beginning of th
 - ### _Dividing all elements of an array by a number_
 ```c++
 template <typename typeArr, typename typeNum>
-typeArr* inDivArr(typeArr* arr, const int size, typeNum number)
+typeArr* inDivArr(typeArr* arr, const int size, const typeNum& number)
 ```
 As input arguments the function takes ```arr``` - pointer to the beginning of the array, ```size``` - size of the array, ```number``` - number by which all array elements will be divided. The function returns a pointer to the first element of the modified array.
 
@@ -552,7 +552,7 @@ As input arguments the function takes ```arr``` - pointer to the beginning of th
 - ### _Array elements to a power_
 ```c++
 template <typename typeArr, typename typeNum>
-typeArr* powArr(typeArr* arr, const int size, typeNum gpow)
+typeArr* powArr(typeArr* arr, const int size, const typeNum& gpow)
 ```
 As input arguments the function takes ```arr``` - pointer to the beginning of the array, ```size``` - size of the array, ```gpow``` - degree to which all elements of the array will be raised. The function returns a pointer to the first element of the modified array.
 
@@ -635,7 +635,7 @@ Important: The function works on the principle of dividing the element of the fi
 - ### _Adding a number to all matrix elements_
 ```c++
 template <typename typeMat, typename typeNum>
-typeMat* inPlusMat(typeMat* mat, const int isize, const int jsize, typeNum number)
+typeMat* inPlusMat(typeMat* mat, const int isize, const int jsize, const typeNum& number)
 ```
 As input arguments the function takes ```mat``` - pointer to the beginning of the matrix, ```isize``` - number of rows in the matrix, ```jsize``` - number of columns in the matrix, ```number``` - number to add. The function returns a pointer to the first element of the resulting matrix.
 
@@ -644,7 +644,7 @@ As input arguments the function takes ```mat``` - pointer to the beginning of th
 - ### _Subtracting a number from all matrix elements_
 ```c++
 template <typename typeMat, typename typeNum>
-typeMat* inMinMat(typeMat* mat, const int isize, const int jsize, typeNum number)
+typeMat* inMinMat(typeMat* mat, const int isize, const int jsize, const typeNum& number)
 ```
 As input arguments the function takes ```mat``` - pointer to the beginning of the matrix, ```isize``` - number of rows in the matrix, ```jsize``` - number of columns in the matrix, ```number``` - subtracted number. The function returns a pointer to the first element of the resulting matrix.
 
@@ -653,7 +653,7 @@ As input arguments the function takes ```mat``` - pointer to the beginning of th
 - ### _Multiplying a number by all matrix elements_
 ```c++
 template <typename typeMat, typename typeNum>
-typeMat* inMulMat(typeMat* mat, const int isize, const int jsize, typeNum number)
+typeMat* inMulMat(typeMat* mat, const int isize, const int jsize, const typeNum& number)
 ```
 As input arguments the function takes ```mat``` - pointer to the beginning of the matrix, ```isize``` - number of rows in the matrix, ```jsize``` - number of columns in the matrix, ```number``` - number by which the matrix elements should be multiplied. The function returns a pointer to the first element of the resulting matrix.
 
@@ -662,7 +662,7 @@ As input arguments the function takes ```mat``` - pointer to the beginning of th
 - ### _Dividing all matrix elements by a number_
 ```c++
 template <typename typeMat, typename typeNum>
-typeMat* inDivMat(typeMat* mat, const int isize, const int jsize, typeNum number)
+typeMat* inDivMat(typeMat* mat, const int isize, const int jsize, const typeNum& number)
 ```
 As input arguments the function takes ```mat``` - pointer to the beginning of the matrix, ```isize``` - number of rows in the matrix, ```jsize``` - number of columns in the matrix, ```number``` - number by which all matrix elements will be divided. The function returns a pointer to the first element of the final matrix.
 
@@ -671,7 +671,7 @@ As input arguments the function takes ```mat``` - pointer to the beginning of th
 - ### _Expanding matrix elements_
 ```c++
 template <typename typeMat, typename typeNum>
-typeMat* powMat(typeMat* mat, const int isize, const int jsize, typeNum gpow)
+typeMat* powMat(typeMat* mat, const int isize, const int jsize, const typeNum& gpow)
 ```
 As input arguments the function takes ```mat``` - pointer to the beginning of the matrix, ```isize``` - number of rows in the matrix, ```jsize``` - number of columns in the matrix, ```gpow``` - degree to which all elements of the array will be raised. The function returns a pointer to the first element of the resulting matrix.
 
@@ -709,7 +709,7 @@ As input arguments the function takes ```mat``` - pointer to the beginning of th
 ## **Простая арифметика**
 - ###  _Проверка числа на простоту_
 ```c++ 
-bool isPrime(uint64_t number)
+bool isPrime(const int64_t& number)
 ```
 В качестве входного аргумента функция принимает число ```number```, которое нужно проверить. Функция возвращает ```true``` - если число простое и ```false``` - если составное.
 
@@ -718,7 +718,7 @@ bool isPrime(uint64_t number)
 ## **Арифметическая и геометрическая прогрессии**
 - ###  _N-ый член арифметической прогрессии_
 ```c++ 
-long double nTermOfASequence(long double a1, long double d, uint64_t n)
+long double nTermOfASequence(const long double a1, const long double d, const int64_t n)
 ```
 В качестве входных аргументов функция принимает первый элемент прогрессии - ```a1```, разницу - ```d``` и номер искомого элемента - ```n```. Функция возвращает значение n-го элемента.
 
@@ -726,7 +726,7 @@ long double nTermOfASequence(long double a1, long double d, uint64_t n)
 
 - ###  _Сумма членов арифметической прогрессии_
 ```c++ 
-long double sumAprogression(long double a1, long double an, uint64_t n)
+long double sumAprogression(const long double a1, const long double an, const int64_t n)
 ```
 В качестве входных аргументов функция принимает первый элемент прогрессии - ```a1```, значение n-го элемента - ```an``` и кол-во элементов - ```n```. Функция возвращает сумму членов последовательности.
 
@@ -734,7 +734,7 @@ long double sumAprogression(long double a1, long double an, uint64_t n)
 
 - ###  _N-ый член геометрической прогрессии_
 ```c++ 
-long double nTermOfGSequence(long double a, long double q, uint64_t n)
+long double nTermOfGSequence(const long double a, const long double q, const int64_t n)
 ```
 В качестве входных аргументов функция принимает первый элемент прогрессии - ```a```, знаменатель прогрессии - ```q``` и номер искомого элемента - ```n```. Функция возвращает значение n-го элемента.
 
@@ -742,7 +742,7 @@ long double nTermOfGSequence(long double a, long double q, uint64_t n)
 
 - ###  _Сумма членов геометрической прогрессии_
 ```c++ 
-long double sumGprogression(long double a1, long double an, long double q)
+long double sumGprogression(const long double a1, const long double an, const long double q)
 ```
 В качестве входных аргументов функция принимает первый элемент прогрессии - ```a1```, значение n-го элемента - ```an``` и знаменатель - ```q```. Функция возвращает сумму членов последовательности.
 
@@ -751,7 +751,7 @@ long double sumGprogression(long double a1, long double an, long double q)
 ## **Теория вероятности и комбинаторика**
 - ### _Факториал_
 ```c++ 
-uint64_t fac(uint64_t number)
+int64_t fac(const int64_t number)
 ```
 В качестве входного аргумента функция принимает число ```number```, которое нужно возвести в факториал. Функция возвращает факториал введенного числа.
 
@@ -759,7 +759,7 @@ uint64_t fac(uint64_t number)
 
 - ### _Вероятность_
 ```c++ 
-long double prob(long double m, long double n)
+long double prob(const long double m, const long double n)
 ```
 В качестве входных аргументов ```m``` принимает число благоприятных исходов, ```n``` - общее число исходов испытаний. Функция возвращает вероятность события.
 
@@ -767,7 +767,7 @@ long double prob(long double m, long double n)
 
 - ### _Размещение (порядок важен)_
 ```c++ 
-uint64_t comA(uint64_t m, uint64_t n)
+int64_t comA(const int64_t m, const int64_t n)
 ```
 <img src="https://camo.githubusercontent.com/ed02a340a9f48b95bb35619ae2af7f29d6665a3536ed8df8b3986ba22c2189a4/68747470733a2f2f7374756466696c652e6e65742f68746d6c2f323730362f3533302f68746d6c5f6b5975646f34726c77552e327532682f696d672d495a6e6e524c2e706e67" alt="Формула размещения" data-canonical-src="https://studfile.net/html/2706/530/html_kYudo4rlwU.2u2h/img-IZnnRL.png" width="200" height="96"><br/><br/>
 В качестве входных аргументов ```m``` и ```n```, упорядоченный набор из ```m``` различных элементов из некоторого множества различных ```n``` элементов. Важно, чтобы ```n``` > ```m```. Функция возвращает количество размещений.
@@ -776,7 +776,7 @@ uint64_t comA(uint64_t m, uint64_t n)
 
 - ### _Сочетание (порядок НЕ важен)_
 ```c++ 
-uint64_t comC(uint64_t m, uint64_t n)
+int64_t comС(const int64_t m, const int64_t n)
 ```
 <img src="https://xn----8sbanwvcjzh9e.xn--p1ai/wp-content/uploads/formula-sochetaniya-kombinatorika_57.jpg" alt="Формула сочетания" data-canonical-src="https://xn----8sbanwvcjzh9e.xn--p1ai/wp-content/uploads/formula-sochetaniya-kombinatorika_57.jpg" width="240" height="100"><br/><br/>
 В качестве входных аргументов ```m``` и ```n```, набор из ```m``` элементов, выбранных из ```n```-элементного множества, в котором не учитывается порядок элементов. Важно, чтобы ```n``` > ```m```. Функция возвращает количество сочетаний.
@@ -785,7 +785,7 @@ uint64_t comC(uint64_t m, uint64_t n)
 
 - ### _Формула Бернулли_
 ```c++ 
-long double bern(uint64_t n, uint64_t k, long double p)
+long double bern(const int64_t n, const int64_t k, const long double p)
 ```
 В качестве входных аргументов функция принимает ```n``` - общее количество испытаний, ```k``` - количество благоприятных испытаний, ```p``` - шанс благоприятного исхода. Функция возвращает вероятность заданного события.
 
@@ -793,7 +793,7 @@ long double bern(uint64_t n, uint64_t k, long double p)
 
 - ### _Локальное число Фи_
 ```c++ 
-long double fiLocal(long double x)
+long double fiLocal(const long double x)
 ```
 В качестве входного аргумента функция принимает ```x``` - любое число. Функция возвращает значение локального числа Фи от заданного числа.
 
@@ -801,7 +801,7 @@ long double fiLocal(long double x)
 
 - ### _Число Фи для интегральной формулы Лапласа_
 ```c++ 
-long double fiIntegral(long double x)
+long double fiIntegral(const long double x)
 ```
 В качестве входного аргумента функция принимает ```x``` - любое число. Функция возвращает значение числа Фи от заданного числа для интегральной формулы Лапласа.
 
@@ -809,7 +809,7 @@ long double fiIntegral(long double x)
 
 - ### _Конечная часть функции для числа интегральной формулы Лапласа_
 ```c++ 
- double endLaplaceTheorem(double x) 
+double endLaplaceTheorem(const double x)
 ```
 В качестве входного аргумента функция принимает ```x``` - любое число. Функция возвращает конечное число в интегральной формуле Лапласа.
 _Комментарий: полезное практическое применение данная функция находит при расчетах в интегральной формуле Лапласа._
@@ -818,7 +818,7 @@ _Комментарий: полезное практическое примен�
 
 - ### _Локальная теорема Лапласа_
 ```c++ 
-long double lLaplace(long double n, long double k, long double p)
+long double lLaplace(const long double n, const long double k, const long double p)
 ```
 В качестве входных аргументов функция принимает ```n``` - общее количество испытаний, ```k``` - количество благоприятных испытаний, ```p``` - шанс благоприятного исхода. Функция возвращает вероятность заданного события.
 
@@ -826,7 +826,7 @@ long double lLaplace(long double n, long double k, long double p)
 
 - ### _Интегральная теорема Лапласа_
 ```c++ 
-long double iLaplace(long double k1, long double k2, long double n, long double p)
+long double iLaplace(const long double k1, const long double k2, const long double n, const long double p)
 ```
 В качестве входных аргументов функция принимает ```k1``` - количество раз, не менее которых событие наступит, ```k2``` - количество раз, не более которых событие наступит, ```n``` - общее количество испытаний, ```p``` - шанс благоприятного исхода. Функция возвращает вероятность заданного события.
 
@@ -856,7 +856,7 @@ long double sDev(typeArr1* x, typeArr2* p, const int size)
 - ### _Метод бисекции(деление пополам)_
 ```c++
 template<typename F>
-long double halfDivisionMethod(F func, long double a, long double b, long double e = 0.001)
+long double halfDivisionMethod(const F func, long double a, long double b, const long double e = 0.001)
 ```
 В качестве входных аргументов функция принимает уравнение ```func```, левую и правую границы отрезка ```a``` & ```b``` и необязательный параметр точности ```e```. Функция возвращает корень уравнения на заданном промежутке, с заданной точностью.<br/>
 
@@ -885,7 +885,7 @@ halfDivisionMethod: 0.88623
 - ### _Метод секущих_
 ```c++
 template<typename F>
-long double secantMethod(F func, long double x0, long double x1, long double e = 0.001)
+long double secantMethod(const F func, long double x0, long double x1, const long double e = 0.001)
 ```
 В качестве входных аргументов функция принимает уравнение ```func```, левую и правую границы отрезка ```x0``` & ```x1``` и необязательный параметр точности ```e```. Функция возвращает корень уравнения на заданном промежутке, с заданной точностью.<br/>
 
@@ -914,7 +914,7 @@ secantMethod: 0.886345
 - ### _Метод парабол_
 ```c++
 template<typename F>
-long double parabolaMethod(F func, long double a, long double b, long double e = 0.001)
+long double parabolaMethod(const F func, long double a, long double b, const long double e = 0.001)
 ```
 В качестве входных аргументов функция принимает уравнение ```func```, левую и правую границы отрезка ```a``` & ```b``` и необязательный параметр точности ```e```. Функция возвращает корень уравнения на заданном промежутке, с заданной точностью.<br/>
 
@@ -943,7 +943,7 @@ parabolaMethod: 0.886345
 ## **Рекурсивные алгоритмы**
 - ### _Число Фибоначчи_
 ```c++
-uint64_t fibonacci(uint64_t n)
+int64_t fibonacci(const int64_t number)
 ```
 В качестве входного аргумента функция принимает число ```n```. Функция возвращает значение последовательности Фибоначчи в заданом 
 положении.
@@ -953,7 +953,7 @@ uint64_t fibonacci(uint64_t n)
 ## **Геометрия**
 - ### _Котангенс_
 ```c++
-long double cot(long double number)
+long double cot(const long double number)
 ```
 В качестве входного аргумента функция принимает число ```number```, котангенс которого нужно получить. Функция возвращает котангенс введенного числа.
 
@@ -961,7 +961,7 @@ long double cot(long double number)
 
 - ### _Арккотангенс_
 ```c++
-long double acot(long double number)
+long double acot(const long double number)
 ```
 В качестве входного аргумента функция принимает число ```number```, арккотангенс которого нужно получить. Функция возвращает арккотангенс введенного числа.
 
@@ -969,9 +969,9 @@ long double acot(long double number)
 
 - ### _Расчет длины отрезка_
 ```c++
-long double lengthOfLine(long double x1, long double x2, 
-                         long double y1, long double y2, 
-                         long double z1 = 0, long double z2 = 0)
+long double lengthOfLine(const long double x1, const long double x2,
+                         const long double y1, const long double y2,
+                         const long double z1 = 0, const long double z2 = 0)
 ```
 В качестве входных аргументов функция принимает координаты точек A(x1, y1) & B(x2, y2)(при трехмерной системе координат вводятся координаты z). Функция возвращает длину отрезка.
 
@@ -1073,7 +1073,7 @@ typeArr* divArr(typeArr* arr0, typeArr* arr1, typeArr* arr2, const int size)
 - ###  _Добавление числа ко всем элементам массива_
 ```c++
 template <typename typeArr, typename typeNum>
-typeArr* inPlusArr(typeArr* arr, const int size, typeNum number)
+typeArr* inPlusArr(typeArr* arr, const int size, const typeNum& number)
 ```
 В качестве входных аргументов функция принимает ```arr``` - указатель на начало массива, ```size``` - размер массива, ```number``` - число, которое будет добавлено ко всем элементам. Функция возвращает указатель на первый элемент измененного массива.
 
@@ -1082,7 +1082,7 @@ typeArr* inPlusArr(typeArr* arr, const int size, typeNum number)
 - ### _Вычитание числа из всех элементов массива_
 ```c++
 template <typename typeArr, typename typeNum>
-typeArr* inMinArr(typeArr* arr, const int size, typeNum number)
+typeArr* inMinArr(typeArr* arr, const int size, const typeNum& number)
 ```
 В качестве входных аргументов функция принимает ```arr``` - указатель на начало массива, ```size``` - размер массива, ```number``` - число, которое будет вычтено из всех элементов. Функция возвращает указатель на первый элемент измененного массива.
 
@@ -1091,7 +1091,7 @@ typeArr* inMinArr(typeArr* arr, const int size, typeNum number)
 - ### _Умножение числа на все элементы массива_
 ```c++
 template <typename typeArr, typename typeNum>
-typeArr* inMulArr(typeArr* arr, const int size, typeNum number)
+typeArr* inMulArr(typeArr* arr, const int size, const typeNum& number)
 ```
 В качестве входных аргументов функция принимает ```arr``` - указатель на начало массива, ```size``` - размер массива, ```number``` - число, которое будет умноженно на все элементы массива. Функция возвращает указатель на первый элемент измененного массива.
 
@@ -1100,7 +1100,7 @@ typeArr* inMulArr(typeArr* arr, const int size, typeNum number)
 - ### _Деление всех элементов массива на число_
 ```c++
 template <typename typeArr, typename typeNum>
-typeArr* inDivArr(typeArr* arr, const int size, typeNum number)
+typeArr* inDivArr(typeArr* arr, const int size, const typeNum& number)
 ```
 В качестве входных аргументов функция принимает ```arr``` - указатель на начало массива, ```size``` - размер массива, ```number``` - число, на которое будут поделенны все элементы массива. Функция возвращает указатель на первый элемент измененного массива.
 
@@ -1109,7 +1109,7 @@ typeArr* inDivArr(typeArr* arr, const int size, typeNum number)
 - ### _Возведение элементов массива в степень_
 ```c++
 template <typename typeArr, typename typeNum>
-typeArr* powArr(typeArr* arr, const int size, typeNum gpow)
+typeArr* powArr(typeArr* arr, const int size, const typeNum& gpow)
 ```
 В качестве входных аргументов функция принимает ```arr``` - указатель на начало массива, ```size``` - размер массива, ```gpow``` - степень, в которую будут возведены все элементы массива. Функция возвращает указатель на первый элемент измененного массива.
 
@@ -1194,7 +1194,7 @@ typeMat* divMat(typeMat* mat0, typeMat* mat1, typeMat* mat2, const int isize, co
 - ### _Добавление числа ко всем элементам матрицы_
 ```c++
 template <typename typeMat, typename typeNum>
-typeMat* inPlusMat(typeMat* mat, const int isize, const int jsize, typeNum number)
+typeMat* inPlusMat(typeMat* mat, const int isize, const int jsize, const typeNum& number)
 ```
 В качестве входных аргументов функция принимает ```mat``` - указатель на начало матрицы, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице, ```number``` - добавляемое число. Функция возвращает указатель на первый элемент итоговой матрицы.
 
@@ -1203,7 +1203,7 @@ typeMat* inPlusMat(typeMat* mat, const int isize, const int jsize, typeNum numbe
 - ### _Вычитание числа из всех элементов матрицы_
 ```c++
 template <typename typeMat, typename typeNum>
-typeMat* inMinMat(typeMat* mat, const int isize, const int jsize, typeNum number)
+typeMat* inMinMat(typeMat* mat, const int isize, const int jsize, const typeNum& number)
 ```
 В качестве входных аргументов функция принимает ```mat``` - указатель на начало матрицы, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице, ```number``` - вычитаемое число. Функция возвращает указатель на первый элемент итоговой матрицы.
 
@@ -1212,7 +1212,7 @@ typeMat* inMinMat(typeMat* mat, const int isize, const int jsize, typeNum number
 - ### _Умножение числа на все элементы матрицы_
 ```c++
 template <typename typeMat, typename typeNum>
-typeMat* inMulMat(typeMat* mat, const int isize, const int jsize, typeNum number)
+typeMat* inMulMat(typeMat* mat, const int isize, const int jsize, const typeNum& number)
 ```
 В качестве входных аргументов функция принимает ```mat``` - указатель на начало матрицы, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице, ```number``` - число, на которое нужно умножить элементы матрицы. Функция возвращает указатель на первый элемент итоговой матрицы.
 
@@ -1221,7 +1221,7 @@ typeMat* inMulMat(typeMat* mat, const int isize, const int jsize, typeNum number
 - ### _Деление всех элементов матрицы на число_
 ```c++
 template <typename typeMat, typename typeNum>
-typeMat* inDivMat(typeMat* mat, const int isize, const int jsize, typeNum number)
+typeMat* inDivMat(typeMat* mat, const int isize, const int jsize, const typeNum& number)
 ```
 В качестве входных аргументов функция принимает ```mat``` - указатель на начало матрицы, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице, ```number``` - число, на которое будут поделены все элементы матрицы. Функция возвращает указатель на первый элемент итоговой матрицы.
 
@@ -1230,7 +1230,7 @@ typeMat* inDivMat(typeMat* mat, const int isize, const int jsize, typeNum number
 - ### _Возведение элементов матрицы в степень_
 ```c++
 template <typename typeMat, typename typeNum>
-typeMat* powMat(typeMat* mat, const int isize, const int jsize, typeNum gpow)
+typeMat* powMat(typeMat* mat, const int isize, const int jsize, const typeNum& gpow)
 ```
 В качестве входных аргументов функция принимает ```mat``` - указатель на начало матрицы, ```isize``` - количество строк в матрице, ```jsize``` - количество столбцов в матрице, ```gpow``` - степень, в которую будут возведены все элементы массива. Функция возвращает указатель на первый элемент итоговой матрицы.
 
