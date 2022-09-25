@@ -76,7 +76,7 @@ namespace mathAlgo {
 
     // Default Bernoulli's formula
     long double bern(const int64_t n, const int64_t k, const long double p) {
-        return comС(k, n) * pow(p, k) * pow(p, n - k);
+        return comC(k, n) * pow(p, k) * pow(p, n - k);
     }
 
     //phi number for local Laplace theorem
