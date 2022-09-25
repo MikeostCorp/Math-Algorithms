@@ -70,7 +70,7 @@ namespace mathAlgo {
     }
 
     // Number of placements, order is NOT important
-    int64_t comС(const int64_t m, const int64_t n) {
+    int64_t comC(const int64_t m, const int64_t n) {
         return fac(n) / (fac(m) * fac(n - m));
     }
 
