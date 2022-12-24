@@ -1,0 +1,7 @@
+main
+main.cpp
+
+*.o
+
+xcodeproj
+*.xcodeproj
