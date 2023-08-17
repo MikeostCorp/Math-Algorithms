@@ -219,7 +219,7 @@ As input arguments ```m``` and ```n```, an ordered set of ```m``` different elem
 
 - ### _Combination (order is NOT important)_
 ```c++ 
-int64_t comС(const int64_t m, const int64_t n)
+int64_t comC(const int64_t m, const int64_t n)
 ```
 <img src="https://xn----8sbanwvcjzh9e.xn--p1ai/wp-content/uploads/formula-sochetaniya-kombinatorika_57.jpg" alt="Combination" data-canonical-src="https://xn----8sbanwvcjzh9e.xn--p1ai/wp-content/uploads/formula-sochetaniya-kombinatorika_57.jpg" width="240" height="100"><br/><br/>
 As input arguments ```m``` and ```n```, a set of ```m``` elements chosen from the ```n``` element set, which does not take into account the order of elements. It is important that ```n``` > ```m```. The function returns the number of combinations.
@@ -776,7 +776,7 @@ int64_t comA(const int64_t m, const int64_t n)
 
 - ### _Сочетание (порядок НЕ важен)_
 ```c++ 
-int64_t comС(const int64_t m, const int64_t n)
+int64_t comC(const int64_t m, const int64_t n)
 ```
 <img src="https://xn----8sbanwvcjzh9e.xn--p1ai/wp-content/uploads/formula-sochetaniya-kombinatorika_57.jpg" alt="Формула сочетания" data-canonical-src="https://xn----8sbanwvcjzh9e.xn--p1ai/wp-content/uploads/formula-sochetaniya-kombinatorika_57.jpg" width="240" height="100"><br/><br/>
 В качестве входных аргументов ```m``` и ```n```, набор из ```m``` элементов, выбранных из ```n```-элементного множества, в котором не учитывается порядок элементов. Важно, чтобы ```n``` > ```m```. Функция возвращает количество сочетаний.
