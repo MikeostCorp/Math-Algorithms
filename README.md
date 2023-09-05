@@ -1,12 +1,21 @@
 # Math-Algorithms
 
-C++ Library of various mathematical algorithms that will simplify your work 
+C++ Library of various mathematical algorithms that will simplify your work. 
 
 ### How to use:
-To use this library, download the mathAlgo.h file into the project folder.
-You must use the namespace ```mathAlgo``` when calling the function
+- Add your ```main.cpp``` file to the project folder.
+- Build the library using CMake:
 
-<br/>
+```
+mkdir build
+cd build
+cmake ..
+make
+```
+
+Note: You must use the namespace ```mathAlgo``` when calling the function.
+
+</br>
 
 Project's frontpage is at: https://mikeostcorp.github.io/Math-Algorithms
 

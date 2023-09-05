@@ -5,3 +5,7 @@ main.cpp
 
 xcodeproj
 *.xcodeproj
+
+build
+
+.DS_Store
