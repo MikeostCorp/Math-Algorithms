@@ -11,6 +11,7 @@ mkdir build
 cd build
 cmake ..
 make
+./MathAlgo
 ```
 
 Note: You must use the namespace ```mathAlgo``` when calling the function.
